@@ -1,0 +1,34 @@
+.navbar {
+    margin-bottom: 11px;;
+
+    .first-level {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 42px;
+    }
+
+    .navbar-menu {
+        display: flex;
+        justify-content: space-between;;
+        max-width: 1000px;
+        width: 100%;
+        column-gap: 5px;
+    }
+
+    .navbar-element {
+        font-size: 18px;
+        color: $gray-color-600;
+        cursor: pointer;
+
+        &.parent::after {
+            display: block;
+            content: "";
+            float: right;
+            background : url(../images/navbar-parent.svg) no-repeat;
+            width: 7px;
+            height: 12px;
+            margin-left: 8px;
+            margin-top: 4px;
+        }
+    }
+}

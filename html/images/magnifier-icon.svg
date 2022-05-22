@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon -->
+
+<svg
+   version="1.1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 1000 1000"
+   enable-background="new 0 0 1000 1000"
+   xml:space="preserve"
+   id="svg8"
+   sodipodi:docname="magnifier-icon.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs12" /><sodipodi:namedview
+   id="namedview10"
+   pagecolor="#ffffff"
+   bordercolor="#111111"
+   borderopacity="1"
+   inkscape:pageshadow="0"
+   inkscape:pageopacity="0"
+   inkscape:pagecheckerboard="1"
+   showgrid="false"
+   inkscape:zoom="0.416"
+   inkscape:cx="496.39423"
+   inkscape:cy="489.18269"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="g6" />
+<metadata
+   id="metadata2"> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
+<g
+   id="g6"><path
+     d="M969.4,870.5L772.1,673.1C821,604.4,850,520.7,850,430c0-232-188.1-420-420-420C198,10,10,198,10,430s188,420,420,420c90.7,0,174.4-29,243.1-77.8l197.3,197.3c27.4,27.4,71.6,27.4,99,0C996.9,942.1,996.9,897.9,969.4,870.5z M430,710c-154.6,0-280-125.4-280-280c0-154.6,125.4-280,280-280s280,125.4,280,280C710,584.6,584.6,710,430,710z"
+     id="path4"
+     style="fill:#aeaca0;fill-opacity:1" /></g>
+</svg>

@@ -1,0 +1,21 @@
+.large-news-block {
+    margin-top: 100px;
+    display: flex;
+    column-gap: 1px;
+
+    .news-element {
+        height: 700px;
+        width: 700px;
+        text-align: center;
+        text-decoration: none;
+
+        .title {
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 140%;
+            color: $white-color;
+            margin: 70px auto 0px;
+            max-width: 600px;
+        }
+    }
+}
