@@ -23,6 +23,11 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+
+    &.big {
+        min-width: 64px;
+        min-height: 64px;
+    }
 }
 
 .icon-btn {

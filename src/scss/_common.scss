@@ -13,3 +13,17 @@ h2 {
 .full-width-background-1 {
     background : url(../images/backgrounds/back_1.png);
 }
+
+.logo-container {
+    display: flex;
+
+    .logo {
+        margin-top: 7px;
+        width: 125px;
+    }
+
+    .company-name {
+        margin-left: 27px;
+        font-size: 18px;
+    }
+}

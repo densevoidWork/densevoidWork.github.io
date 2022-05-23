@@ -5350,6 +5350,18 @@ h2 {
   background: url(../images/backgrounds/back_1.png);
 }
 
+.logo-container {
+  display: flex;
+}
+.logo-container .logo {
+  margin-top: 7px;
+  width: 125px;
+}
+.logo-container .company-name {
+  margin-left: 27px;
+  font-size: 18px;
+}
+
 .btn {
   min-width: 139px;
   min-height: 36px;
@@ -5375,6 +5387,10 @@ h2 {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+.round-btn.big {
+  min-width: 64px;
+  min-height: 64px;
 }
 
 .icon-btn {
@@ -5453,25 +5469,12 @@ h2 {
   column-gap: 32px;
 }
 .middlebar .logo-container {
-  display: flex;
-}
-.middlebar .logo-container .logo {
-  margin-top: 37px;
-  width: 125px;
-}
-.middlebar .logo-container .company-name {
-  margin-left: 27px;
   margin-top: 30px;
-  font-size: 18px;
 }
 .middlebar .search-field {
   display: flex;
   align-items: flex-start;
-  position: relative;
-  padding: 0;
-  margin: 0;
-  margin-top: 32px;
-  border: 0;
+  margin: 32px 0 0;
 }
 .middlebar .search-field input {
   border: 1px solid #D9D8D3;
@@ -5714,6 +5717,157 @@ h2 {
   color: #FFFFFF;
   margin: 70px auto 0px;
   max-width: 600px;
+}
+
+.medium-news-block {
+  margin-top: 40px;
+  display: flex;
+  column-gap: 1px;
+}
+.medium-news-block .news-element {
+  height: 466px;
+  width: 466px;
+  text-align: center;
+  text-decoration: none;
+}
+.medium-news-block .news-element .title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 140%;
+  color: #FFFFFF;
+  margin: 55px auto 0px;
+  max-width: 362px;
+}
+
+.subscribe-block {
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 1px solid #D9D8D3;
+  border-bottom: 1px solid #D9D8D3;
+  padding: 32px 32px 43px;
+  margin-bottom: 10px;
+  align-items: baseline;
+}
+.subscribe-block .big-text {
+  font-weight: 400;
+  font-size: 48px;
+  color: #1D1C1B;
+}
+.subscribe-block .small-text {
+  font-size: 24px;
+  line-height: 15px;
+  color: #AEACA0;
+}
+.subscribe-block .subscribe-field {
+  display: flex;
+  align-items: flex-start;
+}
+.subscribe-block .subscribe-field input {
+  border: 1px solid #D9D8D3;
+  border-radius: 2px;
+  width: 442px;
+  height: 34px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #AEACA0;
+  padding: 8px 16px;
+}
+.subscribe-block .subscribe-field .search-input {
+  margin-left: 16px;
+  font-size: 20px;
+  height: 52px;
+  padding: 0px 33px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.footer {
+  margin-bottom: 52px;
+}
+.footer .main-grid {
+  display: flex;
+  justify-content: space-between;
+}
+.footer .brand-part {
+  flex-grow: 1.4;
+  margin-top: 18px;
+}
+.footer .brand-part .top-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+.footer .brand-part .rules {
+  font-size: 14px;
+  line-height: 140%;
+  color: #AEACA0;
+  margin-top: 52px;
+  max-width: 555px;
+}
+.footer .brand-part .follow-block {
+  margin-top: 52px;
+}
+.footer .brand-part .invite-text {
+  font-size: 32px;
+  line-height: 140%;
+  color: #1D1C1B;
+}
+.footer .brand-part .social-links {
+  margin-top: 16px;
+  display: flex;
+  column-gap: 24px;
+}
+.footer .brand-part .logo-container {
+  margin-top: 18px;
+}
+.footer .footer-menu {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  flex-grow: 0;
+}
+.footer .footer-menu .menu-element {
+  text-decoration: none;
+  color: #1D1C1B;
+  font-size: 18px;
+  line-height: 130%;
+}
+.footer .contacts {
+  margin-top: 26px;
+  display: flex;
+  flex-grow: 2;
+  justify-content: flex-end;
+  column-gap: 82px;
+}
+.footer .contacts .column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  max-width: 260px;
+}
+.footer .contacts .title {
+  color: #1D1C1B;
+  font-size: 18px;
+  line-height: 130%;
+}
+.footer .contacts .menu-element {
+  text-decoration: none;
+  color: #43423F;
+  font-size: 14px;
+  line-height: 130%;
+  display: flex;
+  column-gap: 8px;
+  align-items: flex-start;
+}
+.footer .contacts .menu-element .icon {
+  margin-right: 8px;
+  display: block;
+  margin-top: 1px;
+  float: left;
+}
+.footer .contacts .menu-element.big-gap {
+  margin-top: 50px;
+}
+.footer .contacts .paid-methods {
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

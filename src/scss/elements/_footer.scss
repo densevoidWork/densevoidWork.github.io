@@ -1,0 +1,106 @@
+.footer {
+    margin-bottom: 52px;
+
+    .main-grid {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .brand-part {
+        flex-grow: 1.4;
+        margin-top: 18px;
+
+        .top-text {
+            font-size: 14px;
+            font-weight: bold;
+        }
+    
+        .rules {
+            font-size: 14px;
+            line-height: 140%;
+            color: $gray-color-200;
+            margin-top: 52px;
+            max-width: 555px;
+        }
+    
+        .follow-block {
+            margin-top: 52px;
+        }
+    
+        .invite-text {
+            font-size: 32px;
+            line-height: 140%;
+            color: $gray-color-800;
+        }
+    
+        .social-links {
+            margin-top: 16px;
+            display: flex;
+            column-gap: 24px;
+        }
+    
+        .logo-container {
+            margin-top: 18px;
+        }
+    }
+
+    .footer-menu {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        flex-grow: 0;
+
+        .menu-element {
+            text-decoration: none;
+            color: $gray-color-800;
+            font-size: 18px;
+            line-height: 130%;
+        }
+    }
+
+    .contacts {
+        margin-top: 26px;
+        display: flex;
+        flex-grow: 2;
+        justify-content: flex-end;
+        column-gap: 82px;
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+            max-width: 260px;
+        }
+
+        .title {
+            color: $gray-color-800;
+            font-size: 18px;
+            line-height: 130%;
+        }
+
+        .menu-element {
+            text-decoration: none;
+            color: $gray-color-600;
+            font-size: 14px;
+            line-height: 130%;
+            display: flex;
+            column-gap: 8px;
+            align-items: flex-start;
+
+            .icon {
+                margin-right: 8px;
+                display: block;
+                margin-top: 1px;
+                float: left;
+            }
+
+            &.big-gap {
+                margin-top: 50px;
+            }
+        }
+        
+        .paid-methods {
+            margin-top: 10px;            
+        }
+    }
+}
