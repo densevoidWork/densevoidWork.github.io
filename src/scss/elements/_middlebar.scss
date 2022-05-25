@@ -7,6 +7,10 @@
         column-gap: 32px;
     }
 
+    .hamburger-btn {
+        display: none;
+    }
+
     .logo-container {
         margin-top: 30px;
     }
@@ -67,5 +71,67 @@
         align-items: flex-start;
         column-gap: 23px;
         margin-top: 37px;
+    }
+}
+
+@media (max-width: 768px) {
+    .middlebar {
+        padding-bottom: 9px;
+        
+        .first-level {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .logo-container {
+            margin-top: 10px;
+        }
+
+        .personal-menu {
+            margin-top: 28px;
+        }
+
+        .hamburger-btn {
+            display: block;
+            width: 50px;
+            height: 50px;
+            position: relative;
+            cursor: pointer;
+            margin-top: 13px;
+
+            .first-line {
+                position: absolute;
+                top: 21px;
+                left: 14px;
+                transition: all 0.3s ease-out;
+            }
+
+            .second-line {
+                position: absolute;
+                top: 28px;
+                left: 14px;
+                transition: all 0.3s ease-out;
+            }
+
+            &:hover {
+                .first-line {
+                    top: 24px;
+                    transform: rotate(-45deg);
+                }
+    
+                .second-line {
+                    top: 24px;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        .search-field {
+            display: none;
+        }
+
+        .bar-contacts {
+            display: none;
+        }
     }
 }

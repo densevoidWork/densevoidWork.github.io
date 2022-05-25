@@ -1,10 +1,17 @@
 .topbar {
     background-color: #43423F;
 
-    a {
+    .shops-name {
+        cursor: default;
+    }
+
+    a, .shops-name {
         color: white;
         font-size: 14px;
         font-weight: bold;
+    }
+
+    a {
         text-decoration: none;
 
         &:hover {
@@ -24,5 +31,14 @@
     .second-level {
         display: flex;
         column-gap: 24px;
+    }
+}
+
+@media (min-width: 768px) {
+    .topbar {
+        .first-level {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
     }
 }
