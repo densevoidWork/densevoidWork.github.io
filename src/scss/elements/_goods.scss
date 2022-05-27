@@ -3,6 +3,8 @@
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 70px;
+    padding-left: 10px;
+    padding-right: 10px;
 
     .arrow {
         width: 80px;
@@ -19,20 +21,24 @@
 
     .goods-list {
         display: flex;
-        column-gap: 12px;
     }
 
     .good {
         max-width: 170px;
         text-align: center;
         text-decoration: none;
+        padding-left: 16px;
+        padding-right: 16px;
 
         .preview {
             border-radius: 2px;
+            filter: grayscale(100%);
+            transition: 0.2s filter ease-out, 1s -webkit-filter linear;
+            box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
         }
 
         &:hover .preview { 
-            box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
+            filter: grayscale(0%);
         }
 
         .title {
@@ -45,6 +51,17 @@
     }
 }
 
+@media (max-width: 1336px) {
+    .medium-goods-gallery{
+        padding-left: 20px;
+        justify-content: flex-start;
+
+        .arrow {
+            display: none;
+        }
+    }
+}
+
 .large-goods-gallery {
     display: flex;
     justify-content: center;
@@ -53,7 +70,6 @@
 
     .arrow {
         width: 80px;
-        height: 255px;
         background-image: url("../images/gallery-arrow.svg");
         background-position: center;
         background-repeat: no-repeat;
@@ -81,6 +97,8 @@
 
         .preview {
             border-radius: 5px;
+            width: 100%;
+            min-width: 240px;
         }
 
         .title {
@@ -130,6 +148,43 @@
                 height: 12px;
                 margin-left: 8px;
                 margin-top: 4px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1336px) {
+    .large-goods-gallery{
+        .arrow {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 1066px) {
+    .large-goods-gallery{
+        padding-left: 16px;
+        padding-right: 16px;
+
+        .goods-list {
+            column-gap: 0px;
+        }
+
+        .good {
+            padding-left: 4px;
+            padding-right: 4px;
+
+            .title {
+                font-size: 24px;
+            }
+
+            .bottom-line {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .jump {
+                margin-top: 10px;
             }
         }
     }

@@ -14,53 +14,39 @@ h2 {
     font-size: 48px;
     text-align: center;
     font-weight: 400;
-    margin-top: 68px;
-    margin-bottom: 60px;
+    margin-top: 83px;
+    margin-bottom: 75px;
 }
 
-.container,
-.container-fluid,
-.container-xxl,
-.container-xl,
-.container-lg,
-.container-md,
-.container-sm {
+.container {
   width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
 }
 
-@media (min-width: 576px) {
-  .container-sm, .container {
-    max-width: 540px;
-  }
-}
 @media (min-width: 768px) {
-  .container-md, .container-sm, .container {
-    max-width: 720px;
+  h2 {
+    margin-top: 71px;
+    margin-bottom: 53px;
   }
 }
-@media (min-width: 992px) {
-  .container-lg, .container-md, .container-sm, .container {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1140px;
-  }
-}
-@media (min-width: 1400px) {
-  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+
+@media (min-width: 1440px) {
+  .container {
     max-width: 1440px;
   }
+
+  h2 {
+    margin-top: 83px;
+    margin-bottom: 75px;
+  }
 }
 
-.full-width-background-1 {
+@media (min-width: 1550px) {
+  .full-width-background-1 {
     background : url(../images/backgrounds/back_1.png);
     background-position-x: 50%;
+  }
 }
 
 .logo-container {

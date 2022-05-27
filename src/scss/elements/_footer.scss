@@ -1,5 +1,8 @@
 .footer {
     margin-bottom: 52px;
+    padding-top: 23px;
+    padding-left: 33px;
+    padding-right: 50px;
 
     .main-grid {
         display: flex;
@@ -8,7 +11,6 @@
 
     .brand-part {
         flex-grow: 1.4;
-        margin-top: 18px;
 
         .top-text {
             font-size: 14px;
@@ -38,10 +40,6 @@
             display: flex;
             column-gap: 24px;
         }
-    
-        .logo-container {
-            margin-top: 18px;
-        }
     }
 
     .footer-menu {
@@ -59,7 +57,6 @@
     }
 
     .contacts {
-        margin-top: 26px;
         display: flex;
         flex-grow: 2;
         justify-content: flex-end;
@@ -94,13 +91,82 @@
                 float: left;
             }
 
-            &.big-gap {
-                margin-top: 50px;
+            &.underline {
+                text-decoration: underline;
             }
+        }
+
+        .vlab-logo {
+            width: 49px;
+        }
+
+        .big-gap {
+            margin-top: 27px;
         }
         
         .paid-methods {
             margin-top: 10px;            
         }
     }
+
+    .mobile-contacts {
+        display: none;
+    }
+}
+
+
+@media (max-width: 1288px) {
+    .footer {
+        .footer-menu {
+            display: none;
+        }
+    }
+}
+
+
+@media (max-width: 1050px) {
+    .footer {
+        .main-grid {
+            flex-direction: column;
+        }
+
+        .contacts {
+            display: none;
+        }
+    
+        .brand-part {
+            .logo-container {
+                display: none;
+            }
+
+            .invite-text {
+                display: none;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .rules {
+                display: none
+            }
+        }  
+
+        .mobile-contacts {  
+            display: flex;
+            justify-content: center;
+            column-gap: 30px;
+            margin-top: 24px;
+
+            .menu-element {
+                text-decoration: none;
+                color: $gray-color-600;
+                font-size: 14px;
+                line-height: 130%;
+                display: flex;
+                column-gap: 8px;
+                align-items: flex-start;
+            }
+        }
+    } 
 }

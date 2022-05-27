@@ -74,13 +74,13 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1440px) {
     .middlebar {
         padding-bottom: 9px;
         
         .first-level {
-            padding-left: 0px;
-            padding-right: 0px;
+            padding-left: 25px;
+            padding-right: 25px;
         }
 
         .logo-container {

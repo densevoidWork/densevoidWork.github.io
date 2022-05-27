@@ -17,12 +17,13 @@
             font-size: 32px;
             line-height: 140%;
             color: $white-color;
-            margin: 70px auto 0px;
+            margin: 70px auto 0;
+            padding-left: 16px;
+            padding-right: 16px;;
             max-width: 600px;
         }
     }
 }
-
 
 .medium-news-block {
     margin-top: 40px;
@@ -43,8 +44,31 @@
             font-size: 32px;
             line-height: 140%;
             color: $white-color;
-            margin: 55px auto 0px;
+            margin: 55px auto 0;
+            padding-left: 16px;
+            padding-right: 16px;;
             max-width: 362px;
+        }
+    }
+}
+
+@media (max-width: 1060px) {
+    .large-news-block {    
+        .news-element {
+            text-align: left;
+            .title {
+                margin-top: 16px;
+                font-size: 24px;
+            }
+        }
+    }
+
+    .medium-news-block {    
+        .news-element {
+            .title {
+                margin-top: 35px;
+                font-size: 24px;
+            }
         }
     }
 }
