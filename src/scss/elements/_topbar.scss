@@ -1,5 +1,5 @@
 .topbar {
-    background-color: #43423F;
+    background-color: #43423F;;
 
     .shops-name {
         cursor: default;
@@ -40,5 +40,11 @@
             padding-left: 0px;
             padding-right: 0px;
         }
+    }
+}
+
+@media (max-width: 768px) {
+    .topbar {
+        display: none;
     }
 }

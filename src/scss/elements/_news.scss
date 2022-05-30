@@ -11,6 +11,14 @@
         background-size: cover;
         height: 0;
         padding-bottom: 50%;
+        background-position: center;
+        background-size: 100%;
+        transition: background-size 0.5s ease-out;
+        background-position: center;
+
+        &:hover {
+            background-size: 110%;
+        }
 
         .title {
             font-weight: 700;
@@ -38,6 +46,13 @@
         background-size: cover;
         height: 0;
         padding-bottom: 33.33%;
+        background-position: center;
+        background-size: 100%;
+        transition: background-size 0.5s ease-out;
+
+        &:hover {
+            background-size: 110%;
+        }
 
         .title {
             font-weight: 700;
@@ -68,6 +83,62 @@
             .title {
                 margin-top: 35px;
                 font-size: 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 520px) {
+    .large-news-block {  
+        flex-direction: column;
+
+        .news-element {
+            width: 100%;
+            padding-bottom: 60%;
+
+            .title {                
+                font-size: 32px;
+            }
+        }
+    }
+
+    .medium-news-block {   
+        flex-direction: column; 
+
+        .news-element {
+            width: 100%;
+            padding-bottom: 60%;
+
+            .title {
+                font-size: 32px;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .large-news-block {  
+        .news-element {
+            padding-bottom: 100%;
+            
+            .title {
+                font-size: 24px;
+                margin-top: 20%;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+        }
+    }
+
+    .medium-news-block {   
+        .news-element {
+            padding-bottom: 100%;
+
+            .title {
+                font-size: 24px;
+                margin-top: 20%;
+                margin-left: 5%;
+                margin-right: 5%;
             }
         }
     }

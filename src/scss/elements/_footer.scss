@@ -38,7 +38,9 @@
         .social-links {
             margin-top: 16px;
             display: flex;
-            column-gap: 24px;
+            max-width: 506px;
+            justify-content: space-between;
+            align-items: center;
         }
     }
 
@@ -126,6 +128,8 @@
 
 @media (max-width: 1050px) {
     .footer {
+        padding-top: 8px;
+        
         .main-grid {
             flex-direction: column;
         }
@@ -135,6 +139,10 @@
         }
     
         .brand-part {
+            .follow-block {
+                margin-top: 20px;
+            }
+
             .logo-container {
                 display: none;
             }
@@ -144,7 +152,7 @@
             }
 
             .social-links {
-                justify-content: center;
+                margin: 0 auto;
             }
 
             .rules {
@@ -169,4 +177,33 @@
             }
         }
     } 
+}
+
+
+@media (max-width: 520px) {
+    .footer {
+        padding-top: 7px;
+        margin-bottom: 28px;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        .brand-part {
+            .follow-block {
+                margin-top: 0;
+            }
+
+            .social-links {
+                max-width: 310px;
+
+                .round-btn.big {
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+        }
+
+        .mobile-contacts {
+            margin-top: 17px;
+        }
+    }
 }

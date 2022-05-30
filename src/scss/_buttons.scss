@@ -14,8 +14,8 @@
 }
 
 .round-btn {
-    min-width: 32px;
-    min-height: 32px;
+    width: 32px;
+    height: 32px;
     border-radius: 100%;
     background: $white-color;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
@@ -25,14 +25,23 @@
     cursor: pointer;
 
     &.big {
-        min-width: 64px;
-        min-height: 64px;
+        width: 64px;
+        height: 64px;
+    }
+
+    img {
+        height: 50%;
+        width: 50%;
     }
 }
 
 .icon-btn {
     position: relative;
     cursor: pointer;
+
+    img {
+        max-width: 26px;
+    }
 
     .btn-counter {
         display: block;
@@ -54,7 +63,7 @@
 }
 
 .white-transp-btn {
-    display: inline-block;;
+    display: inline-block;
     min-width: 216px;
     height: 51px;
     background: $white-color-t15;
@@ -64,4 +73,23 @@
     text-transform: uppercase;
     text-decoration: none;
     line-height: 51px;
+    font-size: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .white-transp-btn {
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        min-width: 167px;
+    }
+}
+
+@media (max-width: 570px) {
+    .icon-btn {    
+        img {
+            max-width: 20px;
+        }
+    }
 }
