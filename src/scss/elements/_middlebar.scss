@@ -188,3 +188,13 @@
         }
     }
 }
+
+@media (max-width: 375px) {
+    .middlebar {
+        .logo-container {
+            .logo-img {
+                display: none;
+            }
+        }
+    }
+}

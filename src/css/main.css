@@ -689,6 +689,11 @@ h2 {
     padding-left: 25px;
   }
 }
+@media (max-width: 375px) {
+  .middlebar .logo-container .logo-img {
+    display: none;
+  }
+}
 .navbar {
   margin-bottom: 11px;
 }
@@ -779,6 +784,7 @@ h2 {
   padding-bottom: 70px;
   padding-left: 10px;
   padding-right: 10px;
+  overflow: hidden;
 }
 .medium-goods-gallery .arrow {
   width: 80px;
@@ -847,6 +853,7 @@ h2 {
   justify-content: center;
   padding-top: 45px;
   padding-bottom: 25px;
+  overflow: hidden;
 }
 .large-goods-gallery .arrow {
   width: 80px;
