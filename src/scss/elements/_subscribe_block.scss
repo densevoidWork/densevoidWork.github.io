@@ -22,26 +22,20 @@
         color: $gray-color-200;
     }
 
-    .form-part {
-        width: 100%;
-    }
-
     .subscribe-field {
         display: flex;
         align-items: flex-start;
-        width: 100%;
-        max-width: 709px;
 
         input {
             border: 1px solid $gray-color-100;
             border-radius: 2px;
-            max-width: 442px;
-            width: 100%;
-            height: 34px;
+            width: 442px;
+            height: 52px;
             font-weight: 400;
             font-size: 18px;
             color: $gray-color-200;
             padding: 8px 16px;
+            box-sizing: border-box;
         }
 
         .search-input {
@@ -79,6 +73,17 @@
 }
 
 
+@media (max-width: 888px) {
+    .subscribe-block {
+        .subscribe-field {
+            input {
+                width: 250px;
+            }
+        }
+    }
+}
+
+
 @media (max-width: 560px) {
     .subscribe-block {   
         margin-top: 38px;
@@ -103,6 +108,7 @@
             
             input {
                 font-size: 16px;
+                height: 47px;
             }
             
             .search-input {

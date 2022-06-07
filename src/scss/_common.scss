@@ -10,6 +10,11 @@ body {
     font-family: 'Helvetica';
 }
 
+header {
+  z-index: 2;
+  position: relative;
+}
+
 h2 {
     font-size: 32px;
     text-align: center;
@@ -24,11 +29,31 @@ h2 {
   margin-right: auto;
 }
 
+.mini-contacts {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 12px;
+    margin-top: 2px;
+
+    .phone-and-worktime {
+        white-space: nowrap;
+    }
+
+    .phone-text {
+        color: $gray-color-600;
+        font-size: 18px;
+    }
+
+    .worktime-text {
+        color: $gray-color-200;
+        font-size: 12px;
+    }
+}
+
 @media (min-width: 768px) {
   h2 {    
-    font-size: 40px;
-    margin-top: 71px;
-    margin-bottom: 53px;
+    margin-bottom: 25px;
+    margin-top: 58px;
   }
 }
 
@@ -38,9 +63,9 @@ h2 {
   }
 
   h2 {
-    font-size: 48px;
-    margin-top: 83px;
-    margin-bottom: 75px;
+    font-size: 40px;
+    margin-bottom: 37px;
+    margin-top: 76px;
   }
 }
 

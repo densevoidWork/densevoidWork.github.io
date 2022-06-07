@@ -112,7 +112,8 @@
         padding: 8px 43px 22px 16px;
 
         &:hover { 
-            box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0px 20px rgba(0,0,0,.25);
+            z-index: 25;
         }
 
         .preview {
@@ -222,8 +223,7 @@
 
         .good {
             display: flex;
-            border-bottom: 1px solid $gray-color-100;
-            padding-bottom: 7px;
+            padding: 0;
             width: 100%;
             max-width: none;
             justify-content: center;
