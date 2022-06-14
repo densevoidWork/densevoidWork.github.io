@@ -20,6 +20,7 @@
         font-size: 18px;
         color: $gray-color-600;
         cursor: pointer;
+        text-decoration: none;
 
         &.parent::after {
             display: block;

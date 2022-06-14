@@ -15,6 +15,14 @@ header {
   position: relative;
 }
 
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 h2 {
     font-size: 32px;
     text-align: center;
@@ -27,27 +35,6 @@ h2 {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-}
-
-.mini-contacts {
-    display: flex;
-    align-items: flex-start;
-    column-gap: 12px;
-    margin-top: 2px;
-
-    .phone-and-worktime {
-        white-space: nowrap;
-    }
-
-    .phone-text {
-        color: $gray-color-600;
-        font-size: 18px;
-    }
-
-    .worktime-text {
-        color: $gray-color-200;
-        font-size: 12px;
-    }
 }
 
 @media (min-width: 768px) {

@@ -172,6 +172,167 @@
     }
 }
 
+.big-goods-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 12px;
+
+    .good {
+        width: 216px;
+        height: 303px;
+        background-color: $white-color;
+        text-align: center;
+        position: relative;
+        padding-top: 16px;
+
+        .preview {
+            position: relative;
+        }
+
+        .good-flags {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 4px;
+            right: 16px;
+            row-gap: 4px;
+
+            .flag {
+                width: 44px;
+                height: 26px;
+                border-radius: 2px;
+                background-color: $orange-color;
+
+                &::after {
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    color: $white-color;
+                    vertical-align: -3px;
+                }
+
+                &.new::after {
+                    content: "new";
+                }
+
+                &.sale {
+                    background-color: $yellow-color;
+
+                    &::after {
+                        content: "sale";
+                    }
+                }
+
+                &.eac {
+                    background-color: $gray-color-800;
+
+                    &::after {
+                        content: "";
+                        min-width: 24px;
+                        min-height: 24px;
+                        display: block;
+                        background-repeat: no-repeat;
+                        background-position: 50%;
+                        background-image: url("../images/EAC.png");;
+                    }
+                }
+            }
+        }
+
+        .price {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .title {
+            font-size: 14px;
+            color: $gray-color-600;
+            margin-top: 8px;
+            margin-bottom: 70px;
+            transition: all 0.3s ease-out;
+        }
+
+        .look-link {
+            font-size: 12px;
+            color: $orange-color;
+            opacity: 0;
+            transition: all 0.2s ease-out;
+        }
+
+        .hider-box {
+            overflow: hidden;
+            height: 80px;
+        }
+
+        .buy-btn {
+            width: 140px;
+            margin-top: 15px;
+        }
+
+        .colors-list {
+            display: flex;
+            column-gap: 8px;
+            justify-content: center;
+            margin-top: 13px;
+
+            .color-box {
+                width: 8px;
+                height: 8px;
+                border-radius: 2px;
+                background-color: $white-color;
+            }
+        }
+
+        &:hover {
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+            z-index: 5;
+
+            .title {
+                margin-top: -89px;
+            }
+
+            .look-link {
+                opacity: 1;
+            }
+
+            .colors-list {
+                display: flex;
+            }
+        }
+    }
+
+    .navigation {
+        margin: 27px auto 0;
+
+        .pages {
+            display: flex;
+            color: $gray-color-200;
+            font-size: 18px;
+            margin-top: 34px;
+            column-gap: 20px;
+
+            .page {
+                min-width: 24px;
+                min-height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+
+            .right-arrow {
+                cursor: pointer;
+            }
+
+            .page.current {
+                border-radius: 100%;
+                background-color: $yellow-color;
+                color: $white-color;
+            }
+        }
+    }
+}
+
 @media (max-width: 1336px) {
     .large-goods-gallery{
         .arrow {

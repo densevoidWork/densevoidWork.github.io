@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Petzl</title>
-        <link rel="stylesheet" href="/css/main.css">
-        <script src="/js/main.js"></script> 
+        <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
+        <script src="{{ '/js/main.js' | url }}"></script> 
     </head>
     <body>
         <header>
@@ -28,8 +28,8 @@
                     <div class="first-level">
                         <div class="mobile-menu">
                             <div class="hamburger-btn">
-                                <img class="first-line" src="/images/hamburger-line.svg"/>
-                                <img class="second-line" src="/images/hamburger-line.svg"/>
+                                <img class="first-line" src="{{ '/images/hamburger-line.svg' | url }}"/>
+                                <img class="second-line" src="{{ '/images/hamburger-line.svg' | url }}"/>
                             </div>
                 
                             <div class="mobile-submenu">
@@ -41,19 +41,19 @@
                                         <div class="categories-list-grow">
                                             <div class="categories-list">
                                                 <a class="category" href="#">
-                                                    <img class="icon" src="/images/goods/categories/category-1.png " />
+                                                    <img class="icon" src="{{ '/images/goods/categories/category-1.png' | url }} " />
                                                     <div class="title">Страховочные системы</div>
                                                 </a>
                                                 <a class="category" href="#">
-                                                    <img class="icon" src="/images/goods/categories/category-1.png" />
+                                                    <img class="icon" src="{{ '/images/goods/categories/category-1.png' | url }}" />
                                                     <div class="title">Каски</div>
                                                 </a>
                                                 <a class="category" href="#">
-                                                    <img class="icon" src="/images/goods/categories/category-1.png" />
+                                                    <img class="icon" src="{{ '/images/goods/categories/category-1.png' | url }}" />
                                                     <div class="title">Спусковые и страховочные устройства</div>
                                                 </a>
                                                 <a class="category" href="#">
-                                                    <img class="icon" src="/images/goods/categories/category-1.png" />
+                                                    <img class="icon" src="{{ '/images/goods/categories/category-1.png' | url }}" />
                                                     <div class="title">Карабины и оттяжки</div>
                                                 </a>
                                             </div>                                        
@@ -87,8 +87,8 @@
                                 </div>                                
 
                                 <div class="mini-contacts in-mobile-menu">
-                                    <a class="round-btn"><img src="/images/whatsapp-icon.svg" /></a>
-                                    <a class="round-btn"><img src="/images/phone-icon.svg" /></a>
+                                    <a class="round-btn"><img src="{{ '/images/whatsapp-icon.svg' | url }}" /></a>
+                                    <a class="round-btn"><img src="{{ '/images/phone-icon.svg' | url }}" /></a>
                                     <div class="phone-and-worktime">
                                         <div class="phone-text">8 495 134 74 46</div>
                                         <div class="worktime-text">Интернет-магазин 10:00 - 20:00</div>
@@ -102,19 +102,19 @@
                             </div>
                         </div>
 
-                        <a class="logo-container" href="/">
-                            <img class="logo-img" src="/images/mainlogo_full.svg" />     
+                        <a class="logo-container" href="{{ '/' | url }}">
+                            <img class="logo-img" src="{{ '/images/mainlogo_full.svg' | url }}" />     
                         </a>
 
                         <form class="search-field">
-                            <img class="magnifier-icon" src="/images/magnifier-icon.svg" />
+                            <img class="magnifier-icon" src="{{ '/images/magnifier-icon.svg' | url }}" />
                             <input type="text" placeholder="Название, артикул, код товара..."/>
                             <button class="btn search-input" type="submit">Поиск</button>
                         </form>
 
                         <div class="mini-contacts in-middle-bar">
-                            <a class="round-btn"><img src="/images/whatsapp-icon.svg" /></a>
-                            <a class="round-btn"><img src="/images/phone-icon.svg" /></a>
+                            <a class="round-btn"><img src="{{ '/images/whatsapp-icon.svg' | url }}" /></a>
+                            <a class="round-btn"><img src="{{ '/images/phone-icon.svg' | url }}" /></a>
                             <div class="phone-and-worktime">
                                 <div class="phone-text">8 495 134 74 46</div>
                                 <div class="worktime-text">Интернет-магазин 10:00 - 20:00</div>
@@ -122,12 +122,12 @@
                         </div>
 
                         <div class="personal-menu">
-                            <div id="bug-button" class="icon-btn"><img src="/images/bug-icon.svg" /><div class="btn-counter">1</div></div>
-                            <div id="account-button" class="icon-btn"><img src="/images/account-icon.svg" /></div>
+                            <div id="bug-button" class="icon-btn"><img src="{{ '/images/bug-icon.svg' | url }}" /><div class="btn-counter">1</div></div>
+                            <div id="account-button" class="icon-btn"><img src="{{ '/images/account-icon.svg' | url }}" /></div>
                         </div>
                     </div>
                     <div class="mobile-search-field">
-                        <img class="magnifier-icon" src="/images/magnifier-icon.svg" />
+                        <img class="magnifier-icon" src="{{ '/images/magnifier-icon.svg' | url }}" />
                         <input type="text" placeholder="Искать..."/>
                     </div>
                 </div>
@@ -150,59 +150,59 @@
                 <div class="navbar-submenu">
                     <div class="submenu-goods-categories">
                         <a class="category" href="#">
-                            <img class="preview" src="/images/goods/small/1.jpg"></img>
+                            <img class="preview" src="{{ '/images/goods/small/1.jpg' | url }}"></img>
                             <div class="title">Страховочные системы</div>
                         </a>
                         <a class="category" href="#">
-                            <img class="preview" src="/images/goods/small/2.jpg"></img>
+                            <img class="preview" src="{{ '/images/goods/small/2.jpg' | url }}"></img>
                             <div class="title">Каски</div>
                         </a>
                         <a class="category" href="#">
-                            <img class="preview" src="/images/goods/small/1.jpg"></img>
+                            <img class="preview" src="{{ '/images/goods/small/1.jpg' | url }}"></img>
                             <div class="title">Страховочные системы</div>
                         </a>
                         <a class="category" href="#">
-                            <img class="preview" src="/images/goods/small/2.jpg"></img>
+                            <img class="preview" src="{{ '/images/goods/small/2.jpg' | url }}"></img>
                             <div class="title">Каски</div>
                         </a>
                         <a class="category" href="#">
-                            <img class="preview" src="/images/goods/small/1.jpg"></img>
+                            <img class="preview" src="{{ '/images/goods/small/1.jpg' | url }}"></img>
                             <div class="title">Страховочные системы</div>
                         </a>
                         <a class="category" href="#">
-                            <img class="preview" src="/images/goods/small/2.jpg"></img>
+                            <img class="preview" src="{{ '/images/goods/small/2.jpg' | url }}"></img>
                             <div class="title">Каски</div>
                         </a>
                         <a class="category" href="#">
-                            <img class="preview" src="/images/goods/small/1.jpg"></img>
+                            <img class="preview" src="{{ '/images/goods/small/1.jpg' | url }}"></img>
                             <div class="title">Страховочные системы</div>
                         </a>
                         <a class="category" href="#">
-                            <img class="preview" src="/images/goods/small/2.jpg"></img>
+                            <img class="preview" src="{{ '/images/goods/small/2.jpg' | url }}"></img>
                             <div class="title">Каски</div>
                         </a>
                         <a class="category" href="#">
-                            <img class="preview" src="/images/goods/small/1.jpg"></img>
+                            <img class="preview" src="{{ '/images/goods/small/1.jpg' | url }}"></img>
                             <div class="title">Страховочные системы</div>
                         </a>
                         <a class="category" href="#">
-                            <img class="preview" src="/images/goods/small/2.jpg"></img>
+                            <img class="preview" src="{{ '/images/goods/small/2.jpg' | url }}"></img>
                             <div class="title">Каски</div>
                         </a>
                         <a class="category" href="#">
-                            <img class="preview" src="/images/goods/small/1.jpg"></img>
+                            <img class="preview" src="{{ '/images/goods/small/1.jpg' | url }}"></img>
                             <div class="title">Страховочные системы</div>
                         </a>
                         <a class="category" href="#">
-                            <img class="preview" src="/images/goods/small/2.jpg"></img>
+                            <img class="preview" src="{{ '/images/goods/small/2.jpg' | url }}"></img>
                             <div class="title">Каски</div>
                         </a>
                         <a class="category" href="#">
-                            <img class="preview" src="/images/goods/small/1.jpg"></img>
+                            <img class="preview" src="{{ '/images/goods/small/1.jpg' | url }}"></img>
                             <div class="title">Страховочные системы</div>
                         </a>
                         <a class="category" href="#">
-                            <img class="preview" src="/images/goods/small/2.jpg"></img>
+                            <img class="preview" src="{{ '/images/goods/small/2.jpg' | url }}"></img>
                             <div class="title">Каски</div>
                         </a>
                     </div>
@@ -211,188 +211,25 @@
         </header>   
 
         <main>
-            
-<div class="hero mainpage-hero">
-    <div class="container">
-        <div class="hero-title">Каталог PRO 2022</div>
-        <div class="hero-content">Новый каталог - снаряжение для работы на высоте</div>
-        <a class="white-transp-btn" href="#">Скачать</a>
-    </div>
-</div>
-
-<div class="container">
-    <h2>Промальп</h2>
-    <div class="medium-goods-gallery">
-        <div class="arrow left"></div>
-        <div class="goods-list">
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/medium/good_1.jpg"></img>
-                <div class="title">Страховочные и удерживающие привязи</div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/medium/good_2.jpg"></img>
-                <div class="title">Страховочные и удерживающие привязи</div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/medium/good_1.jpg"></img>
-                <div class="title">Страховочные и удерживающие привязи</div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/medium/good_2.jpg"></img>
-                <div class="title">Страховочные и удерживающие привязи</div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/medium/good_1.jpg"></img>
-                <div class="title">Страховочные и удерживающие привязи</div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/medium/good_2.jpg"></img>
-                <div class="title">Страховочные и удерживающие привязи</div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/medium/good_1.jpg"></img>
-                <div class="title">Страховочные и удерживающие привязи</div>
-            </a>
-        </div>
-        <div class="arrow right"></div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="large-goods-gallery">
-        <div class="arrow left"></div>
-        <div class="goods-list">
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/large/good_1.jpg"></img>
-                <div class="info-block">
-                    <div class="title">ASAP</div>
-                    <div class="description">Мобильное устройство остановки падения</div>
-                    <div class="bottom-line">
-                        <div class="price">18 990 руб.</div>
-                        <div class="jump">Подробнее</div>
-                    </div>
-                </div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/large/good_1.jpg"></img>
-                <div class="info-block">
-                    <div class="title">ASAP</div>
-                    <div class="description">Мобильное устройство остановки падения</div>
-                    <div class="bottom-line">
-                        <div class="price">18 990 руб.</div>
-                        <div class="jump">Подробнее</div>
-                    </div>
-                </div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/large/good_1.jpg"></img>
-                <div class="info-block">
-                    <div class="title">ASAP</div>
-                    <div class="description">Мобильное устройство остановки падения</div>
-                    <div class="bottom-line">
-                        <div class="price">18 990 руб.</div>
-                        <div class="jump">Подробнее</div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="arrow right"></div>
-    </div>
-</div>
-
-<div class="full-width-background-1">
-    <div class="large-news-block">
-        <a class="news-element" href="#" style="background-image: url(images/news/large/1.jpg);">
-            <div class="title">Отзыв SCORPIO EASHOOK</div>
-        </a>
-        <a class="news-element" href="#" style="background-image: url(images/news/large/2.jpg);">
-            <div class="title">Информация по безопасности: случаи проскальзывания с ZIGZAG</div>
-        </a>
-    </div>
-</div>
-
-<div class="container">
-    <h2>Спорт</h2>
-    <div class="medium-goods-gallery">
-        <div class="arrow left"></div>
-        <div class="goods-list">
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/medium/good_1.jpg"></img>
-                <div class="title">Страховочные и удерживающие привязи</div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/medium/good_1.jpg"></img>
-                <div class="title">Страховочные и удерживающие привязи</div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/medium/good_1.jpg"></img>
-                <div class="title">Страховочные и удерживающие привязи</div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/medium/good_1.jpg"></img>
-                <div class="title">Страховочные и удерживающие привязи</div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/medium/good_1.jpg"></img>
-                <div class="title">Страховочные и удерживающие привязи</div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/medium/good_1.jpg"></img>
-                <div class="title">Страховочные и удерживающие привязи</div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="/images/goods/medium/good_1.jpg"></img>
-                <div class="title">Страховочные и удерживающие привязи</div>
-            </a>
-        </div>
-        <div class="arrow right"></div>
-    </div>
-</div>
-
-<div class="full-width-background-1">
-    <div class="medium-news-block">
-        <a class="news-element" href="#" style="background-image: url(images/news/medium/1.jpg);">
-            <div class="title">Отзыв SCORPIO EASHOOK</div>
-        </a>
-        <a class="news-element" href="#" style="background-image: url(images/news/medium/1.jpg);">
-            <div class="title">Отзыв SCORPIO EASHOOK</div>
-        </a>
-        <a class="news-element" href="#" style="background-image: url(images/news/medium/1.jpg);">
-            <div class="title">Отзыв SCORPIO EASHOOK</div>
-        </a>
-    </div>
-</div>
-
-<div class="subscribe-block">
-    <div class="text-part">
-        <div class="big-text">Подписаться на рассылку</div>
-        <div class="small-text">и всегда быть в курсе</div>
-    </div>
-    <div class="form-part">
-        <form class="subscribe-field">
-            <input type="text" placeholder="Введите ваш email"/>
-            <button class="btn search-input" type="submit">Подписаться</button>
-        </form>
-    </div>
-</div>
+            {{ content | safe }}
         </main>
 
         <footer class="footer">
             <div class="container">
                 <div class="main-grid">
                     <div class="brand-part">
-                        <a class="logo-container" href="/">
-                            <img src="/images/mainlogo_full.svg" />     
+                        <a class="logo-container" href="{{ '/' | url }}">
+                            <img src="{{ '/images/mainlogo_full.svg' | url }}" />     
                         </a>
                         <div class="follow-block">
                             <div class="invite-text">Присоединяйтесь к нам</div>
                             <div class="social-links">
-                                <a class="round-btn big"><img src="/images/social/twitter.svg" /></a>
-                                <a class="round-btn big"><img src="/images/social/vk.svg" /></a>
-                                <a class="round-btn big"><img src="/images/social/yandexdzen.svg" /></a>
-                                <a class="round-btn big"><img src="/images/social/youtube.svg" /></a>
-                                <a class="round-btn big"><img src="/images/social/telegram.svg" /></a>
-                                <a class="round-btn big"><img src="/images/social/tiktok.svg" /></a>
+                                <a class="round-btn big"><img src="{{ '/images/social/twitter.svg' | url }}" /></a>
+                                <a class="round-btn big"><img src="{{ '/images/social/vk.svg' | url }}" /></a>
+                                <a class="round-btn big"><img src="{{ '/images/social/yandexdzen.svg' | url }}" /></a>
+                                <a class="round-btn big"><img src="{{ '/images/social/youtube.svg' | url }}" /></a>
+                                <a class="round-btn big"><img src="{{ '/images/social/telegram.svg' | url }}" /></a>
+                                <a class="round-btn big"><img src="{{ '/images/social/tiktok.svg' | url }}" /></a>
                             </div>
                         </div>
                         <div class="rules">Условия использования сайта. При републикации материалов активная ссылка на petzl.ru обязательна.</div>
@@ -413,8 +250,8 @@
                     <div class="contacts">
                         <div class="column">
                             <div class="title">Интернет магазин</div>
-                            <a class="menu-element" href="#"><img class="icon" src="/images/small-email-icon.svg"/>info@petzl.ru</a>
-                            <a class="menu-element" href="#"><img class="icon" src="/images/small-phone-icon.svg"/>8 (495) 134-74-46</a>
+                            <a class="menu-element" href="#"><img class="icon" src="{{ '/images/small-email-icon.svg' | url }}"/>info@petzl.ru</a>
+                            <a class="menu-element" href="#"><img class="icon" src="{{ '/images/small-phone-icon.svg' | url }}"/>8 (495) 134-74-46</a>
                             <a class="menu-element" href="#">Доставка и оплата</a>
                             <a class="menu-element" href="#">Магазин в Москве</a>
                             <a class="menu-element" href="#">Где еще купить Petzl</a>
@@ -423,15 +260,15 @@
                         </div>
                         <div class="column">
                             <div class="title">Petzl Technical Institute</div>
-                            <img class="vlab-logo" src="/images/logo-vlab.png"/>
+                            <img class="vlab-logo" src="{{ '/images/logo-vlab.png' | url }}"/>
                             <div class="title big-gap">Оптовым клиентам</div>
                             <a class="menu-element underline" href="dealerpage.ru">dealerpage.ru</a>
                         </div>
                     </div>
 
                     <div class="mobile-contacts">
-                        <a class="menu-element" href="#"><img class="icon" src="/images/small-email-icon.svg"/>info@petzl.ru</a>
-                        <a class="menu-element" href="#"><img class="icon" src="/images/small-phone-icon.svg"/>8 (495) 134-74-46</a>
+                        <a class="menu-element" href="#"><img class="icon" src="{{ '/images/small-email-icon.svg' | url }}"/>info@petzl.ru</a>
+                        <a class="menu-element" href="#"><img class="icon" src="{{ '/images/small-phone-icon.svg' | url }}"/>8 (495) 134-74-46</a>
                     </div>
                 </div>
             </div>

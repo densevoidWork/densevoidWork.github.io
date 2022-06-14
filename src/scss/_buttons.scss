@@ -6,11 +6,32 @@
     border: none;
     font-weight: 400;
     font-size: 14px;
-    line-height: 19px;
+    line-height: 36px;
     text-align: center;
     text-transform: uppercase;
     color: $white-color;
     cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &.orange {
+        background-color: $orange-color;
+    }
+
+    &.transp-gray-btn {
+        min-height: 52px;
+        background-color: $white-color;
+        color: $gray-color-200;
+        border: 1px solid $gray-color-200;
+        border-radius: 4px;
+        padding: 0 30px;
+        font-size: 20px;
+        text-transform: none;
+    }
 }
 
 .round-btn {
