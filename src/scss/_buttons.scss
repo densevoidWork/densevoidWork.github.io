@@ -95,6 +95,11 @@
     text-decoration: none;
     line-height: 51px;
     font-size: 20px;
+
+    &:hover {
+        text-decoration: none;
+        background: hsla(0, 0%, 100%, 0.29);
+    }
 }
 
 
