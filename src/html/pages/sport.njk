@@ -4,57 +4,74 @@ layout: layouts/main.njk
 
 <div class="breadcrumbs">    
     <div class="container">
-        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-        <li itemprop="itemListElement" itemscope
-            itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="{{ '/' | url }}">
-            <span itemprop="name">Главная</span></a>
-            <meta itemprop="position" content="1" />
-        </li>
-        <li itemprop="itemListElement" itemscope
-            itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="{{ '/pages/sport/' | url }}">
-            <span itemprop="name">Спорт</span></a>
-            <meta itemprop="position" content="2" />
-        </li>
-        </ol>
+        <div class="desktop">
+            <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="{{ '/' | url }}">
+                    <span itemprop="name">Главная</span></a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="{{ '/pages/sport/' | url }}">
+                    <span itemprop="name">Спорт</span></a>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
+        </div>
+        <div class="mobile">
+            <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="{{ '/' | url }}"><span itemprop="name">Назад</span></a>
+                    <meta itemprop="position" content="1" />
+                </li>
+            </ol>
+        </div>
     </div>
 </div>
 
 <div class="hero sport-hero">
     <div class="container">
-        <div class="hero-title">Каталог PRO 2022</div>
-        <div class="hero-content">Новый каталог - снаряжение для работы на высоте</div>
-        <a class="white-transp-btn" href="#">Скачать</a>
+        <div class="hero-content">
+            <div class="hero-title">Каталог PRO 2022</div>
+            <div class="hero-description">Новый каталог - снаряжение для работы на высоте</div>
+            <a class="white-transp-btn" href="#">Скачать</a>
+        </div>
     </div>
 </div>
 
 <div class="container sport-content">
     <div class="sport-menu">
         <div class="title">Спорт</div>
-        <div class="menu-lines">
-            <a class="line attention" href="#">Распродажа</a>
-            <a class="line attention" href="#">Новые поступления</a>
-            <a class="line" href="#">Страховочные системы</a>
-            <a class="line" href="#">Каски</a>
-            <a class="line" href="#">Спусковые и страховочные устройства</a>
-            <a class="line" href="#">Карабины и оттяжки</a>
-            <a class="line" href="#">Зажимы</a>
-            <a class="line" href="#">Блоки, ролики</a>
-            <a class="line" href="#">Ледорубы и ледовые инструменты</a>
-            <a class="line" href="#">Кошки</a>
-            <a class="line" href="#">Ледобуры</a>
-            <a class="line" href="#">Крючья, шлямбурное оборудование, ИТО</a>
-            <a class="line" href="#">Петли и самостраховки</a>
-            <a class="line" href="#">Рюкзаки и транспортные мешки</a>
-            <a class="line" href="#">Веревки и репшнуры</a>
-            <a class="line" href="#">Аксессуары</a>
+        <div class="catalog-opener">Категории товаров</div>
+        <div class="menu-grower">
+            <div class="menu-lines">
+                <div class="menu-column">
+                    <a class="line attention" href="#">Распродажа</a>
+                    <a class="line attention" href="#">Новые поступления</a>
+                    <a class="line" href="#">Страховочные системы</a>
+                    <a class="line" href="#">Каски</a>
+                    <a class="line" href="#">Спусковые и страховочные устройства</a>
+                    <a class="line" href="#">Карабины и оттяжки</a>
+                    <a class="line" href="#">Зажимы</a>
+                    <a class="line" href="#">Блоки, ролики</a>
+                </div>
+                <div class="menu-column">
+                    <a class="line" href="#">Ледорубы и ледовые инструменты</a>
+                    <a class="line" href="#">Кошки</a>
+                    <a class="line" href="#">Ледобуры</a>
+                    <a class="line" href="#">Крючья, шлямбурное оборудование, ИТО</a>
+                    <a class="line" href="#">Петли и самостраховки</a>
+                    <a class="line" href="#">Рюкзаки и транспортные мешки</a>
+                    <a class="line" href="#">Веревки и репшнуры</a>
+                    <a class="line" href="#">Аксессуары</a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="big-goods-list">
+    <div class="big-goods-list sport-goods-list">
         {% for good in sportGoodsList %}        
-        <div class="good">
+        <a class="good" href="#">
             <div class="preview">
                 <img src="{{ good.image }}" />
                 <div class="good-flags">
@@ -63,9 +80,7 @@ layout: layouts/main.njk
                     {% endfor %}   
                 </div>
             </div>
-            <a href="#" class="look-link">
-                Смотреть
-            </a>
+            <div class="look-link">Смотреть</div>
             <div class="price">
                 {{ good.price }} руб.
             </div>
@@ -78,9 +93,9 @@ layout: layouts/main.njk
                     <div class="color-box" style="background-color: {{ color }}"></div>
                     {% endfor %}                
                 </div>
-                <a class="btn orange buy-btn" href="#">Купить</a>
+                <button class="btn orange buy-btn">Купить</button>
             </div>
-        </div>
+        </a>
         {% endfor %}
 
         <div class="navigation">

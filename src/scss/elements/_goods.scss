@@ -177,6 +177,8 @@
     flex-wrap: wrap;
     column-gap: 24px;
     row-gap: 12px;
+    min-width: 456px;
+    justify-content: center;
 
     .good {
         width: 216px;
@@ -185,6 +187,8 @@
         text-align: center;
         position: relative;
         padding-top: 16px;
+        text-decoration: none;
+        color: $gray-color-800;
 
         .preview {
             position: relative;
@@ -257,6 +261,10 @@
             color: $orange-color;
             opacity: 0;
             transition: all 0.2s ease-out;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
         .hider-box {
@@ -415,5 +423,11 @@
                 font-size: 12px;
             }
         }
+    }
+}
+
+@media (max-width: 500px) {
+    .big-goods-list {
+        min-width: auto;
     }
 }

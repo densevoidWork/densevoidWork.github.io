@@ -2,17 +2,17 @@
     height: 36px;
     background-color: $gray-color-800;
 
-    .container {
+    .container, .desktop, .mobile {
         height: 100%;
     }
 
     ol {
         display: flex;
         margin: 0;
-        padding: 0;
         column-gap: 50px;
         height: 100%;
         align-items: center;
+        padding: 0 43px;
     }
 
     li {
@@ -39,6 +39,38 @@
             top: -10px;
             width: 20px;
             height: 38px;
+        }
+    }
+
+    .mobile {
+        display: none;
+
+        li {
+
+            a::before {
+                background : url(../images/back-arrow.svg) no-repeat;
+                content: "";
+                display: block;
+                height: 12px;
+                position: absolute;
+                width: 7px;
+                left: -20px;
+                top: 4px;
+                padding: 2px 12px 0px 2px;
+            }
+        }
+    }
+}
+
+@media (max-width: 758px) {
+    .breadcrumbs {
+        
+        .desktop {
+            display: none;
+        }
+
+        .mobile {
+            display: block;
         }
     }
 }

@@ -1,0 +1,124 @@
+.sport-content {
+    display: flex;
+    padding-bottom: 100px;
+    padding-left: 37px;
+    padding-right: 23px;
+    width: auto;
+}
+
+.sport-menu {
+    min-width: 260px;
+    width: 100%;
+
+    .title {
+        font-size: 32px;
+        color: $gray-color-800;
+        text-transform: uppercase;
+    }
+
+    .menu-grower {
+        transition: all .7s ease-out;
+        margin-top: 29px;
+    }
+
+    .menu-lines {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        column-gap: 20px;
+
+        .menu-column {
+            display: flex;
+            flex-direction: column;
+            row-gap: 16px;
+        }
+
+        .line {
+            font-size: 18px;
+            display: block;
+            color: $gray-color-800;
+            
+            &.attention {
+                text-transform: uppercase;
+                color: $orange-color;
+            }
+        }
+    }
+
+    .catalog-opener {
+        display: none;
+        font-size: 18px;
+        color: $gray-color-200;
+        cursor: pointer;
+
+        &::after {
+            background-image: url(../images/gallery-arrow.svg);
+            content: "";
+            display: inline-block;
+            height: 12px;
+            width: 7px;
+            background-size: 100%;
+            transform: rotate(90deg);
+            background-repeat: no-repeat;
+            margin-left: 12px;
+            vertical-align: -1px;
+            transition: transform 0.2s ease-out;
+        }
+        
+        &.opened::after {
+            transform: rotate(-90deg);
+        }
+    }
+}
+
+@media (min-width: 769px) {
+
+    .sport-menu {
+        .menu-grower {
+            //height: auto !important;
+        }
+    }
+}
+
+@media (max-width: 768px) { 
+    
+    .sport-content {
+        flex-direction: column;
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .sport-menu {
+        
+        padding-bottom: 60px;
+
+        .menu-grower {
+            height: 0;
+            overflow: hidden;
+        }
+
+        .menu-lines {
+            flex-direction: row;
+        }
+        
+        .title {
+            text-align: center;
+            font-size: 24px;
+        }   
+
+        .catalog-opener {
+            font-size: 18px;
+            display: block;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .sport-menu {
+
+        .menu-lines {
+            flex-direction: column;
+        }
+    }
+}

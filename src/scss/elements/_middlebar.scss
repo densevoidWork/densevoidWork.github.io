@@ -32,13 +32,19 @@ $mobile-menu-width: 375px;
         input {
             border: 1px solid $gray-color-100;
             border-radius: 2px;
-            height: 34px;
+            height: 38px;
             padding-left: 38px;
             font-weight: 400;
             font-size: 14px;
             line-height: 130%;
             color: $gray-color-200;
             width: 100%;
+            outline: none;
+            box-sizing: border-box;
+
+            &:focus {
+                border: 2px solid $gray-color-100;
+            }
         }
 
         .search-input {
@@ -315,6 +321,7 @@ $mobile-menu-width: 375px;
                 color: $gray-color-200;
                 border: none;
                 width: 100%;
+                box-sizing: border-box;
             }
     
             .magnifier-icon {

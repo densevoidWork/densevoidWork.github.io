@@ -56,5 +56,28 @@ document.addEventListener('DOMContentLoaded', function(){
             element.querySelector(".categories-list-grow").style.height = 0;
         }
     }
+
+    /* SPORT PAGE CATEGORIES MENU */
+
+    let sportMenuOpener = document.querySelector('.sport-menu .catalog-opener');
+    
+    if (sportMenuOpener != null) {
+        sportMenuOpener.addEventListener("click", function(event) {
+            let isOpened = sportMenuOpener.classList.toggle("opened");
+            let menuGrower = sportMenuOpener.parentElement.querySelector(".menu-grower");
+
+            if (menuGrower == null) return;
+
+            if (isOpened) {
+                let menu = menuGrower.querySelector(".menu-lines");
+                if (menu != null)
+                    menuGrower.style.height = menu.clientHeight + "px";
+            }
+            else {
+                menuGrower.style.height = null;
+            }
+        });
+    }
+
 });
 
