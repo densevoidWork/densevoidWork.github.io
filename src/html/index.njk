@@ -54,39 +54,9 @@ layout: layouts/main.njk
     <div class="large-goods-gallery">
         <div class="arrow left"></div>
         <div class="goods-list">
-            <a class="good" href="#">
-                <img class="preview" src="{{ '/images/goods/large/good_1.jpg' | url }}"></img>
-                <div class="info-block">
-                    <div class="title">ASAP</div>
-                    <div class="description">Мобильное устройство остановки падения</div>
-                    <div class="bottom-line">
-                        <div class="price">18 990 руб.</div>
-                        <div class="jump">Подробнее</div>
-                    </div>
-                </div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="{{ '/images/goods/large/good_1.jpg' | url }}"></img>
-                <div class="info-block">
-                    <div class="title">ASAP</div>
-                    <div class="description">Мобильное устройство остановки падения</div>
-                    <div class="bottom-line">
-                        <div class="price">18 990 руб.</div>
-                        <div class="jump">Подробнее</div>
-                    </div>
-                </div>
-            </a>
-            <a class="good" href="#">
-                <img class="preview" src="{{ '/images/goods/large/good_1.jpg' | url }}"></img>
-                <div class="info-block">
-                    <div class="title">ASAP</div>
-                    <div class="description">Мобильное устройство остановки падения</div>
-                    <div class="bottom-line">
-                        <div class="price">18 990 руб.</div>
-                        <div class="jump">Подробнее</div>
-                    </div>
-                </div>
-            </a>
+            {% for good in goods | goodsByGroup("mainLarge") %}
+                {% include "components/goods/large-good-card.njk" %}
+            {% endfor %}
         </div>
         <div class="arrow right"></div>
     </div>

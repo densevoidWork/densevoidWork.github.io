@@ -6,8 +6,8 @@
   "scripts": {
     "sass-watch": "sass --watch scss:css",
     "postcss-watch": "postcss css/main.css -u autoprefixer cssnano -o ../docs/css/main.css --watch",
-    "eleventy-watch": "npx @11ty/eleventy --input=html --output=../docs --watch",
-    "server": "http-server ../docs/ -o",
+    "eleventy-watch": "npx @11ty/eleventy --input=html --output=../docs --watch --quiet",
+    "server": "http-server ../docs/",
     "dev": "npm-run-all --parallel sass-watch postcss-watch eleventy-watch server"
   },
   "keywords": [],

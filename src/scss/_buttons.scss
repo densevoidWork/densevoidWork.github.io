@@ -16,6 +16,7 @@
 
     &:hover {
         text-decoration: none;
+        background: $yellow-hover-color;
     }
 
     &.orange {
@@ -34,6 +35,28 @@
     }
 }
 
+@keyframes background-wiggle {
+    0% {
+      background-position: 50% 50%;
+    }
+
+    12.5% {
+      background-position: 60% 50%;
+    }
+
+    37.5% {
+      background-position: 40% 50%;
+    }
+
+    62.5% {
+      background-position: 60% 50%;
+    }
+
+    87.5% {
+      background-position: 40% 50%;
+    }
+}
+
 .round-btn {
     width: 32px;
     height: 32px;
@@ -44,6 +67,9 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 18px;
 
     &.big {
         width: 64px;
@@ -54,14 +80,21 @@
         height: 50%;
         width: 50%;
     }
+
+    &:hover {
+        animation-name: background-wiggle;
+        animation-duration: 0.6s;
+    }
 }
 
 .icon-btn {
     position: relative;
     cursor: pointer;
+    z-index: 0;
 
     img {
         max-width: 26px;
+        min-width: 26px;
     }
 
     .btn-counter {
@@ -80,6 +113,28 @@
         display: flex;
         justify-content: center;
         align-items: flex-end;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        background: transparent;
+        top: 50%;
+        z-index: -1;
+        left: 50%;
+        border-radius: 100%;    
+        transition: all 0.3s cubic-bezier(.65,.05,.36,1);
+    }
+
+    &:hover::after {
+        width: 42px;
+        height: 42px;
+        top: -7px;
+        left: -8px; 
+        background: $gray-color-50;
     }
 }
 

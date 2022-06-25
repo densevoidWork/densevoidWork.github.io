@@ -71,10 +71,15 @@
         
                 &:hover {
                     text-decoration: underline;
+        
+                    .preview {                 
+                        filter: grayscale(0%);
+                    }
                 }
         
                 .preview {
-                    width: 80px;
+                    width: 80px;                    
+                    filter: grayscale(100%);
                 }
         
                 .title {

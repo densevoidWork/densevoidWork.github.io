@@ -18,12 +18,24 @@ document.addEventListener('DOMContentLoaded', function(){
 
     /* MOBILE SUB MENU */
 
-    let mobileMenuSubmenu = document.querySelector('.mobile-menu .mobile-submenu');
-    let mobileMenuButton = document.querySelector('.mobile-menu .hamburger-btn');
-    let mobileMenuMainCategories = document.querySelectorAll('.mobile-menu .main-category.parent');
+    let mobileMenuSubmenu = document.querySelector('.middlebar .mobile-submenu');
+    let mobileMenuButton = document.querySelector('.middlebar .hamburger-btn');
+    let mobileMenuMainCategories = document.querySelectorAll('.middlebar .main-category.parent');
+    let mobileSubmenuGrower = document.querySelector('.middlebar .mobile-submenu-grower');
 
     mobileMenuButton.addEventListener("click", function(event) {
-        toggleMobileMenuStatus();
+        //console.log(mobileSubmenuGrower.querySelector(".mobile-submenu").clientHeight);
+
+        let isOpened = mobileSubmenuGrower.classList.toggle("opened");
+
+        if (isOpened) {
+            let height = mobileSubmenuGrower.querySelector(".mobile-submenu").clientHeight;
+            mobileSubmenuGrower.style.height = height + "px";
+        }
+        else {
+            mobileSubmenuGrower.style.height = 0;
+        }
+        //toggleMobileMenuStatus();
     });
 
     mobileMenuMainCategories.forEach(element => {
@@ -47,13 +59,18 @@ document.addEventListener('DOMContentLoaded', function(){
 
     function openMainMobileCategory(element) {
         let isOpened = element.classList.toggle("opened");
+        let categoriesListGrower = element.querySelector(".categories-list-grow");
+
+        let elementHeight = element.querySelector(".categories-list").clientHeight;
+        let containerHeight = mobileSubmenuGrower.querySelector(".mobile-submenu").clientHeight;
 
         if (isOpened) {
-            let height = element.querySelector(".categories-list").clientHeight;
-            element.querySelector(".categories-list-grow").style.height = height + "px";
+            mobileSubmenuGrower.style.height = containerHeight + elementHeight + "px";
+            categoriesListGrower.style.height = elementHeight + "px";
         }
         else {
-            element.querySelector(".categories-list-grow").style.height = 0;
+            mobileSubmenuGrower.style.height = containerHeight - elementHeight + "px";
+            categoriesListGrower.style.height = 0;   
         }
     }
 
