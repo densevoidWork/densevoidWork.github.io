@@ -10,17 +10,16 @@
 
     .navbar-menu {
         display: flex;
-        justify-content: space-between;;
+        justify-content: flex-end;
         max-width: 1000px;
         width: 100%;
         column-gap: 5px;
+        column-gap: 25px;
     }
 
     .navbar-element {
         font-size: 18px;
-        color: $gray-color-600;
         cursor: pointer;
-        text-decoration: none;
 
         &.parent::after {
             display: block;
@@ -38,6 +37,18 @@
             padding-bottom: 6px;
             margin-bottom: -11px;
         }
+
+        & a {            
+            color: $gray-color-600;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .menu-categories {
+        display: none;
     }
 
     .navbar-submenu {
@@ -90,8 +101,136 @@
     }
 }
 
+.mobile-navbar {
+    display: none;
+
+    .mobile-submenu-grower {
+        height: 0;
+        overflow: hidden;
+        transition: all 1s cubic-bezier(.25,.46,.45,.94);
+    }
+
+    .mobile-submenu {   
+        background-color: #fff;
+        box-sizing: border-box;
+        padding: 0 16px 20px;
+        width: 100%;
+
+        .main-category {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            cursor: pointer;
+            border-bottom: 1px solid $gray-color-100;
+
+            .main-title {
+                position: relative;
+                min-height: 60px;
+                line-height: 60px;
+                font-size: 20px;
+                color: $gray-color-600;
+            }
+
+            &.parent .main-title::after {
+                background: url(../images/navbar-parent.svg) no-repeat;
+                content: "";
+                display: block;
+                width: 8px;
+                background-size: 8px 14px;
+                height: 14px;
+                transition: all 0.2s ease-out;
+                position: absolute;
+                top: calc(50% - 7px);
+                right: 8px;
+            }
+
+            &.parent.opened {
+                .main-title::after {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+
+        .categories-list-grow {
+            height: 0px;
+            overflow: hidden;
+            transition: all 1s cubic-bezier(.25,.46,.45,.94);
+        }
+
+        .categories-list {
+            display: flex;
+            flex-direction: column;
+            row-gap: 4px;
+            padding-bottom: 16px;
+        }
+
+        .category {
+            min-height: 40px;
+            line-height: 40px;
+            background-color: #f7f7f7;
+            display: flex;
+            align-items: center;
+            border-radius: 4px;
+            position: relative;
+            padding: 4px 32px 4px 0px;
+            box-sizing: border-box;
+            text-decoration: none;
+
+            .icon {
+                width: 38px;
+                height: 30px;
+                margin: 0 16px;
+            }
+
+            .title {
+                font-size: 16px;
+                color: $gray-color-600;
+                line-height: 150%;
+            }
+
+            &::after {
+                background: url(../images/navbar-parent.svg) no-repeat;
+                content: "";
+                display: block;
+                width: 8px;
+                background-size: 8px 14px;
+                height: 14px;
+                transition: all 0.2s ease-out;
+                position: absolute;
+                right: 21px;
+                top: calc(50% - 7px);
+                opacity: 0.4;
+            }
+        }
+        
+        .mobile-menu-options {
+            margin-top: 24px;
+            
+            a {
+                display: block;
+                font-size: 16px;
+                text-decoration: none;
+                color: $gray-color-600;
+                margin-top: 10px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .mini-contacts-in-mobile-menu {
+            margin-top: 30px;
+        }
+    }
+}
+
 @media (max-width: 1100px) {
     .navbar {
         display: none;
+    }
+
+    .mobile-navbar {
+        display: block;
     }
 }

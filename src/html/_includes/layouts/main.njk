@@ -55,11 +55,78 @@
                         <img class="magnifier-icon" src="{{ '/images/magnifier-icon.svg' | url }}" />
                         <input type="text" placeholder="Искать..."/>
                     </div>
-                </div>      
+                </div>
+            </div>
+            
+            <div class="navbar">
+                <div class="container">
+                    <div class="first-level">                        
+                        <div class="navbar-menu">
+                            {% for item in menu %}
+                                {% set parent = "" %}
 
+                                {% if item.content|length %}
+                                    {% set parent = " parent" %}
+                                {% endif %}
+
+                                <div class="navbar-element{{ parent }}">
+                                    <a href="{{ item.page }}">{{ item.title }}</a>
+
+                                    <div class="menu-categories">
+                                        {% for category in item.content %}
+                                            <a class="category" href="{{ category.page }}">
+                                                <img class="preview" src="{{ category.image | url }}"></img>
+                                                <div class="title">{{ category.title }}</div>
+                                            </a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-submenu">
+                    <div class="submenu-goods-categories">
+                    </div>
+                </div>
+            </div>       
+
+            <div class="mobile-navbar">
                 <div class="mobile-submenu-grower">
                     <div class="mobile-submenu">
                         <div class="main-categories-list">
+                            {% for item in menu %}
+                                {% set parent = "" %}
+
+                                {% if item.content|length %}
+                                    {% set parent = " parent" %}
+                                {% endif %}
+
+                                <div class="main-category{{ parent }}">
+                                    <div class="main-title">
+                                        {{ item.title }}
+                                    </div>
+
+                                    <div class="categories-list-grow">
+                                        <div class="categories-list">
+                                            {% for category in item.content %}
+                                                {% if category.mobileImage %}                                                    
+                                                    {% set mobileImage = category.mobileImage %}
+                                                {% else %}                             
+                                                    {% set mobileImage = "/images/goods/categories/category-1.png" %}
+                                                {% endif %}
+
+                                                <a class="category" href="{{ category.page }}">
+                                                    <img class="icon" src="{{ mobileImage | url }}" />
+                                                    <div class="title">{{ category.title }}</div>
+                                                </a>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
                             <div class="main-category parent">
                                 <div class="main-title">
                                     Спорт
@@ -123,82 +190,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="navbar">
-                <div class="container">
-                    <div class="first-level">
-                        <div class="navbar-menu">
-                            <a class="navbar-element parent" href="pages/sport/">Спорт</a>
-                            <div class="navbar-element parent">Промальп</div>
-                            <div class="navbar-element parent">Фонари</div>
-                            <div class="navbar-element parent">Подборки</div>
-                            <div class="navbar-element">Новости и статьи</div>
-                            <div class="navbar-element parent">Техническая информация</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="navbar-submenu">
-                    <div class="submenu-goods-categories">
-                        <a class="category" href="#">
-                            <img class="preview" src="{{ '/images/goods/small/1.jpg' | url }}"></img>
-                            <div class="title">Страховочные системы</div>
-                        </a>
-                        <a class="category" href="#">
-                            <img class="preview" src="{{ '/images/goods/small/2.jpg' | url }}"></img>
-                            <div class="title">Каски</div>
-                        </a>
-                        <a class="category" href="#">
-                            <img class="preview" src="{{ '/images/goods/small/1.jpg' | url }}"></img>
-                            <div class="title">Страховочные системы</div>
-                        </a>
-                        <a class="category" href="#">
-                            <img class="preview" src="{{ '/images/goods/small/2.jpg' | url }}"></img>
-                            <div class="title">Каски</div>
-                        </a>
-                        <a class="category" href="#">
-                            <img class="preview" src="{{ '/images/goods/small/1.jpg' | url }}"></img>
-                            <div class="title">Страховочные системы</div>
-                        </a>
-                        <a class="category" href="#">
-                            <img class="preview" src="{{ '/images/goods/small/2.jpg' | url }}"></img>
-                            <div class="title">Каски</div>
-                        </a>
-                        <a class="category" href="#">
-                            <img class="preview" src="{{ '/images/goods/small/1.jpg' | url }}"></img>
-                            <div class="title">Страховочные системы</div>
-                        </a>
-                        <a class="category" href="#">
-                            <img class="preview" src="{{ '/images/goods/small/2.jpg' | url }}"></img>
-                            <div class="title">Каски</div>
-                        </a>
-                        <a class="category" href="#">
-                            <img class="preview" src="{{ '/images/goods/small/1.jpg' | url }}"></img>
-                            <div class="title">Страховочные системы</div>
-                        </a>
-                        <a class="category" href="#">
-                            <img class="preview" src="{{ '/images/goods/small/2.jpg' | url }}"></img>
-                            <div class="title">Каски</div>
-                        </a>
-                        <a class="category" href="#">
-                            <img class="preview" src="{{ '/images/goods/small/1.jpg' | url }}"></img>
-                            <div class="title">Страховочные системы</div>
-                        </a>
-                        <a class="category" href="#">
-                            <img class="preview" src="{{ '/images/goods/small/2.jpg' | url }}"></img>
-                            <div class="title">Каски</div>
-                        </a>
-                        <a class="category" href="#">
-                            <img class="preview" src="{{ '/images/goods/small/1.jpg' | url }}"></img>
-                            <div class="title">Страховочные системы</div>
-                        </a>
-                        <a class="category" href="#">
-                            <img class="preview" src="{{ '/images/goods/small/2.jpg' | url }}"></img>
-                            <div class="title">Каски</div>
-                        </a>
-                    </div>
-                </div>
-            </div>      
         </header>   
 
         <main>
@@ -214,13 +205,15 @@
                         </a>
                         <div class="follow-block">
                             <div class="invite-text">Присоединяйтесь к нам</div>
-                            <div class="social-links">
-                                <a class="round-btn big"><img src="{{ '/images/social/twitter.svg' | url }}" /></a>
-                                <a class="round-btn big"><img src="{{ '/images/social/vk.svg' | url }}" /></a>
-                                <a class="round-btn big"><img src="{{ '/images/social/yandexdzen.svg' | url }}" /></a>
-                                <a class="round-btn big"><img src="{{ '/images/social/youtube.svg' | url }}" /></a>
-                                <a class="round-btn big"><img src="{{ '/images/social/telegram.svg' | url }}" /></a>
-                                <a class="round-btn big"><img src="{{ '/images/social/tiktok.svg' | url }}" /></a>
+                            <div class="social-links">                                
+                                {% for social in contacts.social %}
+                                <a class="round-btn big" href="{{ social.link }}">
+                                    <div class="icon-container">
+                                        <img class="color-icon" src="{{ '/images/social/' + social.name + '.svg' | url }}"></img>
+                                        <img class="gray-icon" src="{{ '/images/social/' + social.name + '-gray.svg' | url }}"></img>
+                                    </div>
+                                </a>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="rules">Условия использования сайта. При републикации материалов активная ссылка на petzl.ru обязательна.</div>

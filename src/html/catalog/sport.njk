@@ -1,0 +1,52 @@
+---
+eleventyNavigation:
+    key: Sport
+    parent: Main
+    title: Спорт
+---
+
+{% include "components/common/breacrumbs.njk" %}
+
+<div class="hero sport-hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-title">Каталог PRO 2022</div>
+            <div class="hero-description">Новый каталог - снаряжение для работы на высоте</div>
+            <a class="white-transp-btn" href="#">Скачать</a>
+        </div>
+    </div>
+</div>
+
+<div class="container sport-content">
+    <div class="hiding-menu" data-hidetarget="menu-grower">
+        <div class="title">СПОРТ</div>
+        <div class="catalog-opener">Категории товаров</div>
+        <div class="menu-grower">
+            <div class="menu-lines">
+                <div class="menu-column">
+                    <a class="line attention" href="#">Распродажа</a>
+                    <a class="line attention" href="#">Новые поступления</a>
+                    <a class="line" href="#">Страховочные системы</a>
+                    <a class="line" href="#">Каски</a>
+                    <a class="line" href="#">Спусковые и страховочные устройства</a>
+                    <a class="line" href="#">Карабины и оттяжки</a>
+                    <a class="line" href="#">Зажимы</a>
+                    <a class="line" href="#">Блоки, ролики</a>
+                </div>
+                <div class="menu-column">
+                    <a class="line" href="#">Ледорубы и ледовые инструменты</a>
+                    <a class="line" href="#">Кошки</a>
+                    <a class="line" href="#">Ледобуры</a>
+                    <a class="line" href="#">Крючья, шлямбурное оборудование, ИТО</a>
+                    <a class="line" href="#">Петли и самостраховки</a>
+                    <a class="line" href="#">Рюкзаки и транспортные мешки</a>
+                    <a class="line" href="#">Веревки и репшнуры</a>
+                    <a class="line" href="#">Аксессуары</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% set goodsGroup = "sport" %}
+    {% include "components/goods/big-goods-list.njk" %}
+</div>

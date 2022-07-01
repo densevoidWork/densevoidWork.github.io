@@ -1,13 +1,15 @@
 document.addEventListener('DOMContentLoaded', function(){ 
-
+    
     /* DESKTOP SUB MENU */
 
     let navbar = document.querySelector('.navbar');
     let navbarSubmenu = document.querySelector('.navbar .navbar-submenu');
-    let navbarElements = document.querySelectorAll('.navbar .navbar-element');
+    let navbarParentElements = document.querySelectorAll('.navbar .navbar-element.parent');
+    let navbarNotParentElements = document.querySelectorAll('.navbar .navbar-element:not(.parent)');
 
-    navbarElements.forEach(element => {
+    navbarParentElements.forEach(element => {
         element.addEventListener("mouseenter", function(event) {
+            navbarSubmenu.querySelector(".submenu-goods-categories").innerHTML = element.querySelector(".menu-categories").innerHTML;
             navbarSubmenu.classList.add("opened");
         });
     });
@@ -16,17 +18,21 @@ document.addEventListener('DOMContentLoaded', function(){
         navbarSubmenu.classList.remove("opened");
     });
 
+    navbarNotParentElements.forEach(element => {
+        element.addEventListener("mouseenter", function(event) {
+            navbarSubmenu.classList.remove("opened");
+        });
+    });
+
+
     /* MOBILE SUB MENU */
 
-    let mobileMenuSubmenu = document.querySelector('.middlebar .mobile-submenu');
     let mobileMenuButton = document.querySelector('.middlebar .hamburger-btn');
-    let mobileMenuMainCategories = document.querySelectorAll('.middlebar .main-category.parent');
-    let mobileSubmenuGrower = document.querySelector('.middlebar .mobile-submenu-grower');
+    let mobileMenuMainCategories = document.querySelectorAll('.mobile-navbar .main-category.parent');
+    let mobileSubmenuGrower = document.querySelector('.mobile-navbar .mobile-submenu-grower');
 
     mobileMenuButton.addEventListener("click", function(event) {
-        //console.log(mobileSubmenuGrower.querySelector(".mobile-submenu").clientHeight);
-
-        let isOpened = mobileSubmenuGrower.classList.toggle("opened");
+        let isOpened = toggleMobileMenuStatus();
 
         if (isOpened) {
             let height = mobileSubmenuGrower.querySelector(".mobile-submenu").clientHeight;
@@ -35,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function(){
         else {
             mobileSubmenuGrower.style.height = 0;
         }
-        //toggleMobileMenuStatus();
     });
 
     mobileMenuMainCategories.forEach(element => {
@@ -44,18 +49,20 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     });
 
+
     function toggleMobileMenuStatus() {    
         let isMenuOpened = mobileMenuButton.classList.contains("opened");
 
         if (!isMenuOpened) {
             mobileMenuButton.classList.add("opened");
-            mobileMenuSubmenu.classList.add("opened");
         }
         else {
             mobileMenuButton.classList.remove("opened");
-            mobileMenuSubmenu.classList.remove("opened");
         }
+
+        return !isMenuOpened;
     }
+
 
     function openMainMobileCategory(element) {
         let isOpened = element.classList.toggle("opened");
@@ -74,27 +81,32 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     }
 
-    /* SPORT PAGE CATEGORIES MENU */
 
-    let sportMenuOpener = document.querySelector('.sport-menu .catalog-opener');
+
+    /* HIDING MENU */
+
+    let hidingMenus = document.querySelectorAll('.hiding-menu');
+
+    hidingMenus.forEach(hideMenu => {
+        let sportMenuOpener = hideMenu.querySelector('.catalog-opener');
+        
+        if (sportMenuOpener != null) {
+            sportMenuOpener.addEventListener("click", function(event) {
+                let isOpened = sportMenuOpener.classList.toggle("opened");
+                let menuGrower = sportMenuOpener.parentElement.querySelector(".menu-grower");
     
-    if (sportMenuOpener != null) {
-        sportMenuOpener.addEventListener("click", function(event) {
-            let isOpened = sportMenuOpener.classList.toggle("opened");
-            let menuGrower = sportMenuOpener.parentElement.querySelector(".menu-grower");
-
-            if (menuGrower == null) return;
-
-            if (isOpened) {
-                let menu = menuGrower.querySelector(".menu-lines");
-                if (menu != null)
-                    menuGrower.style.height = menu.clientHeight + "px";
-            }
-            else {
-                menuGrower.style.height = null;
-            }
-        });
-    }
-
+                if (menuGrower == null) return;
+    
+                if (isOpened) {
+                    let content = menuGrower.firstElementChild;
+                    if (content != null)
+                        menuGrower.style.height = content.clientHeight + "px";
+                }
+                else {
+                    menuGrower.style.height = null;
+                }
+            });
+        }
+    });
 });
 

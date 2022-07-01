@@ -76,14 +76,34 @@
         height: 64px;
     }
 
-    img {
-        height: 50%;
+    .icon-container {
+        position: relative;
         width: 50%;
+        height: 50%;
+    }
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s ease-in;
+    }
+
+    .color-icon {
+        opacity: 0;
     }
 
     &:hover {
         animation-name: background-wiggle;
         animation-duration: 0.6s;
+
+        .color-icon {
+            opacity: 1;
+        }
+
+        .gray-icon {
+            opacity: 0;
+        }
     }
 }
 

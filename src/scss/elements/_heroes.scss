@@ -39,6 +39,21 @@
     background-image: url('../images/heroes/sportpage.jpg');
 }
 
+.safetysystems-hero {
+    background-image: linear-gradient(90deg, #0009, #0000), url(../images/heroes/safetySystems.jpg);
+
+    .hero-description {
+        margin-top: 32px;
+        margin-bottom: 40px;
+    }
+    
+    @media (max-width: 600px) {
+        .hero-description {
+            margin-top: 12px;
+        }
+    }
+}
+
 
 @media (max-width: 768px) {
     .hero {    

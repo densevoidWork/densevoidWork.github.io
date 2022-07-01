@@ -1,9 +1,9 @@
 @font-face {
-  font-family: "HelveticaThin"; 
-  src: url("../fonts/HelveticaCyr.otf") format("opentype");; 
-  font-style: normal; 
-  font-weight: lighter; 
-} 
+    font-family: "HelveticaThin";
+    src: url("../fonts/HelveticaCyr.otf") format("opentype");
+    font-style: normal;
+    font-weight: lighter;
+}
 
 
 body {
@@ -11,16 +11,16 @@ body {
 }
 
 header {
-  z-index: 2;
-  position: relative;
+    z-index: 2;
+    position: relative;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
-  }
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 h2 {
@@ -32,43 +32,40 @@ h2 {
 }
 
 input {
-  outline: none;
+    outline: none;
 
-  &:focus {
-      border: 2px solid $gray-color-100 !important;
-  }
+    &:focus {
+        border: 2px solid $gray-color-100  !important;
+    }
 }
 
 .container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
 }
 
 @media (min-width: 768px) {
-  h2 {    
-    margin-bottom: 25px;
-    margin-top: 58px;
-  }
+    h2 {
+        margin-bottom: 25px;
+        margin-top: 58px;
+    }
 }
 
 @media (min-width: 1440px) {
-  .container {
-    max-width: 1440px;
-  }
-
-  h2 {
-    font-size: 40px;
-    margin-bottom: 37px;
-    margin-top: 76px;
-  }
+    h2 {
+        font-size: 40px;
+        margin-bottom: 37px;
+        margin-top: 76px;
+    }
 }
 
 @media (min-width: 1550px) {
-  .full-width-background-1 {
-    background : url(../images/backgrounds/back_1.png);
-    background-position-x: 50%;
-  }
+    .full-width-background-1 {
+        background: url(../images/backgrounds/back_1.png);
+        background-position-x: 50%;
+    }
 }
 
 .logo-container {
@@ -83,5 +80,210 @@ input {
     .company-name {
         margin-left: 27px;
         font-size: 18px;
+    }
+}
+
+.mini-contacts {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 12px;
+    margin-top: 2px;
+
+    .phone-and-worktime {
+        white-space: nowrap;
+    }
+
+    .phone-text {
+        color: $gray-color-600;
+        font-size: 18px;
+    }
+
+    .worktime-text {
+        color: $gray-color-200;
+        font-size: 12px;
+    }
+}
+
+input[type=radio] {
+    display: none;
+}
+
+input[type=radio]+label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 28px;
+    margin-right: 0;
+    line-height: 18px;
+    user-select: none;
+    font-size: 18px;
+    color: $gray-color-600;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    line-height: 25px;
+}
+
+input[type=radio]+label:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    background: url(../images/ui/radiobutton-unchecked.svg) 0 0 no-repeat;
+}
+
+input[type=radio]:checked+label:before {
+    background: url(../images/ui/radiobutton-active.svg) 0 0 no-repeat;
+}
+
+input[type=radio]:not(:checked)+label:hover:before {
+    background: url(../images/ui/radiobutton-active.svg) 0 0 no-repeat;
+    filter: grayscale(100%) brightness(186%);
+}
+
+.filters {
+    padding-bottom: 28px;
+    padding-top: 29px;
+
+    .filter {
+        display: inline-block;
+        margin: 11px 15px;
+    }
+
+    @media (max-width: 940px) {
+        columns: 2;
+
+        .filter {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        columns: 1;
+    }
+}
+
+.filter.special {
+    label {
+        color: $orange-color;
+    }
+}
+
+.hiding-menu {
+    min-width: 260px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    .title {
+        font-size: 32px;
+        color: $gray-color-800;
+    }
+
+    .menu-grower {
+        transition: all .7s ease-out;
+    }
+
+    .menu-lines {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        column-gap: 20px;
+
+        .menu-column {
+            display: flex;
+            flex-direction: column;
+            row-gap: 16px;
+            max-width: 280px;
+        }
+
+        .line {
+            font-size: 18px;
+            display: block;
+            color: $gray-color-800;
+
+            &.attention {
+                text-transform: uppercase;
+                color: $orange-color;
+            }
+        }
+    }
+
+    .catalog-opener {
+        display: none;
+        font-size: 18px;
+        color: $gray-color-200;
+        cursor: pointer;
+        margin-top: 13px;
+
+        &::after {
+            background-image: url(../images/gallery-arrow.svg);
+            content: "";
+            display: inline-block;
+            height: 12px;
+            width: 7px;
+            background-size: 100%;
+            transform: rotate(90deg);
+            background-repeat: no-repeat;
+            margin-left: 12px;
+            vertical-align: -1px;
+            transition: transform 0.2s ease-out;
+        }
+
+        &.opened::after {
+            transform: rotate(-90deg);
+        }
+    }
+
+    @media (max-width: 940px) {
+        padding-bottom: 35px;
+
+        .menu-grower {
+            height: 0;
+            overflow: hidden;
+        }
+
+        .menu-lines {
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            .menu-column {
+                width: auto;
+            }
+        }
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .catalog-opener {
+            font-size: 18px;
+            display: block;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .menu-lines {
+            flex-direction: column;
+        }
+
+        .full-text {
+            display: none;
+        }
+    }
+}
+
+.goods-with-filters .hiding-menu {
+    .title {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .title {
+            display: block;
+        }
     }
 }

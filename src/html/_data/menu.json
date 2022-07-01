@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Спорт",
+        "page": "/catalog/sport/",
+        "content": [
+            {
+                "title": "Страховочные системы",
+                "image": "/images/goods/small/1.jpg",
+                "page": "/catalog/safetysystems/"
+            },
+            {
+                "title": "Каски",
+                "image": "/images/goods/small/2.jpg",
+                "page": "/catalog/safetysystems/"
+            }
+        ]
+    },
+    {
+        "title": "Промальп",
+        "page": "/catalog/promalp/",
+        "content": [
+            {
+                "title": "Тест 1",
+                "image": "/images/goods/small/2.jpg",
+                "page": "/catalog/safetysystems/"
+            },
+            {
+                "title": "Тест 2",
+                "image": "/images/goods/small/1.jpg",
+                "page": "/catalog/safetysystems/"
+            }
+        ]
+    },
+    {
+        "title": "Фонари",
+        "page": "/catalog/promalp/"
+    },
+    {
+        "title": "Подборки",
+        "page": "/catalog/promalp/"
+    },
+    {
+        "title": "Новости и статьи",
+        "page": "/catalog/promalp/"
+    },
+    {
+        "title": "Техническая информация",
+        "page": "/catalog/promalp/"
+    }
+]

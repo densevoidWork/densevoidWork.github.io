@@ -1,0 +1,51 @@
+<div class="big-goods-list">
+    <div class="goods-list">
+        {% for good in goods | goodsByGroup(goodsGroup) %}
+            <div>
+                <div class="desktop-view">    
+                    <a class="good" href="#">
+                        <div class="preview">
+                            <img src="{{ good.image }}" />
+                            <div class="good-flags">
+                                {% for flag in good.flags %}
+                                <div class="flag {{ flag }}"></div>
+                                {% endfor %}   
+                            </div>
+                        </div>
+                        <div class="look-link">Смотреть</div>
+                        <div class="price">
+                            {{ good.price }} руб.
+                        </div>
+                        <div class="hider-box">
+                            <div class="title">
+                            {{ good.title }}
+                            </div>
+                            <div class="colors-list">
+                                {% for color in good.colors %}
+                                <div class="color-box" style="background-color: {{ color }}"></div>
+                                {% endfor %}                
+                            </div>
+                            <button class="btn orange buy-btn">Купить</button>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mobile-view">
+                    {% include "components/goods/large-good-card.njk" %}
+                </div>
+            </div>    
+        {% endfor %}
+    </div>
+
+    <div class="navigation">
+        <button class="btn transp-gray-btn">Показать больше</button>
+        <div class="pages">
+            <div class="page current">1</div>
+            <div class="page">2</div>
+            <div class="page">3</div>
+            <div class="dots">...</div>
+            <div class="page">13</div>
+            <div class="right-arrow">></div>
+        </div>
+    </div>
+</div>
