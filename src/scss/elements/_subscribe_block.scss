@@ -1,19 +1,68 @@
 .subscribe-block {
-    display: flex;
-    justify-content: space-evenly;
     border-top: 1px solid $gray-color-100;
     border-bottom: 1px solid $gray-color-100;
     padding: 32px 32px 43px;
-    margin-bottom: 10px;
-    align-items: baseline;
+    margin-bottom: 25px;
     margin-top: 30px;
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        row-gap: 33px;
+
+        @media (max-width: $screensize-medium) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media (max-width: $screensize-small-2) {
+            row-gap: 20px;
+        }
+    }
+
+    .text-part, .form-part {
+        width: 48%;
+    }
+
+    @media (max-width: 1280px) {
+        .text-part {
+            width: 34%;
+        }
+
+        .form-part {
+            width: 64%;
+        }
+    }
+
+    @media (max-width: $screensize-large) {
+        .text-part {
+            width: 48%;
+        }
+
+        .form-part {
+            width: 48%;
+        }
+    }
+
+    
+    @media (max-width: $screensize-medium) { 
+        .text-part {
+            width: 100%;
+        }
+
+        .form-part {
+            width: 100%;
+        }
+    }
 
     .big-text {
         font-weight: 400;
         font-size: 48px;
         color: $gray-color-800;
         line-height: 48px;
-        margin-bottom: 18px;
+        margin-bottom: 14px;
     }
 
     .small-text {
@@ -22,14 +71,27 @@
         color: $gray-color-200;
     }
 
+    @media (max-width: $screensize-large) {
+        .big-text {
+            font-size: 40px;
+            line-height: 43px;
+        }
+    
+        .small-text {
+            font-size: 20px;
+        }
+    }
+
     .subscribe-field {
         display: flex;
         align-items: flex-start;
+        column-gap: 16px;
+        row-gap: 11px;
 
         input {
             border: 1px solid $gray-color-100;
             border-radius: 2px;
-            width: 442px;
+            width: 100%;
             height: 52px;
             font-weight: 400;
             font-size: 18px;
@@ -39,72 +101,25 @@
         }
 
         .search-input {
-            margin-left: 16px;
             font-size: 20px;
             height: 52px;
             padding: 0px 33px;
             box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
             min-width: 217px;
         }
-    }
-}
 
-
-@media (max-width: 1424px) {
-    .subscribe-block {    
-        flex-direction: column;
-        align-items: center;
-        padding-top: 41px;
-        margin-top: 65px;
-
-        .text-part {
-            text-align: center;
+        @media (max-width: $screensize-large) {
+            flex-direction: column;
+            align-items: flex-end;
         }
 
-        .small-text {
-            margin-top: 3px;
+        @media (max-width: $screensize-medium) {
+            flex-direction: row;
         }
 
-        .subscribe-field {
-            margin-top: 35px;
-            padding-bottom: 30px;
-        }
-    }
-}
-
-
-@media (max-width: 888px) {
-    .subscribe-block {
-        .subscribe-field {
-            input {
-                width: 250px;
-            }
-        }
-    }
-}
-
-
-@media (max-width: 560px) {
-    .subscribe-block {   
-        margin-top: 38px;
-        padding-bottom: 18px;
-        padding-top: 10px;
-
-        .big-text {
-            font-size: 20px;
-            margin-bottom: 10px;
-            line-height: 28px;
-        }
-        
-        .small-text {
-            font-size: 14px;
-        }
-
-        .subscribe-field {
+        @media (max-width: $screensize-small-2) {
             flex-direction: column;
             align-items: center;
-            margin-top: 18px;
-            padding-bottom: 0px;
             
             input {
                 font-size: 16px;
@@ -115,9 +130,30 @@
                 height: 37px;
                 font-size: 14px;
                 min-width: 139px;
-                margin-left: 0;
-                margin-top: 11px;
             }
+        }
+    }
+}
+
+
+@media (max-width: $screensize-small-2) {
+    .subscribe-block {   
+        margin-top: 38px;
+        padding-bottom: 18px;
+        padding-top: 10px;
+
+        .big-text {
+            font-size: 20px;
+            margin-bottom: 10px;
+            line-height: 28px;
+            font-weight: 700;
+        }
+        
+        .small-text {
+            font-size: 14px;
+        }
+
+        .subscribe-field {
         }
     }
 }

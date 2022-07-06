@@ -1,12 +1,11 @@
 .footer {
     margin-bottom: 52px;
     padding-top: 23px;
-    padding-left: 33px;
-    padding-right: 50px;
 
-    .main-grid {
+    .footer-content {
         display: flex;
         justify-content: space-between;
+        margin: 0 32px;
     }
 
     .brand-part {
@@ -134,7 +133,7 @@
     .footer {
         padding-top: 8px;
         
-        .main-grid {
+        .footer-content {
             flex-direction: column;
         }
 

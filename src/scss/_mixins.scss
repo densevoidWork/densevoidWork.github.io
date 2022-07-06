@@ -1,0 +1,19 @@
+@mixin select-border {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+
+    &:hover {
+        border: 1px solid $gray-color-200;
+    }
+}
+
+@mixin select-border-2 {
+    border: 1px solid $gray-color-200;
+    border-radius: 4px;
+    overflow: hidden;
+
+    &:hover {
+        border: 1px solid $gray-color-600;
+    }
+}

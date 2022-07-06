@@ -1,13 +1,13 @@
 {
-  "name": "test",
-  "version": "1.0.0",
+  "name": "Petzl",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "sass-watch": "sass --watch scss:css",
     "postcss-watch": "postcss css/main.css -u autoprefixer cssnano -o ../docs/css/main.css --watch",
     "eleventy-watch": "npx @11ty/eleventy --input=html --output=../docs --watch --quiet",
-    "server": "http-server ../docs/",
+    "server": "http-server ../docs/ --silent",
     "dev": "npm-run-all --parallel sass-watch postcss-watch eleventy-watch server"
   },
   "keywords": [],

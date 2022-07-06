@@ -135,7 +135,7 @@ $mobile-menu-width: 375px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $screensize-medium) {
     .middlebar {
         padding-bottom: 0;
 

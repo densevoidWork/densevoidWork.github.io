@@ -6,7 +6,7 @@
     width: auto;
 }
 
-@media (max-width: 940px) {
+@media (max-width: $screensize-large) {
     .sport-content {
         flex-direction: column;
         padding-left: 17px;

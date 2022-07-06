@@ -94,7 +94,7 @@
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: $screensize-medium) {
         display: flex;
         padding: 0;
         max-width: none;
@@ -102,7 +102,7 @@
         max-height: 140px;
     
         .info-block {
-            min-width: 50%;
+            min-width: 60%;
             margin-top: 13px;
             text-align: left;
             margin-right: 10px;
@@ -206,7 +206,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $screensize-medium) {
     .medium-goods-gallery {
         padding-bottom: 25px;
 
@@ -282,14 +282,19 @@
             .price {
                 font-size: 18px;
                 margin-top: 10px;
+                margin-bottom: 10px;
             }
     
             .title {
                 font-size: 14px;
                 color: $gray-color-600;
-                margin-top: 8px;
+                margin-top: 3px;
                 margin-bottom: 70px;
-                transition: all 0.3s ease-out;
+            }
+
+            .description {
+                font-size: 14px;
+                color: $gray-color-600;
             }
     
             .look-link {
@@ -305,7 +310,16 @@
     
             .hider-box {
                 overflow: hidden;
-                height: 80px;
+                height: 69px;
+                position: relative;
+
+                .moving-box {
+                    position: absolute;
+                    width: 100%;
+                    transform: translateY(100%);
+                    bottom: 100%;
+                    transition: all 0.5s ease;
+                }
             }
     
             .buy-btn {
@@ -331,9 +345,10 @@
                 border: 1px solid $gray-color-200;
                 //box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
                 z-index: 5;
-    
-                .title {
-                    margin-top: -89px;
+
+                .moving-box {
+                    transform: translateY(0%);
+                    bottom: 0;
                 }
     
                 .look-link {
@@ -405,7 +420,7 @@
     } 
 
     .navigation {
-        margin: 27px auto 20px;
+        margin: 27px auto 38px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -458,7 +473,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $screensize-medium) {
     .large-goods-gallery {
         padding-top: 20px;
         padding-left: 5px;
@@ -474,6 +489,7 @@
 @media (max-width: 500px) {
     .big-goods-list {
         min-width: auto;
+        margin: 0 10px;
         
         .goods-list {
             display: block;
@@ -484,7 +500,8 @@
         }
 
         .mobile-view {
-            display: block;    
+            display: block;
+            margin-bottom: 10px; 
         }
     }
 }

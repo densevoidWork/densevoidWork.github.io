@@ -1,0 +1,195 @@
+.main-good-block {
+    margin: 60px 34px 17px;
+    height: 600px;
+    display: flex;
+    column-gap: 16px;
+
+    .good-photos {
+        display: flex;
+        column-gap: 16px;
+    
+        .good-photo-gallery {
+            width: 100px;
+            display: flex;
+            row-gap: 16px;
+            flex-direction: column;
+
+            .gallery {
+                display: flex;
+                flex-direction: column;
+                row-gap: 16px;
+
+                .photo-preview {
+                    height: 88px;
+                    width: 100px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+
+                    @include select-border-2;
+                }
+
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+
+            .scroll-btn {
+                height: 32px;
+                width: 100%;
+                cursor: pointer;
+
+                &::after {
+                    display: block;
+                    content: "";
+                    background: url(../images/gallery-arrow.svg);
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 100%;
+                    margin: 0 auto;
+                    background-repeat: no-repeat;
+                    background-position: 50%;
+                    background-size: 50% 50%;
+                    transform: rotate(-90deg);
+                }
+
+                &:hover::after {
+                    background: $gray-color-50 url(../images/gallery-arrow.svg);
+                    background-repeat: no-repeat;
+                    background-position: 50%;
+                    background-size: 50% 50%;
+                }
+
+                &.forward {
+                    &::after {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+    
+        .good-selected-photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 680px;
+        }
+    
+    }
+
+    .good-base {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+
+        .good-name {
+
+            .category {
+                font-size: 18px;
+                color: $gray-color-600;
+                line-height: 130%;
+            }
+
+            .name {
+                font-size: 48px;
+                color: $gray-color-800;
+                font-weight: 700;
+                line-height: 56px;
+            }
+
+            .code {
+                font-size: 14px;
+                color: $gray-color-600;
+                line-height: 130%;
+
+                .separator {
+                    margin: 0 10px;
+                }
+            }
+        }
+
+        .good-price {
+
+            .price {
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 140%;
+                color: $gray-color-800;
+            }
+
+            .avaible {
+                font-size: 14px;
+                line-height: 130%;
+                color: $gray-color-600;
+
+                &::before {
+                    display: inline-block;
+                    content: "";
+                    background: url(../images/good-avaible.svg);
+                    width: 16px;
+                    height: 16px;
+                    margin: 0 auto;
+                    background-repeat: no-repeat;
+                    background-position: 50%;
+                    background-size: 100%;
+                    margin-right: 8px;
+                }
+            }
+        }
+
+        .good-options {
+            
+            .small-label {
+                font-size: 14px;
+                color: $gray-color-600;
+                margin-bottom: 8px;
+            }
+
+            .colors {
+            
+                .color-list {
+                    display: flex;
+                    column-gap: 8px;
+                }
+    
+                .color-preview {
+                    width: 48px;
+                    height: 48px;
+                    @include select-border-2;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+    
+                    img {
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                }
+            }
+
+            .sizes {
+
+                .counter-block {
+                    display: flex;
+                    column-gap: 24px;
+                }
+
+                .round-gray-but {
+                    display: block;
+                    background: $gray-color-50;
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 100%;
+                }
+
+                .counter {
+
+                }
+            }
+        }
+    }
+}

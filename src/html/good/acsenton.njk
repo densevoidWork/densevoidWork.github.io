@@ -1,0 +1,67 @@
+---
+eleventyNavigation:
+    key: Acsenton
+    parent: SafetySystems
+    title: ACSENTON
+---
+
+{% include "components/common/breacrumbs.njk" %}
+
+<div class="container">
+    <div class="main-good-block">
+        <div class="good-photos">
+            <div class="good-photo-gallery">
+                <div class="scroll-btn back"></div>                
+                <div class="gallery">
+                    {% for i in range(0, 5) %}
+                        <div class="photo-preview">
+                            <img src="/images/goods/small/3.jpg" />
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="scroll-btn forward"></div>
+            </div>
+            <div class="good-selected-photo">
+                <img src="/images/goods/full/image1.jpg" />
+            </div>
+        </div>
+
+        <div class="good-base">
+            <div class="good-name">
+                <div class="category">Страховочная система</div>
+                <div class="name">CORAX</div>
+                <div class="code">Артикул: C051BA00<span class="separator">|</span>Код товара: 376147</div>
+
+            </div>
+            <div class="good-price">
+                <div class="price">6 390 руб.</div>
+                <div class="avaible">Наличие в интернет-магазине</div>
+            </div>
+            <div class="good-options">
+                <div class="colors">
+                    <div class="small-label">Цвет:</div>
+                    <div class="color-list">
+                        <div class="color-preview">
+                            <img src="/images/goods/small/3.jpg" />
+                        </div>
+                        <div class="color-preview">
+                            <img src="/images/goods/small/3.jpg" style="filter: hue-rotate(90deg);" />
+                        </div>                    
+                        <div class="color-preview">
+                            <img src="/images/goods/small/3.jpg" style="filter: hue-rotate(180deg);" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sizes">
+                    <div class="small-label">Размер:</div>
+                    <div class="counter-block">
+                        <div id="decrease-size" class="round-gray-but">-</div>
+                        <div class="counter">1</div>
+                        <div id="increase-size" class="round-gray-but">+</div>
+                    </div>      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

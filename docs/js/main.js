@@ -108,5 +108,23 @@ document.addEventListener('DOMContentLoaded', function(){
             });
         }
     });
-});
 
+
+    /* HIDING TEXT */
+
+    let hidingTexts = document.querySelectorAll('.hiding-text');
+
+    hidingTexts.forEach(hideText => {
+        let hidingBox = hideText.querySelector('.hiding-box');
+        let opener = hideText.querySelector('.open-btn');
+
+        opener.addEventListener("click", function(event) {
+            if(hideText.classList.toggle("opened")) {
+                let height = hidingBox.querySelector(".text").clientHeight;
+                hidingBox.style.height = height + "px";
+            } else {
+                hidingBox.style.height = null;
+            }
+        });
+    });
+});

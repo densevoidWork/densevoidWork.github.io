@@ -67,6 +67,78 @@
     }
 }
 
+.news-preview-block {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 25%);
+    justify-content: space-evenly;
+    margin: 0 20px;
+
+    .news-element {
+        margin: 16px 8px 8px;
+        padding: 8px 8px 16px;
+        @include select-border;
+        text-decoration: none;
+
+        &:hover {
+            .read-btn {
+                visibility: visible;
+            }
+        }
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 18px;
+        color: $gray-color-800;
+        margin-top: 8px;
+    }
+
+    .preview-content {
+        font-size: 12px;
+        color: $gray-color-600;
+        margin-top: 8px;
+    }
+
+    .read-btn {
+        color: #F0571B;
+        font-size: 14px;
+        margin-top: 8px;
+        float: right;
+        visibility: hidden;
+
+        &::after {
+            background: url(../images/orange-arrow.svg) no-repeat;
+            content: "";
+            display: inline-block;
+            height: 10px;
+            width: 6px;
+            margin-left: 4px;
+            background-size: 100%;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @media (max-width: $screensize-large) {
+        margin: 0 10px;
+        grid-template-columns: repeat(auto-fill, 33%);
+    }
+
+    @media (max-width: $screensize-medium-2) {
+        margin: 0;
+        grid-template-columns: repeat(auto-fill, 50%);
+    }
+
+    @media (max-width: $screensize-small-2) {
+        grid-template-columns: repeat(auto-fill, 100%);
+    }
+}
+
 @media (max-width: 1060px) {
     .large-news-block {    
         .news-element {
@@ -88,7 +160,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $screensize-medium) {
     .large-news-block {
         margin-top: 48px;
     }

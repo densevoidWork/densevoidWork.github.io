@@ -29,6 +29,11 @@
         margin-bottom: 15px;
         max-width: 500px;
     }
+
+    &.narrow {
+        height: 210px;
+        box-shadow: none;
+    }
 }
 
 .mainpage-hero {
@@ -55,7 +60,7 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: $screensize-medium) {
     .hero {    
         .hero-title {
             font-size: 40px;

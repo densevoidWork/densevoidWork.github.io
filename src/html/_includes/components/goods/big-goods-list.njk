@@ -17,15 +17,20 @@
                             {{ good.price }} руб.
                         </div>
                         <div class="hider-box">
-                            <div class="title">
-                            {{ good.title }}
+                            <div class="moving-box">
+                                <div class="description">
+                                {{ good.description }}
+                                </div>
+                                <div class="title">
+                                {{ good.title }}
+                                </div>
+                                <div class="colors-list">
+                                    {% for color in good.colors %}
+                                    <div class="color-box" style="background-color: {{ color }}"></div>
+                                    {% endfor %}                
+                                </div>
+                                <button class="btn orange buy-btn">Купить</button>
                             </div>
-                            <div class="colors-list">
-                                {% for color in good.colors %}
-                                <div class="color-box" style="background-color: {{ color }}"></div>
-                                {% endfor %}                
-                            </div>
-                            <button class="btn orange buy-btn">Купить</button>
                         </div>
                     </a>
                 </div>
