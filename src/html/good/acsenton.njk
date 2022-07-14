@@ -11,7 +11,7 @@ eleventyNavigation:
     <div class="main-good-block">
         <div class="good-photos">
             <div class="good-photo-gallery">
-                <div class="scroll-btn back"></div>                
+                <div class="round-gray-btn scroll-btn back"><i class="icon icon-arrow-200"></i></div>                
                 <div class="gallery">
                     {% for i in range(0, 5) %}
                         <div class="photo-preview">
@@ -19,7 +19,7 @@ eleventyNavigation:
                         </div>
                     {% endfor %}
                 </div>
-                <div class="scroll-btn forward"></div>
+                <div class="round-gray-btn scroll-btn forward"><i class="icon icon-arrow-200"></i></div>    
             </div>
             <div class="good-selected-photo">
                 <img src="/images/goods/full/image1.jpg" />
@@ -41,7 +41,7 @@ eleventyNavigation:
                 <div class="colors">
                     <div class="small-label">Цвет:</div>
                     <div class="color-list">
-                        <div class="color-preview">
+                        <div class="color-preview selected">
                             <img src="/images/goods/small/3.jpg" />
                         </div>
                         <div class="color-preview">
@@ -55,13 +55,30 @@ eleventyNavigation:
 
                 <div class="sizes">
                     <div class="small-label">Размер:</div>
+                    <div class="sizes-block">
+                        <div class="size">1</div>
+                        <div class="size selected">2</div>
+                        <div class="size">3</div>
+                    </div>      
+                </div>
+
+                <div class="count">
+                    <div class="small-label">Количество:</div>
                     <div class="counter-block">
-                        <div id="decrease-size" class="round-gray-but">-</div>
+                        <div id="decrease-count" class="round-gray-btn"><i class="icon icon-minus"></i></div>
                         <div class="counter">1</div>
-                        <div id="increase-size" class="round-gray-but">+</div>
+                        <div id="increase-count" class="round-gray-btn"><i class="icon icon-plus"></i></div>
                     </div>      
                 </div>
             </div>
+
+            <button class="btn buy-input" type="submit"><i class="icon icon-bug"></i>В корзину</button>
+        </div>
+
+        <div class="good-flags">
+            <div class="flag new"></div>
+            <div class="flag eac"></div>
+            <div class="flag sale"></div>
         </div>
     </div>
 </div>

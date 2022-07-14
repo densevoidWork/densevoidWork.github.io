@@ -1,7 +1,9 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const svgContents = require("eleventy-plugin-svg-contents");
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
+    eleventyConfig.addPlugin(svgContents);
 
     eleventyConfig.addNunjucksFilter("isArrayContain", function(array, value) {
         if (Array.isArray(array)) {

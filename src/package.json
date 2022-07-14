@@ -8,7 +8,14 @@
     "postcss-watch": "postcss css/main.css -u autoprefixer cssnano -o ../docs/css/main.css --watch",
     "eleventy-watch": "npx @11ty/eleventy --input=html --output=../docs --watch --quiet",
     "server": "http-server ../docs/ --silent",
-    "dev": "npm-run-all --parallel sass-watch postcss-watch eleventy-watch server"
+    "dev": "npm-run-all --parallel sass-watch postcss-watch eleventy-watch server",
+    "icons-generate": "make-dir icons_out && fantasticon --normalize true icons -o icons_out",
+    "copy-css-file": "node -e \"require('fs/promises').copyFile('icons_out/icons.css', 'icons_out/icons2.css')\"",
+    "replace-path-to-font": "replace-in-files --string='./icons' --replacement='./../fonts/icons/icons' icons_out/icons2.css",
+    "rename-css-to-scss-and-move": "node -e \"require('fs/promises').rename('icons_out/icons2.css', 'scss/_icons.scss')\"",
+    "sass-update": "sass scss:css && postcss css/main.css -u autoprefixer cssnano -o ../docs/css/main.css",
+    "move-fonts-to-prod": "copyfiles -f icons_out/icons.eot icons_out/icons.woff icons_out/icons.woff2 ../docs/fonts/icons",
+    "icons": "npm run icons-generate && npm run copy-css-file && npm run replace-path-to-font && npm run rename-css-to-scss-and-move && npm run sass-update && npm run move-fonts-to-prod"
   },
   "keywords": [],
   "author": "",
@@ -17,10 +24,17 @@
     "@11ty/eleventy": "^1.0.1",
     "@11ty/eleventy-navigation": "^0.3.3",
     "autoprefixer": "^10.4.7",
+    "copyfiles": "^2.4.1",
     "cssnano": "^5.1.7",
+    "del-cli": "^4.0.1",
+    "eleventy-plugin-svg-contents": "^0.7.0",
+    "fantasticon": "^1.2.3",
     "http-server": "^14.1.1",
+    "make-dir-cli": "^3.0.0",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^9.1.0",
+    "rename-cli": "^6.2.1",
+    "replace-in-files-cli": "^2.0.0",
     "sass": "^1.51.0"
   }
 }
