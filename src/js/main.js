@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(){ 
+document.addEventListener('DOMContentLoaded', function() { 
     
     /* DESKTOP SUB MENU */
 
@@ -127,4 +127,58 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         });
     });
+    
+    Splide.defaults = {
+        type: 'loop',
+        pagination: false,
+        autoplay: true,
+        perMove: 1,
+        speed: 2000,
+        drag: false,
+    }
+
+    var mediumGalleries = document.getElementsByClassName( 'medium-gallery' );
+    for ( var i = 0; i < mediumGalleries.length; i++ ) {
+        new Splide( mediumGalleries[ i ], {
+            perPage: 7,
+            breakpoints: {
+                1200: {
+                    perPage: 6,
+                },
+                1000: {
+                    perPage: 5,
+                },
+                900: {
+                    perPage: 4,
+                },
+                580: {
+                    perPage: 3,
+                },
+                400: {
+                    perPage: 2,
+                },
+                280: {
+                    perPage: 1,
+                },
+            }
+        }).mount();
+    }
+
+    var largeGalleries = document.getElementsByClassName( 'large-gallery' );
+    for ( var i = 0; i < largeGalleries.length; i++ ) {
+        console.log(largeGalleries[ i ]);
+        new Splide( largeGalleries[ i ], {
+            perPage: 3,
+            breakpoints: {
+                940: {
+                    perPage: 2,
+                },
+                768: {
+                    direction: 'ttb',
+                    perPage: 3,
+                    height: 440
+                },
+            },
+        } ).mount(); 
+    }
 });

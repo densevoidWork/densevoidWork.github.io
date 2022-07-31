@@ -27,6 +27,33 @@
         ]
     },
     {
+        "title": "ASAP 4",
+        "description": "Мобильное устройство остановки падения",
+        "image": "/images/goods/large/good_1.jpg",
+        "price": 18990,
+        "groups": [
+            "mainLarge"
+        ]
+    },
+    {
+        "title": "ASAP 5",
+        "description": "Мобильное устройство остановки падения",
+        "image": "/images/goods/large/good_1.jpg",
+        "price": 28990,
+        "groups": [
+            "mainLarge"
+        ]
+    },
+    {
+        "title": "ASAP 6",
+        "description": "Мобильное устройство остановки падения",
+        "image": "/images/goods/large/good_1.jpg",
+        "price": 58990,
+        "groups": [
+            "mainLarge"
+        ]
+    },
+    {
         "title": "ACSENTON",
         "description": "Зажим под правую руку",
         "image": "/images/goods/list/good1.jpg",

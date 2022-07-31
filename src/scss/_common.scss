@@ -54,6 +54,14 @@ input {
     max-width: 1440px;
 }
 
+.row {
+    padding: 0 20px;
+
+    @media (max-width: $screensize-small-2) {
+        padding: 0 16px;
+    }
+}
+
 @media (max-width: 1440px) {
     h2 {
         font-size: 40px;
