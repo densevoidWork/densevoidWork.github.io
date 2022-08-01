@@ -1550,7 +1550,7 @@ input[type=radio]:not(:checked) + label:hover:before {
     color: #FFFFFF;
     height: 24px;
     width: 24px;
-    top: 28%;
+    top: calc(50% - 12px);
     font-size: 12px;
   }
   .goods-gallery .splide__arrow:hover {
@@ -2461,9 +2461,45 @@ input[type=radio]:not(:checked) + label:hover:before {
     margin: 32px 16px 20px;
   }
 }
+@media (max-width: 500px) {
+  .main-good-block {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+  }
+}
 .main-good-block .good-photos {
   display: flex;
   column-gap: 16px;
+}
+.main-good-block .good-photos .splide_container {
+  position: relative;
+}
+.main-good-block .good-photos .personal-gallery {
+  position: unset;
+  margin: 0 auto;
+}
+.main-good-block .good-photos .personal-gallery .splide__arrows {
+  position: unset;
+}
+.main-good-block .good-photos .personal-gallery .photo-preview {
+  height: 88px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 auto;
+  border: 1px solid #AEACA0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.main-good-block .good-photos .personal-gallery .photo-preview:hover {
+  border: 1px solid #43423F;
+}
+.main-good-block .good-photos .personal-gallery img {
+  max-width: 100%;
+  max-height: 100%;
 }
 .main-good-block .good-photos .good-photo-gallery {
   width: 100px;
@@ -2522,7 +2558,6 @@ input[type=radio]:not(:checked) + label:hover:before {
 @media (max-width: 768px) {
   .main-good-block .good-photos {
     flex-direction: column-reverse;
-    width: 50%;
     justify-content: flex-end;
   }
   .main-good-block .good-photos .good-photo-gallery {
@@ -2539,6 +2574,61 @@ input[type=radio]:not(:checked) + label:hover:before {
   }
   .main-good-block .good-photos .good-photo-gallery .scroll-btn {
     display: none;
+  }
+}
+@media (max-width: 500px) {
+  .main-good-block .good-photos {
+    width: 100%;
+  }
+}
+@media (width > 768px) {
+  .main-good-block .good-photos .personal-gallery {
+    position: relative;
+  }
+  .main-good-block .good-photos .personal-gallery .slides {
+    margin: 46px 0 0;
+  }
+  .main-good-block .good-photos .personal-gallery .splide__slide {
+    display: flex;
+    align-items: center;
+  }
+  .main-good-block .good-photos .personal-gallery .splide__arrow {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+  }
+  .main-good-block .good-photos .personal-gallery .splide__arrow i {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    background-color: #F2F2F2;
+    color: #AEACA0;
+    vertical-align: -4px;
+    display: inline-block;
+  }
+  .main-good-block .good-photos .personal-gallery .splide__arrow i::before {
+    vertical-align: -9px;
+    margin-left: 4px;
+  }
+  .main-good-block .good-photos .personal-gallery .splide__arrow .icon-arrow-300 {
+    display: none;
+  }
+  .main-good-block .good-photos .personal-gallery .splide__arrow.splide__arrow--next {
+    right: unset;
+    bottom: -46px;
+  }
+  .main-good-block .good-photos .personal-gallery .splide__arrow.splide__arrow--next i {
+    transform: rotate(90deg);
+  }
+  .main-good-block .good-photos .personal-gallery .splide__arrow.splide__arrow--prev {
+    left: unset;
+    top: 0px;
+  }
+  .main-good-block .good-photos .personal-gallery .splide__arrow.splide__arrow--prev i {
+    transform: rotate(-90deg);
+  }
+  .main-good-block .good-photos .personal-gallery .splide__arrow:hover {
+    background-color: unset;
   }
 }
 .main-good-block .good-base {
@@ -2685,6 +2775,14 @@ input[type=radio]:not(:checked) + label:hover:before {
 @media (max-width: 768px) {
   .main-good-block .good-base {
     width: 50%;
+    max-width: 250px;
+    min-width: 200px;
+  }
+}
+@media (max-width: 500px) {
+  .main-good-block .good-base {
+    text-align: center;
+    align-items: center;
   }
 }
 .main-good-block .good-flags {

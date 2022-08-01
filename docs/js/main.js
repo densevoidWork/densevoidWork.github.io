@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     Splide.defaults = {
         type: 'loop',
         pagination: false,
-        autoplay: true,
+        autoplay: false,
         perMove: 1,
         speed: 2000,
         drag: false,
@@ -166,8 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var largeGalleries = document.getElementsByClassName( 'large-gallery' );
     for ( var i = 0; i < largeGalleries.length; i++ ) {
-        console.log(largeGalleries[ i ]);
-        new Splide( largeGalleries[ i ], {
+        new Splide( largeGalleries[i], {
             perPage: 3,
             breakpoints: {
                 940: {
@@ -177,6 +176,40 @@ document.addEventListener('DOMContentLoaded', function() {
                     direction: 'ttb',
                     perPage: 3,
                     height: 440
+                },
+            },
+        } ).mount(); 
+    }
+
+    var personalGalleries = document.getElementsByClassName( 'personal-gallery' );
+    for ( var i = 0; i < personalGalleries.length; i++ ) {
+        new Splide( personalGalleries[i], {
+            perPage: 5,
+            width: 525,
+            direction: 'ttb',
+            height: 480,
+            breakpoints: {
+                770: {
+                    direction: 'ltr',
+                    height: 'auto',
+                    width: 315,
+                    perPage: 3,
+                },
+                670: {
+                    width: 210,
+                    perPage: 2,
+                },
+                500: {
+                    width: 420,
+                    perPage: 4,
+                },
+                450: {
+                    width: 315,
+                    perPage: 3,
+                },
+                350: {
+                    width: 210,
+                    perPage: 2,
                 },
             },
         } ).mount(); 

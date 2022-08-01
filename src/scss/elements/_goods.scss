@@ -191,7 +191,7 @@
             color: $white-color;
             height: 24px;
             width: 24px;
-            top: 28%;
+            top: calc(50% - 12px);
             font-size: 12px;
 
             &:hover {

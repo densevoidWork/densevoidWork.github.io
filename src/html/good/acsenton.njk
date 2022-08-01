@@ -10,17 +10,33 @@ eleventyNavigation:
 <div class="container">
     <div class="main-good-block">
         <div class="good-photos">
-            <div class="good-photo-gallery">
-                <div class="round-gray-btn scroll-btn back"><i class="icon icon-arrow-200"></i></div>                
-                <div class="gallery">
-                    {% for i in range(0, 5) %}
-                        <div class="photo-preview">
-                            <img src="/images/goods/small/3.jpg" />
-                        </div>
-                    {% endfor %}
+
+            <div class="splide_container">
+            <div class="splide goods-gallery personal-gallery" role="group">
+                <div class="splide__arrows">
+                    <button class="splide__arrow splide__arrow--prev">
+                        <i class="icon icon-arrow-200"></i>
+                        <i class="icon icon-arrow-300"></i>
+                    </button>
+                    <button class="splide__arrow splide__arrow--next">
+                        <i class="icon icon-arrow-200"></i>
+                        <i class="icon icon-arrow-300"></i>
+                    </button>
                 </div>
-                <div class="round-gray-btn scroll-btn forward"><i class="icon icon-arrow-200"></i></div>    
+                <div class="splide__track slides">
+                    <ul class="splide__list">
+                        {% for i in range(0, 6) %}
+                            <li class="splide__slide">
+                                <div class="photo-preview">
+                                    <img src="/images/goods/small/3.jpg" />
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
+            </div>
+            
             <div class="good-selected-photo">
                 <img src="/images/goods/full/image1.jpg" />
             </div>
