@@ -653,6 +653,10 @@ input[type=radio]:not(:checked) + label:hover:before {
   transform: rotate(90deg) scaleX(-1);
 }
 
+.margin-top-32 {
+  margin-top: 32px;
+}
+
 .margin-top-60 {
   margin-top: 60px;
 }
@@ -2452,7 +2456,7 @@ input[type=radio]:not(:checked) + label:hover:before {
 }
 
 .main-good-block {
-  margin: 60px 34px 17px;
+  margin: 60px 14px 17px;
   display: flex;
   column-gap: 16px;
 }
@@ -2801,6 +2805,96 @@ input[type=radio]:not(:checked) + label:hover:before {
   .main-good-block .good-flags {
     display: none;
   }
+}
+
+.good-description {
+  background-color: #FFFFFF;
+  border: 1px solid #D9D8D3;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 12px;
+  color: #43423F;
+}
+.good-description h2 {
+  font-size: 18px;
+  margin: 0;
+  color: #1D1C1B;
+  text-align: left;
+}
+
+.good-data-table-slider {
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.good-data-table-arrows {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.good-data-table-arrows .arrow {
+  width: 32px;
+  height: 32px;
+  background-color: #AEACA0;
+  opacity: 0.3;
+  border-radius: 100%;
+  position: absolute;
+  top: calc(50% - 16px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.good-data-table-arrows .arrow i {
+  color: #FFFFFF;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+.good-data-table-arrows .arrow-left {
+  left: 10px;
+  transform: scaleX(-1);
+}
+.good-data-table-arrows .arrow-right {
+  right: 10px;
+}
+
+.good-data-table-container {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #AEACA0;
+  display: inline-block;
+  margin-left: 16px;
+  margin-right: 16px;
+  position: relative;
+  z-index: -1;
+  transform: translateX(0px);
+  transition: transform 1s ease;
+}
+
+.good-data-table {
+  border-collapse: collapse;
+  width: calc(100% + 2px);
+  margin: -1px 0px -1px -1px;
+  font-size: 14px;
+  text-align: left;
+}
+.good-data-table tr:nth-child(2n) {
+  background-color: #EEEEEE;
+}
+.good-data-table th, .good-data-table td {
+  border: 1px solid #AEACA0;
+  height: 40px;
+  padding-left: 11px;
+}
+.good-data-table th {
+  min-width: 130px;
+}
+.good-data-table td {
+  min-width: 120px;
 }
 
 @font-face {

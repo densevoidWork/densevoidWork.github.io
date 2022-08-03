@@ -127,6 +127,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+
+    /* SPLIDE CAROUSEL */
     
     Splide.defaults = {
         type: 'loop',
@@ -137,8 +140,8 @@ document.addEventListener('DOMContentLoaded', function() {
         drag: false,
     }
 
-    var mediumGalleries = document.getElementsByClassName( 'medium-gallery' );
-    for ( var i = 0; i < mediumGalleries.length; i++ ) {
+    let mediumGalleries = document.getElementsByClassName( 'medium-gallery' );
+    for ( let i = 0; i < mediumGalleries.length; i++ ) {
         new Splide( mediumGalleries[ i ], {
             perPage: 7,
             breakpoints: {
@@ -164,8 +167,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }).mount();
     }
 
-    var largeGalleries = document.getElementsByClassName( 'large-gallery' );
-    for ( var i = 0; i < largeGalleries.length; i++ ) {
+    let largeGalleries = document.getElementsByClassName( 'large-gallery' );
+    for ( let i = 0; i < largeGalleries.length; i++ ) {
         new Splide( largeGalleries[i], {
             perPage: 3,
             breakpoints: {
@@ -181,8 +184,8 @@ document.addEventListener('DOMContentLoaded', function() {
         } ).mount(); 
     }
 
-    var personalGalleries = document.getElementsByClassName( 'personal-gallery' );
-    for ( var i = 0; i < personalGalleries.length; i++ ) {
+    let personalGalleries = document.getElementsByClassName( 'personal-gallery' );
+    for ( let i = 0; i < personalGalleries.length; i++ ) {
         new Splide( personalGalleries[i], {
             perPage: 5,
             width: 525,
@@ -213,5 +216,46 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
             },
         } ).mount(); 
+    }
+
+
+    /* SLIDE TABLE */
+
+    let slideTables = document.getElementsByClassName( 'slide-table' );
+
+    for ( let i = 0; i < slideTables.length; i++ ) {
+        let arrows = slideTables[i].querySelectorAll('.arrow');
+        let slideContainer = slideTables[i].querySelector('.good-data-table-container');
+        let containerWidth = slideContainer.offsetWidth;
+        let containerMargins = parseInt(window.getComputedStyle(slideContainer).marginLeft, 10) + parseInt(window.getComputedStyle(slideContainer).marginRight, 10);
+        let currentOffset = 0;
+
+        arrows.forEach(arrow => {
+            arrow.addEventListener("mousedown", function(event) {
+                const maxOffset = containerWidth - slideTables[i].offsetWidth + containerMargins;
+
+                if (arrow.classList.contains('arrow-right')) {
+                    currentOffset -= 100;
+                    currentOffset = Math.max(currentOffset, -maxOffset);
+                }
+                else if (arrow.classList.contains('arrow-left')) {
+                    currentOffset += 100;
+                    currentOffset = Math.min(currentOffset, 0);
+                }    
+
+                slideContainer.style.transform = "translateX(" + currentOffset + "px)";
+
+                let arrowRight = slideTables[i].querySelector('.arrow-right');
+                let arrowLeft = slideTables[i].querySelector('.arrow-left');
+
+                arrowRight.style.display = "flex";
+                arrowLeft.style.display = "flex";
+
+                console.log(currentOffset, -maxOffset);
+
+                if (currentOffset <= -maxOffset) arrowRight.style.display = "none"; 
+                if (currentOffset >= 0) arrowLeft.style.display = "none"; 
+            });
+        });
     }
 });

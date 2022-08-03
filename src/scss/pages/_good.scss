@@ -1,5 +1,5 @@
 .main-good-block {
-    margin: 60px 34px 17px;
+    margin: 60px 14px 17px;
     display: flex;
     column-gap: 16px;
 
@@ -396,5 +396,104 @@
         @media (max-width: $screensize-large-2) {
             display: none;
         }
+    }
+}
+
+.good-description {
+    background-color: $white-color;
+    border: 1px solid $gray-color-100;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 12px;
+    color: $gray-color-600;
+
+    h2 {
+        font-size: 18px;
+        margin: 0;
+        color: $gray-color-800;
+        text-align: left;
+    }
+}
+
+.good-data-table-slider {
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+}
+
+.good-data-table-arrows {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    .arrow {
+        width: 32px;
+        height: 32px;
+        background-color: $gray-color-200;
+        opacity: 0.3;
+        border-radius: 100%;
+        position: absolute;
+        top: calc(50% - 16px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        pointer-events: auto;
+
+        i {
+            color: $white-color;
+            margin-top: 4px;
+            margin-left: 4px;
+        }
+    }
+
+    .arrow-left {
+        left: 10px;
+        transform: scaleX(-1);
+    }
+
+    .arrow-right {
+        right: 10px;
+    }
+}
+
+.good-data-table-container {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid $gray-color-200;
+    display: inline-block;
+    margin-left: 16px;
+    margin-right: 16px;
+    position: relative;
+    z-index: -1;
+    transform: translateX(0px);
+    transition: transform 1s ease;
+}
+
+.good-data-table {
+    border-collapse: collapse;
+    width: calc(100% + 2px);
+    margin: -1px 0px -1px -1px;
+    font-size: 14px;
+    text-align: left;
+
+    tr:nth-child(2n) {
+        background-color: $gray-color-75;
+    }
+
+    th, td {
+        border: 1px solid $gray-color-200;
+        height: 40px;
+        padding-left: 11px;
+    }
+
+    th {
+        min-width: 130px;
+    }
+
+    td {
+        min-width: 120px;
     }
 }
