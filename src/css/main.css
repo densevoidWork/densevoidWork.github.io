@@ -2834,6 +2834,7 @@ input[type=radio]:not(:checked) + label:hover:before {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  top: 0;
 }
 .good-data-table-arrows .arrow {
   width: 32px;
@@ -2869,10 +2870,7 @@ input[type=radio]:not(:checked) + label:hover:before {
   display: inline-block;
   margin-left: 16px;
   margin-right: 16px;
-  position: relative;
-  z-index: -1;
   transform: translateX(0px);
-  transition: transform 1s ease;
 }
 
 .good-data-table {
@@ -2881,6 +2879,7 @@ input[type=radio]:not(:checked) + label:hover:before {
   margin: -1px 0px -1px -1px;
   font-size: 14px;
   text-align: left;
+  user-select: none;
 }
 .good-data-table tr:nth-child(2n) {
   background-color: #EEEEEE;

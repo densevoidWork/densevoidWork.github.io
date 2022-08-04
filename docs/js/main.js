@@ -230,32 +230,77 @@ document.addEventListener('DOMContentLoaded', function() {
         let containerMargins = parseInt(window.getComputedStyle(slideContainer).marginLeft, 10) + parseInt(window.getComputedStyle(slideContainer).marginRight, 10);
         let currentOffset = 0;
 
+        let isMoveRight = false;
+        let isMoveLeft = false;
+        let moveInterval;
+
         arrows.forEach(arrow => {
             arrow.addEventListener("mousedown", function(event) {
-                const maxOffset = containerWidth - slideTables[i].offsetWidth + containerMargins;
 
                 if (arrow.classList.contains('arrow-right')) {
-                    currentOffset -= 100;
-                    currentOffset = Math.max(currentOffset, -maxOffset);
+                    isMoveRight = true;
                 }
                 else if (arrow.classList.contains('arrow-left')) {
-                    currentOffset += 100;
-                    currentOffset = Math.min(currentOffset, 0);
-                }    
+                    isMoveLeft = true;
+                }
 
-                slideContainer.style.transform = "translateX(" + currentOffset + "px)";
-
-                let arrowRight = slideTables[i].querySelector('.arrow-right');
-                let arrowLeft = slideTables[i].querySelector('.arrow-left');
-
-                arrowRight.style.display = "flex";
-                arrowLeft.style.display = "flex";
-
-                console.log(currentOffset, -maxOffset);
-
-                if (currentOffset <= -maxOffset) arrowRight.style.display = "none"; 
-                if (currentOffset >= 0) arrowLeft.style.display = "none"; 
+                moveInterval = setInterval( function() {
+                    const moveSpeed = 4;
+                    if (isMoveRight) currentOffset -= moveSpeed;
+                    else if (isMoveLeft) currentOffset += moveSpeed;
+                    updateSliderPosition();
+                } , 8);
             });
         });
+        
+
+        let isDragged = false;
+        let prevPos = 0;
+
+        slideContainer.addEventListener("mousedown", function(event) {
+            if (!isDragged) {
+                prevPos = event.clientX;
+            } 
+            isDragged = true;
+        });
+        
+        window.addEventListener("mouseup", function(event) {
+            isDragged = false;
+            isMoveRight = false;
+            isMoveLeft = false;
+            window.clearInterval(moveInterval);
+        });
+        
+        window.addEventListener("mousemove", function(event) {
+            let curPos = event.clientX;
+
+            if (isDragged && prevPos != curPos) {
+                currentOffset -= prevPos - curPos;
+                prevPos = curPos;
+                updateSliderPosition(currentOffset);
+            }
+        });
+        
+        window.addEventListener("resize", function(event) {
+            updateSliderPosition();
+        });
+
+        function updateSliderPosition() {   
+            const maxOffset = containerWidth - slideTables[i].offsetWidth + containerMargins;
+
+            currentOffset = Math.max(currentOffset, -maxOffset);
+            currentOffset = Math.min(currentOffset, 0);
+
+            slideContainer.style.transform = "translateX(" + currentOffset + "px)";
+    
+            let arrowRight = slideTables[i].querySelector('.arrow-right');
+            let arrowLeft = slideTables[i].querySelector('.arrow-left');
+    
+            arrowRight.style.display = "flex";
+            arrowLeft.style.display = "flex";
+    
+            if (currentOffset <= -maxOffset) arrowRight.style.display = "none"; 
+            if (currentOffset >= 0) arrowLeft.style.display = "none"; 
+        }
     }
 });
