@@ -23,11 +23,36 @@ header {
     position: relative;
 }
 
+ul {
+    padding: 0;
+    margin: 0;
+}
+
 a {
     text-decoration: none;
 
     &:hover {
         text-decoration: underline;
+    }
+}
+
+h1 {
+    font-size: 64px;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 34px;
+
+    @media (max-width: $screensize-large) {
+
+        font-size: 52px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    @media (max-width: $screensize-small-2) {
+
+        margin-top: 24px;
+        font-size: 40px;
     }
 }
 
@@ -39,12 +64,62 @@ h2 {
     margin-top: 58px;
 }
 
-input {
+input[type=text], textarea {
     outline: none;
+    border: 1px solid $gray-color-100;
+    border-radius: 2px;
+    font-size: 14px;
+    color: $gray-color-200;
+    box-sizing: border-box;
+    padding: 0px 14px;
 
     &:focus {
-        border: 2px solid $gray-color-100  !important;
+        border: 1px solid $gray-color-200  !important;
     }
+}
+
+input[type=checkbox] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &+label {
+        cursor: pointer;
+        margin-left: 28px;
+        position: relative;
+        display: inline-block;
+
+        &::before {
+            background-color: $orange-color;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: 75% 75%;
+            border-radius: 2px;
+            content: "";
+            cursor: pointer;
+            display: block;
+            height: 20px;
+            left: -28px;
+            position: absolute;
+            width: 20px;
+            top: -2px;
+        }
+    }
+
+    &:checked+label {
+
+        &::before {
+            background-image: url("/images/ui/checkmark.svg");
+        }
+
+    }
+}
+
+textarea {
+    resize: none;
+    padding: 8px;
+    min-height: 78px;
+    line-height: 130%;
 }
 
 .container {
@@ -54,7 +129,7 @@ input {
     max-width: 1440px;
 }
 
-.row {
+.common-padding {
     padding: 0 20px;
 
     @media (max-width: $screensize-small-2) {
@@ -374,6 +449,15 @@ input[type=radio]:not(:checked)+label:hover:before {
     margin-top: 60px;
 }
 
+.margin-top-64 {
+    margin-top: 64px;
+}
+
 .margin-top-80 {
     margin-top: 80px;
+}
+
+.hiding-container {
+    overflow: hidden;
+    transition: height 0.5s ease-in 0s;
 }

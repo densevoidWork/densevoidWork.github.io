@@ -1,6 +1,6 @@
 <div class="big-goods-list">
     <div class="goods-list">
-        {% for good in goods | goodsByGroup(goodsGroup) %}
+        {% for good in goods | goodsByGroupFirstN(goodsGroup, goodsCount) %}
             <div>
                 <div class="desktop-view">    
                     <a class="good" href="#">

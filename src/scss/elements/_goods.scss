@@ -97,10 +97,20 @@
 
     @media (max-width: $screensize-medium) {
         display: flex;
-        padding: 0;
+        padding: 0 0 10px 0;
         max-width: none;
         justify-content: center;
         max-height: 140px;
+        border-bottom: 1px solid $gray-color-100;
+
+        &:hover {
+            border: 1px solid transparent;
+            border-bottom: 1px solid $gray-color-100;
+
+            .jump {
+                text-decoration: underline;
+            }
+        }
     
         .info-block {
             min-width: 60%;
@@ -400,7 +410,6 @@
 }
 
 .big-goods-list {
-    margin: 0 20px;
     flex-grow: 1;
 
     .goods-list {

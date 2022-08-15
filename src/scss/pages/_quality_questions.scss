@@ -1,0 +1,281 @@
+.quality-questions {
+    .field-container, .input-container, input[type=text], textarea {
+        width: 100%;
+    }
+
+    .page-text {
+        border: 1px solid $gray-color-100;
+        padding: 20px;
+        font-size: 18px;
+
+        @media (max-width: $screensize-medium) {
+            padding: 24px;
+            font-size: 16px;
+        }
+    }
+
+    p {
+        color: $gray-color-600;
+        margin: 28px 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    label {
+        font-size: 14px;
+        color: $gray-color-600;
+        margin-bottom: 8px;
+
+        @media (max-width: $screensize-small-2) {
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+    }
+
+    .required {
+
+        label {
+
+            &::after {
+                content: "*";
+                margin-left: 8px;
+                color: $orange-color;
+            }
+        }
+    }
+
+    input[type=text] {
+        height: 44px;
+    }
+
+    .icon-end{
+        display: inline-block;
+        position: relative;
+
+        &::before {
+            font-family: icons !important;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400 !important;
+            line-height: 1;
+            text-transform: none;
+
+            position: absolute;
+            right: 14px;
+            top: calc(50% - 8px);
+            width: 16px;
+            height: 16px;
+            color: $gray-color-600;
+        }
+        
+        input[type=text] {
+            padding-right: 38px;
+        }
+    }
+
+    .field-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .quality-questions-form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 35px;
+        margin-top: 28px;
+
+        .date-fields {
+            display: flex;
+            column-gap: 16px;
+            justify-content: center;
+
+            .field-container {
+                max-width: 224px;
+            }
+
+            @media (max-width: $screensize-small-2) {
+                column-gap: 8px;
+            }
+        }
+
+        .other-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 35px 16px;
+        }
+
+        .only-medium-gap {
+            display: none;
+        }
+
+        @media (max-width: $screensize-medium) {
+
+            .other-fields {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .only-medium-gap {
+                display: block;
+            }
+        }
+
+        @media (max-width: $screensize-small-2) {
+            row-gap: 16px;
+
+            .other-fields {
+                grid-template-columns: 1fr;
+                grid-gap: 16px;
+            }
+
+            .only-medium-gap {
+                display: none;
+            }
+        }
+
+        .final-part {
+            color: $gray-color-600;
+            font-size: 18px;
+
+            a {
+                color: $gray-color-600;
+                text-decoration: underline;
+            }
+
+            .add-attachment {
+                width: 50%;
+                float: left;
+
+                .icon-clip {
+                    color: $gray-color-200;
+                    margin-right: 12px;
+                    font-size: 16px;
+                }
+            }
+
+            .about-star {
+                width: 50%;
+                float: right;
+                padding-left: 10px;
+                box-sizing: border-box;
+                text-align: right;
+                font-size: 14px;
+
+                .orange {
+                    color: $orange-color;
+                }
+            }
+
+            .user-confirm-field {
+                clear: both;
+                margin-top: 65px;
+                text-align: center;
+                position: relative;
+
+                label {
+                    font-size: 18px;
+
+                    a {
+                        text-decoration: none;
+                        color: $orange-color;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .submit-btn {
+                text-align: center;
+                padding-top: 16px;
+
+                button {
+                    font-size: 20px;
+                    min-width: 216px;
+                    min-height: 52px;
+                    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+                    border-radius: 4px;
+                }
+            }
+
+            .print-blank {
+                text-align: center;
+                margin-top: 16px;
+
+                i {
+                    margin-right: 10px;
+                    color: $gray-color-200;
+                    vertical-align: -3px;
+                }
+            }
+
+            @media (max-width: $screensize-medium) {
+                .add-attachment {
+                    float: none;
+                    width: auto;
+                    text-align: center;
+                }
+
+                .about-star {
+                    float: left;
+                    padding-left: 0;
+                    text-align: left;
+                    margin-top: 32px;
+                }
+
+                .user-confirm-field {
+                    float: right;
+                    width: 50%;
+                    margin-top: 32px;
+                    clear: unset;
+                    text-align: left;
+
+                    label {
+                        font-size: 16px;
+                    }
+                }
+                
+                .submit-btn {
+                    clear: both;
+                    padding-top: 24px;
+                }
+
+                .print-blank {
+                    margin-top: 24px;
+                }
+            }
+    
+            @media (max-width: $screensize-small-2) {
+                .add-attachment {
+                    text-align: left;
+                }
+
+                .about-star {
+                    font-size: 16px;
+                    float: none;
+                    width: auto;
+                }
+
+                .user-confirm-field {
+                    float: none;
+                    width: auto;
+                }
+                
+                .submit-btn {
+                    padding-top: 16px;
+                }
+
+                .print-blank {
+                    margin-top: 16px;
+                }
+            }
+        }
+    }
+}

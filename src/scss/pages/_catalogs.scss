@@ -1,0 +1,42 @@
+.catalogs {
+
+    $catalog-width: 332px;
+    $catalog-height: 470px;
+
+    .catalogs-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, $catalog-width);
+        justify-content: space-evenly;
+        grid-gap: 60px 16px;
+
+        .catalog-element {
+            min-width: $catalog-width;
+            text-align: center;
+            box-sizing: border-box;
+
+            .catalog-preview {
+                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+                max-width: 100%;
+                max-height: 470px;
+            }
+            .name-and-link{
+                font-size: 18px;
+                color: $orange-color;
+                margin-top: 32px;
+                display: block;
+            }
+        }
+    }
+}
+
+.brochures {
+    margin-top: 120px;
+
+    @media (max-width: $screensize-large) {
+        margin-top: 64px;
+    }
+
+    @media (max-width: $screensize-small-2) {
+        margin-top: 96px;
+    }
+}

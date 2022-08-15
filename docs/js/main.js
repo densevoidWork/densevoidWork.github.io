@@ -234,6 +234,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let isMoveLeft = false;
         let moveInterval;
 
+        updateSlider();
+
         arrows.forEach(arrow => {
             arrow.addEventListener("mousedown", function(event) {
 
@@ -245,11 +247,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 moveInterval = setInterval( function() {
-                    const moveSpeed = 4;
+                    const moveSpeed = 5;
                     if (isMoveRight) currentOffset -= moveSpeed;
                     else if (isMoveLeft) currentOffset += moveSpeed;
-                    updateSliderPosition();
-                } , 8);
+                    updateSlider();
+                } , 10);
             });
         });
         
@@ -277,15 +279,15 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isDragged && prevPos != curPos) {
                 currentOffset -= prevPos - curPos;
                 prevPos = curPos;
-                updateSliderPosition(currentOffset);
+                updateSlider(currentOffset);
             }
         });
         
         window.addEventListener("resize", function(event) {
-            updateSliderPosition();
+            updateSlider();
         });
 
-        function updateSliderPosition() {   
+        function updateSlider() {   
             const maxOffset = containerWidth - slideTables[i].offsetWidth + containerMargins;
 
             currentOffset = Math.max(currentOffset, -maxOffset);
@@ -303,4 +305,55 @@ document.addEventListener('DOMContentLoaded', function() {
             if (currentOffset >= 0) arrowLeft.style.display = "none"; 
         }
     }
+
+
+    /* COMMON HIDING ELEMENT */
+
+    let hidingButtons = document.querySelectorAll('[data-hide-button-for]');
+
+    hidingButtons.forEach(button => {
+        let idOfHidingElement = button.getAttribute("data-hide-button-for");
+        let hidingElement = document.getElementById(idOfHidingElement);
+        hidingElement.outerHTML = "<div class=\"hiding-container\">" + hidingElement.outerHTML + "</div>";
+        hidingElement = document.getElementById(idOfHidingElement);
+        let hidingContainer = hidingElement.parentElement;
+        let isOpened = hidingContainer.classList.contains("opened");
+        updateContainer();
+
+        button.addEventListener("click", function(event) {
+            isOpened = this.classList.toggle("opened");
+            if (isOpened) hidingContainer.classList.add("opened");
+            else hidingContainer.classList.remove("opened");
+            updateContainer();
+        });
+
+        function updateContainer() {
+            let elementHeight = hidingElement.clientHeight;
+
+            if (isOpened) {
+                hidingContainer.style.height = elementHeight + "px";
+            }
+            else {
+                hidingContainer.style.height = 0;   
+            }
+        }
+    });
+
+
+    /* SHOW NEWS */
+    
+    let newsBlocks = document.querySelectorAll('.news-preview-block');
+    
+    newsBlocks.forEach(newsBlock => {
+        //newsBlock.style.height = newsBlock.clientHeight + "px";
+
+        let newsElement = newsBlock.querySelector('.news-element');
+        console.log(newsElement);
+        let showMoreBtn = newsBlock.querySelector('.show-more-btn');
+        showMoreBtn.addEventListener('click', function(event) {
+            //newsBlock.style.height = newsBlock.clientHeight + "px";
+            //newsBlock.classList.toggle('showed-fully');
+            //newsBlock.style.height = newsBlock.clientHeight + "px";
+        });
+    });
 });

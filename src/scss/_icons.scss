@@ -1,8 +1,8 @@
 @font-face {
     font-family: "icons";
-    src: url("./../fonts/icons/icons.eot?03c92bd02db2e62e7622c6bbc5350da1#iefix") format("embedded-opentype"),
-url("./../fonts/icons/icons.woff2?03c92bd02db2e62e7622c6bbc5350da1") format("woff2"),
-url("./../fonts/icons/icons.woff?03c92bd02db2e62e7622c6bbc5350da1") format("woff");
+    src: url("./../fonts/icons/icons.eot?4cffe14f3995970b2257a872a390aeb9#iefix") format("embedded-opentype"),
+url("./../fonts/icons/icons.woff2?4cffe14f3995970b2257a872a390aeb9") format("woff2"),
+url("./../fonts/icons/icons.woff?4cffe14f3995970b2257a872a390aeb9") format("woff");
 }
 
 i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -16,21 +16,30 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arrow-100:before {
+.icon-arrow-200:before {
     content: "\f101";
 }
-.icon-arrow-200:before {
+.icon-arrow-300:before {
     content: "\f102";
 }
-.icon-arrow-300:before {
+.icon-bug:before {
     content: "\f103";
 }
-.icon-bug:before {
+.icon-calendar:before {
     content: "\f104";
 }
-.icon-minus:before {
+.icon-checkmark:before {
     content: "\f105";
 }
-.icon-plus:before {
+.icon-clip:before {
     content: "\f106";
+}
+.icon-minus:before {
+    content: "\f107";
+}
+.icon-plus:before {
+    content: "\f108";
+}
+.icon-printer:before {
+    content: "\f109";
 }

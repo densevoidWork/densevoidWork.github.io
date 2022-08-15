@@ -1,0 +1,23 @@
+---
+eleventyNavigation:
+    key: Blanks
+    parent: Main
+    title: Бланки
+---
+<div class="container">
+    <div class="common-padding">
+        <div class="blanks">
+            <h1>Бланки для проверки снаряжения</h1>
+            <div class="blanks-list">                
+                {% for blank in range(0, 18) %}                    
+                    <div class="blank-element">
+                        <img class="blank-preview" src="/images/goods/blanks/blank_img.jpg" />
+                        <div class="blank-title">PRO TRAXION</div>
+                        <div class="blank-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt.</div>
+                        <a class="download-link" href="#">Скачать pdf (0.61 Мб)</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

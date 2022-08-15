@@ -1,0 +1,32 @@
+---
+eleventyNavigation:
+    key: Catalogs
+    parent: Main
+    title: Каталоги
+---
+<div class="container">
+    <div class="common-padding">
+        <div class="catalogs">
+            <h1>Каталоги Petzl в формате PDF</h1>
+            <div class="catalogs-list">                
+                {% for blank in range(0, 8) %}                    
+                    <div class="catalog-element">
+                        <img class="catalog-preview" src="/images/other/catalogs/catalog.jpg" />
+                        <a class="name-and-link" href="#">Скачать - Работа на вертикали и освещение 2022</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="catalogs brochures">
+            <h1>Брошюры Petzl ACCESS BOOK</h1>
+            <div class="catalogs-list">                
+                {% for blank in range(0, 4) %}                    
+                    <div class="catalog-element">
+                        <img class="catalog-preview" src="/images/other/catalogs/catalog2.jpg" />
+                        <a class="name-and-link" href="#">ACCESS BOOK №1: На скалодроме</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

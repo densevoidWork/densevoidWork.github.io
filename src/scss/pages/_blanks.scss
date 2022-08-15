@@ -1,0 +1,44 @@
+.blanks {
+
+    $blank-width: 216px;
+    $blank-height: 249px;
+
+    .blanks-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, $blank-width);
+        justify-content: space-evenly;
+        grid-gap: 24px 16px;
+
+        .blank-element {
+            @include select-border;
+            min-width: $blank-width;
+            text-align: center;
+            padding: 16px;
+            box-sizing: border-box;
+
+            .blank-preview {
+                max-width: 100%;
+                max-height: 64px;
+            }
+
+            .blank-title {
+                font-size: 18px;
+                color: $gray-color-800;
+                margin-top: 16px;
+            }
+
+            .blank-description {
+                font-size: 14px;
+                color: $gray-color-200;
+                margin-top: 8px;
+            }
+
+            .download-link {
+                font-size: 14px;
+                color: $orange-color;
+                margin-top: 8px;
+                display: block;
+            }
+        }
+    }
+}

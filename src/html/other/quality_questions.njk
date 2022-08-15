@@ -1,0 +1,86 @@
+---
+eleventyNavigation:
+    key: QualityQuestions
+    parent: Main
+    title: Вопросы по качеству
+---
+<div class="container">
+    <div class="common-padding">
+        <div class="quality-questions">
+            <h1>Вопросы по качеству снаряжения</h1>
+            <div class="page-text">
+                <p>Если у Вас возникли какие-либо вопросы по качеству используемого Вами снаряжения PETZL (снаряжение вышло из строя, что-то сломалось, порвалось или просто перестало работать), Вы можете сообщить нам об этом, используя специальную форму ниже.</p>
+                <p>Пожалуйста, заполните все поля формы, приложите фотографии Вашего неисправного снаряжения и нажмите кнопку «Отправить». В течение семи дней Вам ответит бренд-менеджер соответствующего направления и разъяснит дальнейшие действия.</p>
+            </div>
+            <form class="quality-questions-form">
+                <div class="date-fields">
+                    <div class="field-container required">
+                        <label for="buy-date">Дата покупки</label>
+                        <div class="input-container icon icon-end icon-calendar"><input type="text" id="buy-date" placeholder="дд.мм.гггг"></div>
+                    </div>
+                    <div class="field-container required">
+                        <label for="first-use-date">Дата первого использования</label>
+                        <div class="input-container icon icon-end icon-calendar"><input type="text" id="first-use-date" placeholder="дд.мм.гггг"></div>
+                    </div>
+                </div>    
+                <div class="other-fields">
+                    <div class="field-container required">
+                        <label for="fio-field">ФИО</label>
+                        <div class="input-container"><input type="text" id="fio-field"></div>
+                    </div>
+                    <div class="field-container required">
+                        <label for="email-field">E-mail</label>
+                        <div class="input-container"><input type="text" id="email-field"></div>
+                    </div>
+                    <div class="field-container required">
+                        <label for="phone-field">Контактный телефон</label>
+                        <div class="input-container"><input type="text" id="phone-field"></div>
+                    </div>
+                    <div class="field-container required">
+                        <label for="post-field">Почтовый адрес и индекс</label>
+                        <div class="input-container"><input type="text" id="post-field"></div>
+                    </div>
+                    <div class="field-container required">
+                        <label for="model-field">Модель изделия PETZL и его артикул</label>
+                        <div class="input-container"><input type="text" id="model-field"></div>
+                    </div>
+                    <div class="field-container required">
+                        <label for="buy-place-field">Название и адрес места приобретения изделия PETZL </label>
+                        <div class="input-container"><input type="text" id="buy-place-field"></div>
+                    </div>
+                    <div class="field-container">
+                        <label for="id-field">Индивидуальный номер изделия</label>
+                        <div class="input-container"><input type="text" id="id-field"></div>
+                    </div>
+                    <div class="only-medium-gap"></div>
+                    <div class="field-container required">
+                        <label for="story-field">Краткая история использования изделия</label>
+                        <div class="input-container"><textarea id="story-field"></textarea></div>
+                    </div>
+                    <div class="field-container required">
+                        <label for="problem-field">Описание неисправности:</label>
+                        <div class="input-container"><textarea id="problem-field"></textarea></div>
+                    </div>
+                </div>      
+                <div class="final-part">
+                    <div class="add-attachment">
+                        <i class="icon icon-clip"></i><a href="#">Прикрепить фото изделия</a> (.jpg .png .gif), не больше 5Mb
+                    </div>
+                    <div class="about-star">
+                        Поля, отмеченные знаком <span class="orange">*</span> обязательны к заполнению
+                    </div>
+                    <div class="user-confirm-field">
+                        <input type="checkbox" id="user-confirm">
+                        <label for="user-confirm">Я согласен на <a href="#">обработку персональных данных</a></label>
+                    </div>
+                    <div class="submit-btn">
+                        <button class="btn orange" type="submit">Отправить</button>
+                    </div>
+                    <div class="print-blank">
+                        <i class="icon icon-printer"></i><a href="#">Распечатать бланк</a>
+                    </div>
+                </div>                      
+            </form>
+        </div>
+    </div>
+</div>

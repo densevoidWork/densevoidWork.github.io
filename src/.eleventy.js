@@ -24,4 +24,9 @@ module.exports = function(eleventyConfig) {
         }
         return [];
     });
+
+    eleventyConfig.addNunjucksFilter("goodsByGroupFirstN", function(goods, group, count) {
+        goods = eleventyConfig.getFilter("goodsByGroup")(goods, group);
+        return goods.slice(0, count);
+    });
 };

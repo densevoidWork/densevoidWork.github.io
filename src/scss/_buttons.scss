@@ -16,8 +16,7 @@
     white-space: nowrap;
 
     &:hover {
-        text-decoration: none;
-        background: $yellow-hover-color;
+        text-decoration: underline;
     }
 
     &.orange {
