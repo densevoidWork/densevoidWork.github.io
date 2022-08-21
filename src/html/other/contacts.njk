@@ -1,0 +1,109 @@
+---
+eleventyNavigation:
+    key: Contacts
+    parent: Main
+    title: Контакты
+---
+<div class="container">
+    <div class="common-padding">
+        <div class="contacts">
+            <h1>Контакты</h1>
+            <div class="persons-list">        
+                {% for id in range(0, 8) %}
+                <div class="person">
+                    <img class="photo" src="/images/contacts/contact_1.jpg" />
+                    <div class="name">Овцынов Михаил</div>
+                    <div class="position">Директор управления торговли "ПЕТЦЛЬ"</div>
+                    <div class="phone">+7 (495) 232-97-79, доб. 123</div>
+                    <div class="mail">m.ovtsynov@petzl.ru</div>
+                    <div class="certificates">
+                        <div class="certificates-button" data-hide-button-for="certificates-list-{{ id }}">Сертификаты<i class="icon icon-arrow-200"></i></div>
+                        <div class="certificates-list-position">
+                            <div id="certificates-list-{{ id }}" class="certificates-list">
+                                <ul>
+                                    <li><a href="#">Менеджмент безопасности труда</a></li>
+                                    <li><a href="#">Сертификат 1</a></li>
+                                    <li><a href="#">Сертификат 2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="info-container distributor">
+                <div class="info-text">Эксклюзивным дистрибьютором продукции PETZL в России, Армении, Белоруссии и в Казахстане является <span class="bold-text">компания "Эталон"</span></div>
+                <div class="buttons-block">
+                    <a class="ic-but" href="#">Сертификаты</a>
+                    <a class="ic-but" href="#">Реквизиты</a>
+                </div>
+            </div>
+
+            <div class="info-container petz-shop">
+                <div class="info-text">Интернет-магазин PETZL.RU - <span class="bold-text">ИП Безручко Е.В.</span></div>
+                <div class="buttons-block">
+                    <a class="ic-but" href="#">Реквизиты</a>
+                </div>
+            </div>
+
+            <div class="mini-info-blocks">
+                <div class="info-container petz-shop-moskow">
+                    <div class="info-text">Фирменный магазин PETZL в Москве</div>
+                    <div class="buttons-block">
+                        <a class="ic-but" href="#">Контакты</a>
+                    </div>
+                </div>
+
+                <div class="info-container service-moskow">
+                    <div class="info-text">Сервисный центр PETZL в Москве</div>
+                    <div class="buttons-block">
+                        <a class="ic-but" href="#">Контакты</a>
+                    </div>
+                </div>
+
+                <div class="info-container quality-questions">
+                    <div class="info-text">Вопросы по качеству</div>
+                    <div class="buttons-block">
+                        <a class="ic-but" href="#">Задать вопрос</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-container ask-question">
+                <div class="aq-header">
+                    <h2>Задать вопрос</h2>
+                    <span>Поля, отмеченные знаком <span class="orange-text">*</span> обязательны к заполнению</span>
+                </div>
+                <div class="aq-row">
+                    <div class="field-container required">
+                        <label for="name">Ваше имя</label>
+                        <div class="input-container"><input type="text" id="name"></div>
+                    </div>                    
+                    <div class="field-container required">
+                        <label for="email">E-mail</label>
+                        <div class="input-container"><input type="text" id="email"></div>
+                    </div>
+                </div>
+                <div class="aq-row">
+                    <div class="field-container">
+                        <label for="theme">Тема сообщения</label>
+                        <div class="input-container"><input type="text" id="theme"></div>
+                    </div>                    
+                    <div class="field-container required">
+                        <label for="message">Сообщение</label>
+                        <div class="input-container"><textarea id="message"></textarea></div>
+                    </div>
+                </div>
+                <div class="aq-footer">
+                    <div class="user-confirm-field">
+                        <input type="checkbox" id="user-confirm">
+                        <label for="user-confirm">Я согласен на <a href="#">обработку персональных данных</a></label>
+                    </div>
+                    <div class="submit-btn">
+                        <button class="btn orange" type="submit">Отправить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

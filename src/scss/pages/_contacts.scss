@@ -1,0 +1,215 @@
+.contacts {
+    .persons-list {
+        display: grid;
+        grid-template-columns: auto auto auto;    
+        grid-row-gap: 55px;
+    }
+
+    .person {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+        font-size: 18px;
+        align-items: center;
+
+        .photo {
+            width: 448px;
+            height: 448px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .name {
+            color: $gray-color-800;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .position {
+            color: $gray-color-600;
+        }
+
+        .phone {
+            color: $orange-color;
+        }
+
+        .mail {
+            color: $orange-color;
+        }
+
+        .certificates {
+            position: relative;
+            text-align: center;
+            width: 100%;
+
+            .certificates-list-position {
+                position: absolute;
+                top: calc(100% + 10px);
+                left: 12%;
+                width: 76%;                
+            }
+
+            .certificates-button {
+                color: $gray-color-200;
+                text-decoration: underline;
+                cursor: pointer;
+
+                i {
+                    transform: rotate(90deg);
+                    display: inline-block;
+                    font-size: 13px;
+                    margin-left: 13px;
+                    transition: transform 0.5s ease-in;
+                }
+
+                &.opened {
+
+                    i {
+                        transform: rotate(90deg) scaleX(-1);
+                    }
+                }
+            }
+    
+            .certificates-list {
+                border: 1px solid $gray-color-100;
+                background-color: $white-color;
+                text-align: center;
+    
+                ul {
+                    list-style-type: none;
+                }
+
+                li {
+                    font-size: 18px;
+                    color: $gray-color-800;
+                    border-bottom: 1px solid $gray-color-100;
+
+                    a {
+                        padding: 12px 18px;
+                        display: block;
+                        color: $gray-color-800;
+                    }
+
+                    &:hover {
+                        background-color: #f7f7f7;
+                    }
+                }
+            }
+        }
+    }
+
+    .distributor {
+        margin-top: 100px;
+    }
+
+    .petz-shop {
+        margin-top: 60px;
+    }
+
+    .info-container {
+        border-radius: 4px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .info-text {
+            font-size: 24px;
+            text-align: center;
+            line-height: 140%;
+        }
+
+        .buttons-block {
+            margin-top: 32px;
+            display: flex;
+            column-gap: 32px;
+            justify-content: center;
+        }
+
+        .bold-text {
+            font-weight: 900;
+            white-space: nowrap;
+        }
+
+        .ic-but {
+            border: $gray-color-100;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            color: $gray-color-200;
+            padding: 15px 50px;
+            display: inline-block;
+            font-size: 20px;
+        }
+    }
+
+    .mini-info-blocks {
+        display: flex;
+        margin-top: 60px;
+        justify-content: space-between;
+
+        .info-container {
+            width: 448px;
+            box-sizing: border-box;
+        }
+    }
+
+    .ask-question {
+        max-width: 976px;
+        margin: 100px auto 0;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+
+        .aq-header {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 16px;
+
+            h2 {
+                font-size: 48px;
+            }
+
+            span {
+                font-size: 14px;
+            }
+        }
+
+        .aq-row {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 16px;
+        }
+
+        .orange-text {
+            color: $orange-color;
+        }
+
+        .field-container {
+            width: 100%;
+
+            input, textarea {
+                width: 100%;
+            }
+        }
+
+        .aq-footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 16px;
+            font-size: 18px;
+
+            .submit-btn {
+
+                button {
+                    font-size: 20px;
+                    min-width: 216px;
+                    min-height: 52px;
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+}
