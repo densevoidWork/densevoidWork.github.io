@@ -532,40 +532,6 @@
     .mobile-view {
         display: none;
     } 
-
-    .navigation {
-        margin: 27px auto 38px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .pages {
-            display: flex;
-            color: $gray-color-200;
-            font-size: 18px;
-            margin-top: 34px;
-            column-gap: 20px;
-
-            .page {
-                min-width: 24px;
-                min-height: 24px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-            }
-
-            .right-arrow {
-                cursor: pointer;
-            }
-
-            .page.current {
-                border-radius: 100%;
-                background-color: $yellow-color;
-                color: $white-color;
-            }
-        }
-    }
 }
 
 @media (max-width: 1336px) {

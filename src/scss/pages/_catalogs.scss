@@ -1,16 +1,15 @@
 .catalogs {
 
-    $catalog-width: 332px;
-    $catalog-height: 470px;
+    --catalog-width: 332px;
 
     .catalogs-list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, $catalog-width);
-        justify-content: space-evenly;
+        grid-template-columns: repeat(auto-fill, var(--catalog-width));
+        justify-content: center;
         grid-gap: 60px 16px;
 
         .catalog-element {
-            min-width: $catalog-width;
+            min-width: var(--catalog-width);
             text-align: center;
             box-sizing: border-box;
 
@@ -19,12 +18,36 @@
                 max-width: 100%;
                 max-height: 470px;
             }
+
             .name-and-link{
                 font-size: 18px;
                 color: $orange-color;
                 margin-top: 32px;
                 display: block;
             }
+        }
+    }
+
+    @media (max-width: 1080px) {
+        --catalog-width: 234px;
+
+        .catalogs-list {
+            grid-gap: 32px 16px;
+
+            .catalog-element {
+                
+                .name-and-link{
+                    margin-top: 16px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 525px) {
+        --catalog-width: 168px;
+
+        .catalogs-list {
+            grid-gap: 24px 8px;
         }
     }
 }

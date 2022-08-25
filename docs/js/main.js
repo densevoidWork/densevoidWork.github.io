@@ -25,66 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-    /* MOBILE SUB MENU */
-
-    let mobileMenuButton = document.querySelector('.middlebar .hamburger-btn');
-    let mobileMenuMainCategories = document.querySelectorAll('.mobile-navbar .main-category.parent');
-    let mobileSubmenuGrower = document.querySelector('.mobile-navbar .mobile-submenu-grower');
-
-    mobileMenuButton.addEventListener("click", function(event) {
-        let isOpened = toggleMobileMenuStatus();
-
-        if (isOpened) {
-            let height = mobileSubmenuGrower.querySelector(".mobile-submenu").clientHeight;
-            mobileSubmenuGrower.style.height = height + "px";
-        }
-        else {
-            mobileSubmenuGrower.style.height = 0;
-        }
-    });
-
-    mobileMenuMainCategories.forEach(element => {
-        element.addEventListener("click", function(event) {
-            openMainMobileCategory(element);
-        });
-    });
-
-
-    function toggleMobileMenuStatus() {    
-        let isMenuOpened = mobileMenuButton.classList.contains("opened");
-
-        if (!isMenuOpened) {
-            mobileMenuButton.classList.add("opened");
-        }
-        else {
-            mobileMenuButton.classList.remove("opened");
-        }
-
-        return !isMenuOpened;
-    }
-
-
-    function openMainMobileCategory(element) {
-        let isOpened = element.classList.toggle("opened");
-        let categoriesListGrower = element.querySelector(".categories-list-grow");
-
-        let elementHeight = element.querySelector(".categories-list").clientHeight;
-        let containerHeight = mobileSubmenuGrower.querySelector(".mobile-submenu").clientHeight;
-
-        if (isOpened) {
-            mobileSubmenuGrower.style.height = containerHeight + elementHeight + "px";
-            categoriesListGrower.style.height = elementHeight + "px";
-        }
-        else {
-            mobileSubmenuGrower.style.height = containerHeight - elementHeight + "px";
-            categoriesListGrower.style.height = 0;   
-        }
-    }
-
-
-
     /* HIDING MENU */
 
+    /*
     let hidingMenus = document.querySelectorAll('.hiding-menu');
 
     hidingMenus.forEach(hideMenu => {
@@ -108,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+    */
 
 
     /* HIDING TEXT */
@@ -311,7 +255,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let hidingButtons = document.querySelectorAll('[data-hide-button-for]');
 
+    console.log(hidingButtons);
+
     hidingButtons.forEach(button => {
+        button = document.querySelector('[data-hide-button-for="' + button.getAttribute('data-hide-button-for') + '"]');
         let idOfHidingElement = button.getAttribute("data-hide-button-for");
         let hidingElement = document.getElementById(idOfHidingElement);
         hidingElement.outerHTML = "<div class=\"hiding-container\">" + hidingElement.outerHTML + "</div>";
@@ -330,13 +277,35 @@ document.addEventListener('DOMContentLoaded', function() {
         function updateContainer() {
             let elementHeight = hidingElement.clientHeight;
 
+            let parentHidingContainer = hidingContainer.parentElement.closest(".hiding-container");
+            let isParentOpened = false;
+
+            if (parentHidingContainer) {                
+                isParentOpened= parentHidingContainer.classList.contains("opened");
+            }
+
             if (isOpened) {
                 hidingContainer.style.height = elementHeight + "px";
+                if (isParentOpened) {
+                    parentHidingContainer.style.height = parentHidingContainer.firstChild.clientHeight + elementHeight + "px";
+                }
             }
             else {
-                hidingContainer.style.height = 0;   
-            }
+                hidingContainer.style.height = 0;  
+                if (isParentOpened) {
+                    parentHidingContainer.style.height = (parentHidingContainer.firstChild.clientHeight - elementHeight) + "px"; 
+                } 
+            }            
         }
+    });
+
+
+    /* ZOOM IMAGE */
+
+    let zoomImages = document.querySelectorAll('.zoom-image');
+
+    zoomImages.forEach(zoomImage => {
+    
     });
 
 
@@ -348,12 +317,11 @@ document.addEventListener('DOMContentLoaded', function() {
         //newsBlock.style.height = newsBlock.clientHeight + "px";
 
         let newsElement = newsBlock.querySelector('.news-element');
-        console.log(newsElement);
         let showMoreBtn = newsBlock.querySelector('.show-more-btn');
         showMoreBtn.addEventListener('click', function(event) {
             //newsBlock.style.height = newsBlock.clientHeight + "px";
             //newsBlock.classList.toggle('showed-fully');
             //newsBlock.style.height = newsBlock.clientHeight + "px";
-        });
+        });        
     });
 });

@@ -1,8 +1,15 @@
 .contacts {
+    --contact-width: 448px;
+
+    @media (max-width: 1200px) {
+        --contact-width: 343px;
+    }
+
     .persons-list {
         display: grid;
-        grid-template-columns: auto auto auto;    
-        grid-row-gap: 55px;
+        grid-template-columns: repeat(auto-fill, var(--contact-width));    
+        grid-gap: 55px 16px;
+        justify-content: center;
     }
 
     .person {
@@ -13,8 +20,7 @@
         align-items: center;
 
         .photo {
-            width: 448px;
-            height: 448px;
+            width: 100%;
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }

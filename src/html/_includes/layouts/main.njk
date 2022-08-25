@@ -29,7 +29,7 @@
                 <div class="container">
                     <div class="first-level">
 
-                        <div class="hamburger-btn">
+                        <div class="hamburger-btn" data-hide-button-for="mobile-main-menu">
                             <img class="first-line" src="{{ '/images/hamburger-line.svg' | url }}"/>
                             <img class="second-line" src="{{ '/images/hamburger-line.svg' | url }}"/>
                         </div>
@@ -95,100 +95,47 @@
             </div>       
 
             <div class="mobile-navbar">
-                <div class="mobile-submenu-grower">
-                    <div class="mobile-submenu">
-                        <div class="main-categories-list">
-                            {% for item in menu %}
-                                {% set parent = "" %}
+                <div id="mobile-main-menu" class="mobile-submenu">
+                    <div class="main-categories-list">
+                        {% set i = 0 %}
+                        {% for item in menu %}
+                            {% set i = i + 1 %}
+                            {% set parent = "" %}
 
-                                {% if item.content|length %}
-                                    {% set parent = " parent" %}
-                                {% endif %}
+                            {% if item.content|length %}
+                                {% set parent = " parent" %}
+                            {% endif %}
 
-                                <div class="main-category{{ parent }}">
-                                    <div class="main-title">
-                                        {{ item.title }}
-                                    </div>
-
-                                    <div class="categories-list-grow">
-                                        <div class="categories-list">
-                                            {% for category in item.content %}
-                                                {% if category.mobileImage %}                                                    
-                                                    {% set mobileImage = category.mobileImage %}
-                                                {% else %}                             
-                                                    {% set mobileImage = "/images/goods/categories/category-1.png" %}
-                                                {% endif %}
-
-                                                <a class="category" href="{{ category.page }}">
-                                                    <img class="icon" src="{{ mobileImage | url }}" />
-                                                    <div class="title">{{ category.title }}</div>
-                                                </a>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endfor %}
-
-                            <div class="main-category parent">
+                            <div class="main-category{{ parent }}" data-hide-button-for="category_{{ i }}">
                                 <div class="main-title">
-                                    Спорт
+                                    {{ item.title }}
                                 </div>
-                                <div class="categories-list-grow">
-                                    <div class="categories-list">
-                                        <a class="category" href="#">
-                                            <img class="icon" src="{{ '/images/goods/categories/category-1.png' | url }} " />
-                                            <div class="title">Страховочные системы</div>
+
+                                <div id="category_{{ i }}" class="categories-list">
+                                    {% for category in item.content %}
+                                        {% if category.mobileImage %}                                                    
+                                            {% set mobileImage = category.mobileImage %}
+                                        {% else %}                             
+                                            {% set mobileImage = "/images/goods/categories/category-1.png" %}
+                                        {% endif %}
+
+                                        <a class="category" href="{{ category.page }}">
+                                            <img class="icon" src="{{ mobileImage | url }}" />
+                                            <div class="title">{{ category.title }}</div>
                                         </a>
-                                        <a class="category" href="#">
-                                            <img class="icon" src="{{ '/images/goods/categories/category-1.png' | url }}" />
-                                            <div class="title">Каски</div>
-                                        </a>
-                                        <a class="category" href="#">
-                                            <img class="icon" src="{{ '/images/goods/categories/category-1.png' | url }}" />
-                                            <div class="title">Спусковые и страховочные устройства</div>
-                                        </a>
-                                        <a class="category" href="#">
-                                            <img class="icon" src="{{ '/images/goods/categories/category-1.png' | url }}" />
-                                            <div class="title">Карабины и оттяжки</div>
-                                        </a>
-                                    </div>                                        
+                                    {% endfor %}
                                 </div>
                             </div>
-                            <div class="main-category">
-                                <div class="main-title">
-                                    Промальп
-                                </div>
-                            </div>
-                            <div class="main-category">
-                                <div class="main-title">
-                                    Фонари
-                                </div>
-                            </div>
-                            <div class="main-category">
-                                <div class="main-title">
-                                    Подборки
-                                </div>
-                            </div>
-                            <div class="main-category">
-                                <div class="main-title">
-                                    Техническая информация
-                                </div>
-                            </div>
-                            <a class="main-category" href="#">
-                                <div class="main-title">
-                                    Новости и статьи
-                                </div>
-                            </a>
-                        </div>                                
+                        {% endfor %}
+                    </div>                                
 
-                        <div class="mini-contacts-in-mobile-menu">                                    
-                            {% include "components/common/mini-contacts.njk" %}
-                        </div>
-                        
-                        <div class="mobile-menu-options">
-                            <a href="#">Доставка и оплата</a>
-                            <a href="#">Связаться с нами</a>
-                        </div>
+                    <div class="mini-contacts-in-mobile-menu">                                    
+                        {% include "components/common/mini-contacts.njk" %}
+                    </div>
+                    
+                    <div class="mobile-menu-options">
+                        <a href="#">Доставка и оплата</a>
+                        <a href="#">Связаться с нами</a>
                     </div>
                 </div>
             </div>
@@ -239,11 +186,11 @@
                     <div class="footer-menu">
                         <a class="menu-element" href="#">Задать вопрос</a>
                         <a class="menu-element" href="#">Новости и статьи</a>
-                        <a class="menu-element" href="#">Вопросы по качеству</a>
+                        <a class="menu-element" href="/other/quality_questions">Вопросы по качеству</a>
                         <a class="menu-element" href="#">Проверка СИЗ</a>
-                        <a class="menu-element" href="#">Каталоги</a>
-                        <a class="menu-element" href="#">Сертификаты</a>
-                        <a class="menu-element" href="#">Команда Petzl</a>
+                        <a class="menu-element" href="/other/catalogs">Каталоги</a>
+                        <a class="menu-element" href="/other/blanks">Сертификаты</a>
+                        <a class="menu-element" href="/other/contacts">Команда Petzl</a>
                         <a class="menu-element" href="#">Фильмотека</a>
                         <a class="menu-element" href="#">FAQ</a>
                     </div>
