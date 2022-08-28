@@ -255,8 +255,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let hidingButtons = document.querySelectorAll('[data-hide-button-for]');
 
-    console.log(hidingButtons);
-
     hidingButtons.forEach(button => {
         button = document.querySelector('[data-hide-button-for="' + button.getAttribute('data-hide-button-for') + '"]');
         let idOfHidingElement = button.getAttribute("data-hide-button-for");
@@ -305,7 +303,99 @@ document.addEventListener('DOMContentLoaded', function() {
     let zoomImages = document.querySelectorAll('.zoom-image');
 
     zoomImages.forEach(zoomImage => {
-    
+        let isZoomed = false;        
+        
+        let isDragStarted = false;
+        let currentDragLayerPos;
+        let startDragClientPos;
+        let dragOffset;
+
+        let zoomer = zoomImage.querySelector('.zoomer');
+        var image = zoomImage.querySelector('img');
+
+        let padding = 50;
+        let paddingRation;
+
+        zoomer.style.backgroundImage = "url('" + image.currentSrc + "')"; 
+
+        let mouseOutEvent = function(event) {
+            setZoomMode(false);
+        };
+
+        let mouseMoveEvent = function(event) {
+            if (!isDragStarted) {
+                updatePosition(event.layerX, event.layerY);
+            }
+        };
+
+        let touchStartEvent = function(event) {
+            isDragStarted = true;
+
+            startDragClientPos = {
+                x: event.touches[0].clientX, 
+                y: event.touches[0].clientY
+            };
+
+            dragOffset = {
+                x: 0, 
+                y: 0
+            };
+        };
+
+        let touchMoveEvent = function(event) {
+            event.preventDefault();
+
+            dragOffset = {
+                x: (startDragClientPos.x - event.touches[0].clientX) * (1 - paddingRation.x * 2), 
+                y: (startDragClientPos.y - event.touches[0].clientY) * (1 - paddingRation.y * 2)
+            };
+
+            updatePosition(currentDragLayerPos.x + dragOffset.x, currentDragLayerPos.y + dragOffset.y);
+        };
+
+        let touchEndEvent = function(event) {
+            isDragStarted = false;
+            currentDragLayerPos = {x: currentDragLayerPos.x + dragOffset.x, y: currentDragLayerPos.y + dragOffset.y};
+        };
+
+        function setZoomMode(mode) {
+            isZoomed = mode;
+
+            if (isZoomed) {
+                zoomImage.classList.add("zoomed");
+                zoomer.addEventListener('mouseleave', mouseOutEvent);
+                zoomer.addEventListener('mousemove', mouseMoveEvent);
+                zoomer.addEventListener('touchstart', touchStartEvent);
+                zoomer.addEventListener('touchend', touchEndEvent);
+                zoomer.addEventListener('touchmove', touchMoveEvent);
+            }            
+            else {
+                zoomImage.classList.remove("zoomed");                
+                zoomer.removeEventListener('mouseleave', mouseOutEvent);
+                zoomer.removeEventListener('mousemove', mouseMoveEvent);
+                zoomer.removeEventListener('touchstart', touchStartEvent);
+                zoomer.removeEventListener('touchend', touchEndEvent);
+                zoomer.addEventListener('touchmove', touchMoveEvent);
+            }
+        }
+
+        zoomImage.addEventListener('mouseup', function(event) {
+            setZoomMode(!isZoomed);
+            currentDragLayerPos = {x: event.layerX, y: event.layerY};
+            updatePosition(event.layerX, event.layerY);
+        });
+
+        function updatePosition(layerX, layerY) {
+            paddingRation = {x: padding / zoomImage.clientWidth, y: padding / zoomImage.clientHeight};
+
+            let uvX = (layerX / zoomImage.clientWidth - 0.5) * 2;
+            let uvY = (layerY / zoomImage.clientHeight - 0.5) * 2;
+
+            let offsetX = (layerX - zoomImage.clientWidth / 2) + padding * uvX;
+            let offsetY = (layerY - zoomImage.clientHeight / 2) + padding * uvY;
+
+            zoomer.style.backgroundPosition = "calc(50% - " + offsetX + "px) " + "calc(50% - " + offsetY + "px)";
+        }
     });
 
 
