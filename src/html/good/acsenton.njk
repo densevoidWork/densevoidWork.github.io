@@ -28,8 +28,8 @@ eleventyNavigation:
                         <ul class="splide__list">
                             {% for i in range(0, 6) %}
                                 <li class="splide__slide">
-                                    <div class="photo-preview">
-                                        <img src="/images/goods/small/3.jpg" />
+                                    <div class="photo-preview" data-source-image="/images/goods/full/image{{ i % 3 + 1 }}.jpg">
+                                        <img src="/images/goods/small/small{{ i % 3 + 1 }}.jpg" />
                                     </div>
                                 </li>
                             {% endfor %}
@@ -45,7 +45,7 @@ eleventyNavigation:
                 </div>
             </div>
 
-            <div class="good-base">
+            <div class="good-base-2">
                 <div class="good-name">
                     <div class="category">Страховочная система</div>
                     <div class="name">CORAX</div>
@@ -57,22 +57,22 @@ eleventyNavigation:
                     <div class="avaible">Наличие в интернет-магазине</div>
                 </div>
                 <div class="good-options">
-                    <div class="colors">
+                    <div class="good-colors">
                         <div class="small-label">Цвет:</div>
                         <div class="color-list">
                             <div class="color-preview selected">
-                                <img src="/images/goods/small/3.jpg" />
+                                <img src="/images/goods/small/small1.jpg" />
                             </div>
                             <div class="color-preview">
-                                <img src="/images/goods/small/3.jpg" style="filter: hue-rotate(90deg);" />
+                                <img src="/images/goods/small/small2.jpg" />
                             </div>                    
                             <div class="color-preview">
-                                <img src="/images/goods/small/3.jpg" style="filter: hue-rotate(180deg);" />
+                                <img src="/images/goods/small/small3.jpg" />
                             </div>
                         </div>
                     </div>
 
-                    <div class="sizes">
+                    <div class="good-sizes">
                         <div class="small-label">Размер:</div>
                         <div class="sizes-block">
                             <div class="size">1</div>
@@ -81,7 +81,7 @@ eleventyNavigation:
                         </div>      
                     </div>
 
-                    <div class="count">
+                    <div class="good-count">
                         <div class="small-label">Количество:</div>
                         <div class="counter-block">
                             <div id="decrease-count" class="round-gray-btn"><i class="icon icon-minus"></i></div>

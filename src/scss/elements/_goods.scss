@@ -167,6 +167,11 @@
         color: $gray-color-200;
         z-index: 5;
         font-size: 24px;
+        transition: opacity 0.5s ease-in;
+
+        &[disabled] {
+            opacity: 0;
+        }
 
         .icon-arrow-300 {
             display: none;
@@ -190,7 +195,7 @@
         display: inline-block;
     }
 
-    @media (max-width: $screensize-medium) {
+    @media (max-width: $screensize-medium-3) {
         .slides {
             margin: 0;
         }

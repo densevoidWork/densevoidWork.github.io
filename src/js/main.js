@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
         pagination: false,
         autoplay: false,
         perMove: 1,
-        speed: 2000,
+        speed: 1000,
         drag: false,
     }
 
@@ -131,24 +131,19 @@ document.addEventListener('DOMContentLoaded', function() {
     let personalGalleries = document.getElementsByClassName( 'personal-gallery' );
     for ( let i = 0; i < personalGalleries.length; i++ ) {
         new Splide( personalGalleries[i], {
+            type: 'slide',
             perPage: 5,
-            width: 525,
+            fixedWidth: 100,
             direction: 'ttb',
             height: 480,
             breakpoints: {
-                770: {
+                630: {
                     direction: 'ltr',
                     height: 'auto',
-                    width: 315,
-                    perPage: 3,
-                },
-                670: {
-                    width: 210,
-                    perPage: 2,
-                },
-                500: {
                     width: 420,
                     perPage: 4,
+                    gap: 5,
+                    fixedWidth: "",
                 },
                 450: {
                     width: 315,
@@ -298,6 +293,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
+    /* GOOD SLIDES VIEWER */
+
+    let goodPhotos = document.querySelectorAll('.good-photos');
+
+    goodPhotos.forEach(gallery => {        
+        let slidesPreview = gallery.querySelectorAll('.photo-preview');
+        let mainImage = gallery.querySelector('.good-selected-photo img');
+        let zoomer = gallery.querySelector('.good-selected-photo  .zoomer');
+        
+        slidesPreview.forEach(preview => {
+            preview.addEventListener('click', function(event) {
+                let sourceSrc = preview.getAttribute('data-source-image');
+                if (sourceSrc) {
+                    mainImage.src = sourceSrc;
+                    console.log(zoomer);
+                    zoomer.style.backgroundImage = "url('" + sourceSrc + "')"; 
+                }
+            });
+        });
+    });
+
+
     /* ZOOM IMAGE */
 
     let zoomImages = document.querySelectorAll('.zoom-image');
@@ -324,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let mouseMoveEvent = function(event) {
             if (!isDragStarted) {
-                updatePosition(event.layerX, event.layerY);
+                setPositionWithOffset(event.layerX, event.layerY);
             }
         };
 
@@ -350,7 +367,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 y: (startDragClientPos.y - event.touches[0].clientY) * (1 - paddingRation.y * 2)
             };
 
-            updatePosition(currentDragLayerPos.x + dragOffset.x, currentDragLayerPos.y + dragOffset.y);
+            setPositionWithOffset(currentDragLayerPos.x + dragOffset.x, currentDragLayerPos.y + dragOffset.y);
         };
 
         let touchEndEvent = function(event) {
@@ -358,34 +375,45 @@ document.addEventListener('DOMContentLoaded', function() {
             currentDragLayerPos = {x: currentDragLayerPos.x + dragOffset.x, y: currentDragLayerPos.y + dragOffset.y};
         };
 
+        let scrollEvent = function(event) {
+            event.preventDefault();
+        };
+
         function setZoomMode(mode) {
             isZoomed = mode;
 
             if (isZoomed) {
                 zoomImage.classList.add("zoomed");
-                zoomer.addEventListener('mouseleave', mouseOutEvent);
-                zoomer.addEventListener('mousemove', mouseMoveEvent);
+                //zoomer.addEventListener('mouseleave', mouseOutEvent);
+                //zoomer.addEventListener('mousemove', mouseMoveEvent);
                 zoomer.addEventListener('touchstart', touchStartEvent);
                 zoomer.addEventListener('touchend', touchEndEvent);
                 zoomer.addEventListener('touchmove', touchMoveEvent);
+                zoomer.addEventListener('wheel', scrollEvent);
             }            
             else {
                 zoomImage.classList.remove("zoomed");                
-                zoomer.removeEventListener('mouseleave', mouseOutEvent);
-                zoomer.removeEventListener('mousemove', mouseMoveEvent);
+                //zoomer.removeEventListener('mouseleave', mouseOutEvent);
+                //zoomer.removeEventListener('mousemove', mouseMoveEvent);
                 zoomer.removeEventListener('touchstart', touchStartEvent);
                 zoomer.removeEventListener('touchend', touchEndEvent);
-                zoomer.addEventListener('touchmove', touchMoveEvent);
+                zoomer.removeEventListener('touchmove', touchMoveEvent);
+                zoomer.removeEventListener('wheel', scrollEvent);
             }
         }
 
         zoomImage.addEventListener('mouseup', function(event) {
             setZoomMode(!isZoomed);
-            currentDragLayerPos = {x: event.layerX, y: event.layerY};
-            updatePosition(event.layerX, event.layerY);
+            currentDragLayerPos = {x: zoomImage.clientWidth / 2, y: zoomImage.clientHeight / 2};
+            setPositionToCenter();
         });
+        
+        function setPositionToCenter() {
+            paddingRation = {x: padding / zoomImage.clientWidth, y: padding / zoomImage.clientHeight};
+            zoomer.style.backgroundPosition = "50% 50%";
+        }
 
-        function updatePosition(layerX, layerY) {
+        function setPositionWithOffset(layerX, layerY) {
             paddingRation = {x: padding / zoomImage.clientWidth, y: padding / zoomImage.clientHeight};
 
             let uvX = (layerX / zoomImage.clientWidth - 0.5) * 2;
