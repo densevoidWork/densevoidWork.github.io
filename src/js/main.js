@@ -128,35 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } ).mount(); 
     }
 
-    let personalGalleries = document.getElementsByClassName( 'personal-gallery' );
-    for ( let i = 0; i < personalGalleries.length; i++ ) {
-        new Splide( personalGalleries[i], {
-            type: 'slide',
-            perPage: 5,
-            fixedWidth: 100,
-            direction: 'ttb',
-            height: 480,
-            breakpoints: {
-                630: {
-                    direction: 'ltr',
-                    height: 'auto',
-                    width: 420,
-                    perPage: 4,
-                    gap: 5,
-                    fixedWidth: "",
-                },
-                450: {
-                    width: 315,
-                    perPage: 3,
-                },
-                350: {
-                    width: 210,
-                    perPage: 2,
-                },
-            },
-        } ).mount(); 
-    }
-
 
     /* SLIDE TABLE */
 
@@ -297,7 +268,87 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let goodPhotos = document.querySelectorAll('.good-photos');
 
-    goodPhotos.forEach(gallery => {        
+    goodPhotos.forEach(gallery => {
+        let miniReviews = gallery.querySelector('.mini-reviews');
+        let miniReviewsSlide = new Splide( miniReviews, {
+            type: 'slide',
+            isNavigation: true,
+            perPage: 5,
+            fixedWidth: 100,
+            direction: 'ttb',
+            height: 480,
+            breakpoints: {
+                630: {
+                    direction: 'ltr',
+                    height: 'auto',
+                    width: 420,
+                    perPage: 4,
+                    gap: 5,
+                    fixedWidth: "",
+                },
+                450: {
+                    width: 315,
+                    perPage: 3,
+                },
+                350: {
+                    width: 210,
+                    perPage: 2,
+                },
+            },
+        }); 
+
+        let fullGoodImages = document.querySelector('.full-good-images');
+        console.log(fullGoodImages);
+        
+        let fullGoodImagesSlide = new Splide( fullGoodImages, {
+            type: 'slide',
+            perPage: 1,
+            lazyLoad: 'nearby',
+            arrows: false
+        });
+
+        miniReviewsSlide.updateState = function() {
+            const { Controller } = this.Components;
+            let list = this.root.querySelector('.splide__list');
+            if (list) {
+                if (this.activeElement != null) {
+                    let lastActive = list.children[this.activeElement];
+                    if (lastActive) lastActive.classList.remove('active');
+                }
+
+                let element = list.children[Controller.getIndex()];
+                element.classList.add('active');
+                this.activeElement = Controller.getIndex();
+
+                let arrowPrev = this.root.querySelector('.splide__arrow--prev');
+                let arrowNext = this.root.querySelector('.splide__arrow--next');
+
+                if (arrowPrev) arrowPrev.classList.remove('hiding');
+                if (arrowNext) arrowNext.classList.remove('hiding');
+
+                if (Controller.getIndex() == 0) {
+                    if (arrowPrev) arrowPrev.classList.add('hiding');
+                }
+
+                if (Controller.getIndex() == Controller.getEnd()) {
+                    if (arrowNext) arrowNext.classList.add('hiding');
+                }
+            }
+        }
+
+        miniReviewsSlide.on('ready', function () {
+            miniReviewsSlide.updateState();            
+
+            miniReviewsSlide.on('move', function () {
+                miniReviewsSlide.updateState();
+            });
+        });
+
+        fullGoodImagesSlide.sync(miniReviewsSlide);
+        fullGoodImagesSlide.mount();
+        miniReviewsSlide.mount();
+
+        /*
         let slidesPreview = gallery.querySelectorAll('.photo-preview');
         let mainImage = gallery.querySelector('.good-selected-photo img');
         let zoomer = gallery.querySelector('.good-selected-photo  .zoomer');
@@ -312,6 +363,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+        */
     });
 
 
@@ -327,13 +379,15 @@ document.addEventListener('DOMContentLoaded', function() {
         let startDragClientPos;
         let dragOffset;
 
-        let zoomer = zoomImage.querySelector('.zoomer');
-        var image = zoomImage.querySelector('img');
+        //let zoomer = zoomImage.querySelector('.zoomer');
+
+        let zoomer = document.createElement("div");
+        zoomer.classList.add('zoomer');
+
+        zoomImage.appendChild(zoomer);
 
         let padding = 50;
         let paddingRation;
-
-        zoomer.style.backgroundImage = "url('" + image.currentSrc + "')"; 
 
         let mouseOutEvent = function(event) {
             setZoomMode(false);
@@ -403,9 +457,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         zoomImage.addEventListener('mouseup', function(event) {
-            setZoomMode(!isZoomed);
-            currentDragLayerPos = {x: zoomImage.clientWidth / 2, y: zoomImage.clientHeight / 2};
-            setPositionToCenter();
+            if (event.target.classList.contains('full-image')) {
+                zoomer.style.backgroundImage = "url('" + event.target.currentSrc + "')"; 
+
+                currentDragLayerPos = {x: zoomImage.clientWidth / 2, y: zoomImage.clientHeight / 2};
+                setPositionToCenter();
+                
+                setZoomMode(true);
+            }
+
+            else if (event.target.classList.contains('zoomer')) {
+                setZoomMode(false);
+            };
         });
         
         function setPositionToCenter() {

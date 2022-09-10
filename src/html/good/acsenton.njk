@@ -13,36 +13,45 @@ eleventyNavigation:
             <div class="good-photos">
 
                 <div class="splide_container">
-                <div class="splide goods-gallery personal-gallery" role="group">
-                    <div class="splide__arrows">
-                        <button class="splide__arrow splide__arrow--prev">
-                            <i class="icon icon-arrow-200"></i>
-                            <i class="icon icon-arrow-300"></i>
-                        </button>
-                        <button class="splide__arrow splide__arrow--next">
-                            <i class="icon icon-arrow-200"></i>
-                            <i class="icon icon-arrow-300"></i>
-                        </button>
-                    </div>
-                    <div class="splide__track slides">
-                        <ul class="splide__list">
-                            {% for i in range(0, 6) %}
+                    <div class="splide goods-gallery mini-reviews" role="group">
+                        <div class="splide__arrows">
+                            <button class="splide__arrow splide__arrow--prev">
+                                <i class="icon icon-arrow-200"></i>
+                                <i class="icon icon-arrow-300"></i>
+                            </button>
+                            <button class="splide__arrow splide__arrow--next">
+                                <i class="icon icon-arrow-200"></i>
+                                <i class="icon icon-arrow-300"></i>
+                            </button>
+                        </div>
+                        <div class="splide__track slides">
+                            <ul class="splide__list">
+                                {% for i in range(0, 6) %}
                                 <li class="splide__slide">
                                     <div class="photo-preview" data-source-image="/images/goods/full/image{{ i % 3 + 1 }}.jpg">
                                         <img src="/images/goods/small/small{{ i % 3 + 1 }}.jpg" />
                                     </div>
                                 </li>
-                            {% endfor %}
-                        </ul>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
-                </div>
                 </div>
 
                 <div class="good-selected-photo zoom-image">
-                    <img src="/images/goods/full/image1.jpg" />
-                    <div class="zoomer">
-                    </div> 
+                    <div class="splide full-good-images">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                {% for i in range(0, 6) %}
+                                <li class="splide__slide">
+                                     <img class="full-image" data-splide-lazy="/images/goods/full/image{{ i % 3 + 1 }}.jpg">
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
             <div class="good-base-2">

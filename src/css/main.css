@@ -1701,7 +1701,7 @@ input[type=checkbox] + label a:hover {
   font-size: 24px;
   transition: opacity 0.5s ease-in;
 }
-.goods-gallery .splide__arrow[disabled] {
+.goods-gallery .splide__arrow.hiding {
   opacity: 0;
 }
 .goods-gallery .splide__arrow .icon-arrow-300 {
@@ -2631,14 +2631,14 @@ input[type=checkbox] + label a:hover {
 .main-good-block .good-photos .splide_container {
   position: relative;
 }
-.main-good-block .good-photos .personal-gallery {
+.main-good-block .good-photos .mini-reviews {
   position: unset;
   margin: 0 auto;
 }
-.main-good-block .good-photos .personal-gallery .splide__arrows {
+.main-good-block .good-photos .mini-reviews .splide__arrows {
   position: unset;
 }
-.main-good-block .good-photos .personal-gallery .photo-preview {
+.main-good-block .good-photos .mini-reviews .photo-preview {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2648,12 +2648,15 @@ input[type=checkbox] + label a:hover {
   border-radius: 4px;
   overflow: hidden;
 }
-.main-good-block .good-photos .personal-gallery .photo-preview:hover {
+.main-good-block .good-photos .mini-reviews li.active .photo-preview {
   border: 1px solid #43423F;
 }
-.main-good-block .good-photos .personal-gallery img {
+.main-good-block .good-photos .mini-reviews img {
   max-width: 100%;
   max-height: 100%;
+}
+.main-good-block .good-photos .full-good-images {
+  width: 100%;
 }
 .main-good-block .good-photos .good-photo-gallery {
   width: 100px;
@@ -2763,22 +2766,22 @@ input[type=checkbox] + label a:hover {
   }
 }
 @media (width > 630px) {
-  .main-good-block .good-photos .personal-gallery {
+  .main-good-block .good-photos .mini-reviews {
     position: relative;
   }
-  .main-good-block .good-photos .personal-gallery .slides {
+  .main-good-block .good-photos .mini-reviews .slides {
     margin: 46px 0;
   }
-  .main-good-block .good-photos .personal-gallery .splide__slide {
+  .main-good-block .good-photos .mini-reviews .splide__slide {
     display: flex;
     align-items: center;
   }
-  .main-good-block .good-photos .personal-gallery .splide__arrow {
+  .main-good-block .good-photos .mini-reviews .splide__arrow {
     width: 100%;
     height: auto;
     font-size: 18px;
   }
-  .main-good-block .good-photos .personal-gallery .splide__arrow i {
+  .main-good-block .good-photos .mini-reviews .splide__arrow i {
     width: 32px;
     height: 32px;
     border-radius: 100%;
@@ -2787,28 +2790,28 @@ input[type=checkbox] + label a:hover {
     vertical-align: -4px;
     display: inline-block;
   }
-  .main-good-block .good-photos .personal-gallery .splide__arrow i::before {
+  .main-good-block .good-photos .mini-reviews .splide__arrow i::before {
     vertical-align: -9px;
     margin-left: 4px;
   }
-  .main-good-block .good-photos .personal-gallery .splide__arrow .icon-arrow-300 {
+  .main-good-block .good-photos .mini-reviews .splide__arrow .icon-arrow-300 {
     display: none;
   }
-  .main-good-block .good-photos .personal-gallery .splide__arrow.splide__arrow--next {
+  .main-good-block .good-photos .mini-reviews .splide__arrow.splide__arrow--next {
     right: unset;
     bottom: -46px;
   }
-  .main-good-block .good-photos .personal-gallery .splide__arrow.splide__arrow--next i {
+  .main-good-block .good-photos .mini-reviews .splide__arrow.splide__arrow--next i {
     transform: rotate(90deg);
   }
-  .main-good-block .good-photos .personal-gallery .splide__arrow.splide__arrow--prev {
+  .main-good-block .good-photos .mini-reviews .splide__arrow.splide__arrow--prev {
     left: unset;
     top: 0px;
   }
-  .main-good-block .good-photos .personal-gallery .splide__arrow.splide__arrow--prev i {
+  .main-good-block .good-photos .mini-reviews .splide__arrow.splide__arrow--prev i {
     transform: rotate(-90deg);
   }
-  .main-good-block .good-photos .personal-gallery .splide__arrow:hover {
+  .main-good-block .good-photos .mini-reviews .splide__arrow:hover {
     background-color: unset;
   }
 }
