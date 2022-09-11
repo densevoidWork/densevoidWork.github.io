@@ -1,277 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() { 
-    
-    /* DESKTOP SUB MENU */
-
-    let navbar = document.querySelector('.navbar');
-    let navbarSubmenu = document.querySelector('.navbar .navbar-submenu');
-    let navbarParentElements = document.querySelectorAll('.navbar .navbar-element.parent');
-    let navbarNotParentElements = document.querySelectorAll('.navbar .navbar-element:not(.parent)');
-
-    navbarParentElements.forEach(element => {
-        element.addEventListener("mouseenter", function(event) {
-            navbarSubmenu.querySelector(".submenu-goods-categories").innerHTML = element.querySelector(".menu-categories").innerHTML;
-            navbarSubmenu.classList.add("opened");
-        });
-    });
-
-    navbar.addEventListener("mouseleave", function(event) {
-        navbarSubmenu.classList.remove("opened");
-    });
-
-    navbarNotParentElements.forEach(element => {
-        element.addEventListener("mouseenter", function(event) {
-            navbarSubmenu.classList.remove("opened");
-        });
-    });
-
-
-    /* HIDING MENU */
-
-    /*
-    let hidingMenus = document.querySelectorAll('.hiding-menu');
-
-    hidingMenus.forEach(hideMenu => {
-        let sportMenuOpener = hideMenu.querySelector('.catalog-opener');
-        
-        if (sportMenuOpener != null) {
-            sportMenuOpener.addEventListener("click", function(event) {
-                let isOpened = sportMenuOpener.classList.toggle("opened");
-                let menuGrower = sportMenuOpener.parentElement.querySelector(".menu-grower");
-    
-                if (menuGrower == null) return;
-    
-                if (isOpened) {
-                    let content = menuGrower.firstElementChild;
-                    if (content != null)
-                        menuGrower.style.height = content.clientHeight + "px";
-                }
-                else {
-                    menuGrower.style.height = null;
-                }
-            });
-        }
-    });
-    */
-
-
-    /* HIDING TEXT */
-
-    let hidingTexts = document.querySelectorAll('.hiding-text');
-
-    hidingTexts.forEach(hideText => {
-        let hidingBox = hideText.querySelector('.hiding-box');
-        let opener = hideText.querySelector('.open-btn');
-
-        opener.addEventListener("click", function(event) {
-            if(hideText.classList.toggle("opened")) {
-                let height = hidingBox.querySelector(".text").clientHeight;
-                hidingBox.style.height = height + "px";
-            } else {
-                hidingBox.style.height = null;
-            }
-        });
-    });
-
-
-    /* SPLIDE CAROUSEL */
-    
-    Splide.defaults = {
-        type: 'loop',
-        pagination: false,
-        autoplay: false,
-        perMove: 1,
-        speed: 1000,
-        drag: false,
-    }
-
-    let mediumGalleries = document.getElementsByClassName( 'medium-gallery' );
-    for ( let i = 0; i < mediumGalleries.length; i++ ) {
-        new Splide( mediumGalleries[ i ], {
-            perPage: 7,
-            breakpoints: {
-                1200: {
-                    perPage: 6,
-                },
-                1000: {
-                    perPage: 5,
-                },
-                900: {
-                    perPage: 4,
-                },
-                580: {
-                    perPage: 3,
-                },
-                400: {
-                    perPage: 2,
-                },
-                280: {
-                    perPage: 1,
-                },
-            }
-        }).mount();
-    }
-
-    let largeGalleries = document.getElementsByClassName( 'large-gallery' );
-    for ( let i = 0; i < largeGalleries.length; i++ ) {
-        new Splide( largeGalleries[i], {
-            perPage: 3,
-            breakpoints: {
-                940: {
-                    perPage: 2,
-                },
-                768: {
-                    direction: 'ttb',
-                    perPage: 3,
-                    height: 440
-                },
-            },
-        } ).mount(); 
-    }
-
-
-    /* SLIDE TABLE */
-
-    let slideTables = document.getElementsByClassName( 'slide-table' );
-
-    for ( let i = 0; i < slideTables.length; i++ ) {
-        let arrows = slideTables[i].querySelectorAll('.arrow');
-        let slideContainer = slideTables[i].querySelector('.good-data-table-container');
-        let containerWidth = slideContainer.offsetWidth;
-        let containerMargins = parseInt(window.getComputedStyle(slideContainer).marginLeft, 10) + parseInt(window.getComputedStyle(slideContainer).marginRight, 10);
-        let currentOffset = 0;
-
-        let isMoveRight = false;
-        let isMoveLeft = false;
-        let moveInterval;
-
-        updateSlider();
-
-        arrows.forEach(arrow => {
-            arrow.addEventListener("mousedown", function(event) {
-
-                if (arrow.classList.contains('arrow-right')) {
-                    isMoveRight = true;
-                }
-                else if (arrow.classList.contains('arrow-left')) {
-                    isMoveLeft = true;
-                }
-
-                moveInterval = setInterval( function() {
-                    const moveSpeed = 5;
-                    if (isMoveRight) currentOffset -= moveSpeed;
-                    else if (isMoveLeft) currentOffset += moveSpeed;
-                    updateSlider();
-                } , 10);
-            });
-        });
-        
-
-        let isDragged = false;
-        let prevPos = 0;
-
-        slideContainer.addEventListener("mousedown", function(event) {
-            if (!isDragged) {
-                prevPos = event.clientX;
-            } 
-            isDragged = true;
-        });
-        
-        window.addEventListener("mouseup", function(event) {
-            isDragged = false;
-            isMoveRight = false;
-            isMoveLeft = false;
-            window.clearInterval(moveInterval);
-        });
-        
-        window.addEventListener("mousemove", function(event) {
-            let curPos = event.clientX;
-
-            if (isDragged && prevPos != curPos) {
-                currentOffset -= prevPos - curPos;
-                prevPos = curPos;
-                updateSlider(currentOffset);
-            }
-        });
-        
-        window.addEventListener("resize", function(event) {
-            updateSlider();
-        });
-
-        function updateSlider() {   
-            const maxOffset = containerWidth - slideTables[i].offsetWidth + containerMargins;
-
-            currentOffset = Math.max(currentOffset, -maxOffset);
-            currentOffset = Math.min(currentOffset, 0);
-
-            slideContainer.style.transform = "translateX(" + currentOffset + "px)";
-    
-            let arrowRight = slideTables[i].querySelector('.arrow-right');
-            let arrowLeft = slideTables[i].querySelector('.arrow-left');
-    
-            arrowRight.style.display = "flex";
-            arrowLeft.style.display = "flex";
-    
-            if (currentOffset <= -maxOffset) arrowRight.style.display = "none"; 
-            if (currentOffset >= 0) arrowLeft.style.display = "none"; 
-        }
-    }
-
-
-    /* COMMON HIDING ELEMENT */
-
-    let hidingButtons = document.querySelectorAll('[data-hide-button-for]');
-
-    hidingButtons.forEach(button => {
-        button = document.querySelector('[data-hide-button-for="' + button.getAttribute('data-hide-button-for') + '"]');
-        let idOfHidingElement = button.getAttribute("data-hide-button-for");
-        let hidingElement = document.getElementById(idOfHidingElement);
-        hidingElement.outerHTML = "<div class=\"hiding-container\">" + hidingElement.outerHTML + "</div>";
-        hidingElement = document.getElementById(idOfHidingElement);
-        let hidingContainer = hidingElement.parentElement;
-        let isOpened = hidingContainer.classList.contains("opened");
-        updateContainer();
-
-        button.addEventListener("click", function(event) {
-            isOpened = this.classList.toggle("opened");
-            if (isOpened) hidingContainer.classList.add("opened");
-            else hidingContainer.classList.remove("opened");
-            updateContainer();
-        });
-
-        function updateContainer() {
-            let elementHeight = hidingElement.clientHeight;
-
-            let parentHidingContainer = hidingContainer.parentElement.closest(".hiding-container");
-            let isParentOpened = false;
-
-            if (parentHidingContainer) {                
-                isParentOpened= parentHidingContainer.classList.contains("opened");
-            }
-
-            if (isOpened) {
-                hidingContainer.style.height = elementHeight + "px";
-                if (isParentOpened) {
-                    parentHidingContainer.style.height = parentHidingContainer.firstChild.clientHeight + elementHeight + "px";
-                }
-            }
-            else {
-                hidingContainer.style.height = 0;  
-                if (isParentOpened) {
-                    parentHidingContainer.style.height = (parentHidingContainer.firstChild.clientHeight - elementHeight) + "px"; 
-                } 
-            }            
-        }
-    });
-
-
-    /* GOOD SLIDES VIEWER */
 
     let goodPhotos = document.querySelectorAll('.good-photos');
 
     goodPhotos.forEach(gallery => {
         let miniReviews = gallery.querySelector('.mini-reviews');
-        let miniReviewsSlide = new Splide( miniReviews, {
-            type: 'slide',
+        let miniReviewsSlide = new Splide(miniReviews, {
+            type: 'slide',            
+            pagination: false,
+            autoplay: false,
+            perMove: 1,
+            speed: 1000,
+            drag: false,
             isNavigation: true,
             perPage: 5,
             fixedWidth: 100,
@@ -300,8 +39,13 @@ document.addEventListener('DOMContentLoaded', function() {
         let fullGoodImages = document.querySelector('.full-good-images');
         console.log(fullGoodImages);
         
-        let fullGoodImagesSlide = new Splide( fullGoodImages, {
+        let fullGoodImagesSlide = new Splide(fullGoodImages, {
             type: 'slide',
+            pagination: false,
+            autoplay: false,
+            perMove: 1,
+            speed: 1000,
+            drag: false,
             perPage: 1,
             lazyLoad: 'nearby',
             arrows: false
@@ -488,6 +232,270 @@ document.addEventListener('DOMContentLoaded', function() {
             zoomer.style.backgroundPosition = "calc(50% - " + offsetX + "px) " + "calc(50% - " + offsetY + "px)";
         }
     });
+});
+document.addEventListener('DOMContentLoaded', function() { 
+
+    let hidingButtons = document.querySelectorAll('[data-hide-button-for]');
+
+    hidingButtons.forEach(button => {
+        button = document.querySelector('[data-hide-button-for="' + button.getAttribute('data-hide-button-for') + '"]');
+        let idOfHidingElement = button.getAttribute("data-hide-button-for");
+        let hidingElement = document.getElementById(idOfHidingElement);
+        hidingElement.outerHTML = "<div class=\"hiding-container\">" + hidingElement.outerHTML + "</div>";
+        hidingElement = document.getElementById(idOfHidingElement);
+        let hidingContainer = hidingElement.parentElement;
+        let isOpened = hidingContainer.classList.contains("opened");
+        updateContainer();
+
+        button.addEventListener("click", function(event) {
+            isOpened = this.classList.toggle("opened");
+            if (isOpened) hidingContainer.classList.add("opened");
+            else hidingContainer.classList.remove("opened");
+            updateContainer();
+        });
+
+        function updateContainer() {
+            let elementHeight = hidingElement.clientHeight;
+
+            let parentHidingContainer = hidingContainer.parentElement.closest(".hiding-container");
+            let isParentOpened = false;
+
+            if (parentHidingContainer) {                
+                isParentOpened= parentHidingContainer.classList.contains("opened");
+            }
+
+            if (isOpened) {
+                hidingContainer.style.height = elementHeight + "px";
+                if (isParentOpened) {
+                    parentHidingContainer.style.height = parentHidingContainer.firstChild.clientHeight + elementHeight + "px";
+                }
+            }
+            else {
+                hidingContainer.style.height = 0;  
+                if (isParentOpened) {
+                    parentHidingContainer.style.height = (parentHidingContainer.firstChild.clientHeight - elementHeight) + "px"; 
+                } 
+            }            
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', function() { 
+
+    let slideTables = document.getElementsByClassName( 'slide-table' );
+
+    for ( let i = 0; i < slideTables.length; i++ ) {
+        let arrows = slideTables[i].querySelectorAll('.arrow');
+        let slideContainer = slideTables[i].querySelector('.good-data-table-container');
+        let containerWidth = slideContainer.offsetWidth;
+        let containerMargins = parseInt(window.getComputedStyle(slideContainer).marginLeft, 10) + parseInt(window.getComputedStyle(slideContainer).marginRight, 10);
+        let currentOffset = 0;
+
+        let isMoveRight = false;
+        let isMoveLeft = false;
+        let moveInterval;
+
+        updateSlider();
+
+        arrows.forEach(arrow => {
+            let holdArrowBut = function(event) {
+                event.preventDefault();
+                
+                if (arrow.classList.contains('arrow-right')) {
+                    isMoveRight = true;
+                }
+                else if (arrow.classList.contains('arrow-left')) {
+                    isMoveLeft = true;
+                }
+
+                moveInterval = setInterval( function() {
+                    const moveSpeed = 5;
+                    if (isMoveRight) currentOffset -= moveSpeed;
+                    else if (isMoveLeft) currentOffset += moveSpeed;
+                    updateSlider();
+                } , 10);
+            }
+
+            arrow.addEventListener("mousedown", holdArrowBut);
+            arrow.addEventListener("touchstart", holdArrowBut);
+        });
+        
+
+        let isDragged = false;
+        let prevPos = 0;
+
+        let mouseDownByMouse = function(event) {
+            mouseDown(event.clientX);
+        }
+
+        let mouseDownByTouch = function(event) {
+            mouseDown(event.touches[0].clientX);
+        }
+
+        let mouseDown = function(clientX) {
+            if (!isDragged) {
+                prevPos = clientX;
+            } 
+            isDragged = true;
+        };
+
+        slideContainer.addEventListener("mousedown", mouseDownByMouse);
+        slideContainer.addEventListener("touchstart", mouseDownByTouch);
+
+        let mouseUp = function(event) {
+            isDragged = false;
+            isMoveRight = false;
+            isMoveLeft = false;
+            window.clearInterval(moveInterval);
+        };
+        
+        window.addEventListener("mouseup", mouseUp);
+        window.addEventListener("touchend", mouseUp);
+
+        let moveElementByMouse = function(event) {
+            moveElement(event.clientX);
+        }
+
+        let moveElementByTouch = function(event) {           
+            moveElement(event.touches[0].clientX);
+        }
+
+        let moveElement = function(clientX) {
+
+            let curPos = clientX;
+
+            if (isDragged && prevPos != curPos) {
+                currentOffset -= prevPos - curPos;
+                prevPos = curPos;
+                updateSlider(currentOffset);
+            }
+        }
+        
+        window.addEventListener("mousemove", moveElementByMouse);
+        window.addEventListener("touchmove", moveElementByTouch);
+        
+        window.addEventListener("resize", function(event) {
+            updateSlider();
+        });
+
+        function updateSlider() {   
+            const maxOffset = containerWidth - slideTables[i].offsetWidth + containerMargins;
+
+            currentOffset = Math.max(currentOffset, -maxOffset);
+            currentOffset = Math.min(currentOffset, 0);
+
+            slideContainer.style.transform = "translateX(" + currentOffset + "px)";
+    
+            let arrowRight = slideTables[i].querySelector('.arrow-right');
+            let arrowLeft = slideTables[i].querySelector('.arrow-left');
+    
+            arrowRight.style.display = "flex";
+            arrowLeft.style.display = "flex";
+    
+            if (currentOffset <= -maxOffset) arrowRight.style.display = "none"; 
+            if (currentOffset >= 0) arrowLeft.style.display = "none"; 
+        }
+    }
+});
+document.addEventListener('DOMContentLoaded', function() { 
+    
+    /* DESKTOP SUB MENU */
+
+    let navbar = document.querySelector('.navbar');
+    let navbarSubmenu = document.querySelector('.navbar .navbar-submenu');
+    let navbarParentElements = document.querySelectorAll('.navbar .navbar-element.parent');
+    let navbarNotParentElements = document.querySelectorAll('.navbar .navbar-element:not(.parent)');
+
+    navbarParentElements.forEach(element => {
+        element.addEventListener("mouseenter", function(event) {
+            navbarSubmenu.querySelector(".submenu-goods-categories").innerHTML = element.querySelector(".menu-categories").innerHTML;
+            navbarSubmenu.classList.add("opened");
+        });
+    });
+
+    navbar.addEventListener("mouseleave", function(event) {
+        navbarSubmenu.classList.remove("opened");
+    });
+
+    navbarNotParentElements.forEach(element => {
+        element.addEventListener("mouseenter", function(event) {
+            navbarSubmenu.classList.remove("opened");
+        });
+    });
+
+
+    /* HIDING TEXT */
+
+    let hidingTexts = document.querySelectorAll('.hiding-text');
+
+    hidingTexts.forEach(hideText => {
+        let hidingBox = hideText.querySelector('.hiding-box');
+        let opener = hideText.querySelector('.open-btn');
+
+        opener.addEventListener("click", function(event) {
+            if(hideText.classList.toggle("opened")) {
+                let height = hidingBox.querySelector(".text").clientHeight;
+                hidingBox.style.height = height + "px";
+            } else {
+                hidingBox.style.height = null;
+            }
+        });
+    });
+
+
+    /* SPLIDE CAROUSEL */
+    
+    Splide.defaults = {
+        type: 'loop',
+        pagination: false,
+        autoplay: false,
+        perMove: 1,
+        speed: 1000,
+        drag: false,
+    }
+
+    let mediumGalleries = document.getElementsByClassName( 'medium-gallery' );
+    for ( let i = 0; i < mediumGalleries.length; i++ ) {
+        new Splide( mediumGalleries[ i ], {
+            perPage: 7,
+            breakpoints: {
+                1200: {
+                    perPage: 6,
+                },
+                1000: {
+                    perPage: 5,
+                },
+                900: {
+                    perPage: 4,
+                },
+                580: {
+                    perPage: 3,
+                },
+                400: {
+                    perPage: 2,
+                },
+                280: {
+                    perPage: 1,
+                },
+            }
+        }).mount();
+    }
+
+    let largeGalleries = document.getElementsByClassName( 'large-gallery' );
+    for ( let i = 0; i < largeGalleries.length; i++ ) {
+        new Splide( largeGalleries[i], {
+            perPage: 3,
+            breakpoints: {
+                940: {
+                    perPage: 2,
+                },
+                768: {
+                    direction: 'ttb',
+                    perPage: 3,
+                    height: 440
+                },
+            },
+        } ).mount(); 
+    }
 
 
     /* SHOW NEWS */

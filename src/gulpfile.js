@@ -6,7 +6,7 @@ function updateJs(cb) {
     //src('node_modules/tiny-slider/dist/min/tiny-slider.js')
     src('js/*.js')
     .pipe(concat('main.js'))
-    //.pipe(uglify())
+    .pipe(uglify())
     .pipe(dest('../docs/js/'));
     cb();
 }
