@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() { 
 
-    let goodPhotos = document.querySelectorAll('.good-photos');
+    let mainGoodElement = document.querySelectorAll('.main-good-block');
 
-    goodPhotos.forEach(gallery => {
+    mainGoodElement.forEach(gallery => {
         let miniReviews = gallery.querySelector('.mini-reviews');
         let miniReviewsSlide = new Splide(miniReviews, {
             type: 'slide',            
@@ -92,22 +92,26 @@ document.addEventListener('DOMContentLoaded', function() {
         fullGoodImagesSlide.mount();
         miniReviewsSlide.mount();
 
-        /*
-        let slidesPreview = gallery.querySelectorAll('.photo-preview');
-        let mainImage = gallery.querySelector('.good-selected-photo img');
-        let zoomer = gallery.querySelector('.good-selected-photo  .zoomer');
-        
-        slidesPreview.forEach(preview => {
-            preview.addEventListener('click', function(event) {
-                let sourceSrc = preview.getAttribute('data-source-image');
-                if (sourceSrc) {
-                    mainImage.src = sourceSrc;
-                    console.log(zoomer);
-                    zoomer.style.backgroundImage = "url('" + sourceSrc + "')"; 
-                }
+        let colorLists = gallery.querySelectorAll('.color-list');
+        colorLists.forEach(colorList => {            
+            let colorPreviews = gallery.querySelectorAll('.color-preview');
+            colorPreviews.forEach(colorPreview => {
+                colorPreview.addEventListener('click', function(event) {
+                    colorPreviews.forEach(elementForRemoveSelection => {
+                        elementForRemoveSelection.classList.remove('selected');
+                    });
+
+                    this.classList.add('selected');
+
+                    const { Controller } = miniReviewsSlide.Components;
+
+                    let forSlide = this.getAttribute('data-for-slide');
+                    if (forSlide != null) {
+                        Controller.go(forSlide - 1);
+                    }
+                });
             });
         });
-        */
     });
 
 

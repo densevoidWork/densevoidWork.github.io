@@ -1,0 +1,60 @@
+.basket-page {
+
+    h1 {
+        font-size: 64px;
+        font-weight: 400;
+    }
+
+    .basket-content {
+        border-collapse: collapse;
+        margin: 0 auto;
+        min-width: 1003px;
+
+        th {
+            font-size: 18px;
+            color: $gray-color-800;
+            font-weight: 400;
+            text-align: left;
+            padding: 8px 16px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        td {            
+            padding: 8px 16px;
+        }
+
+        .name-cell {
+            .name {
+                font-size: 32px;
+                color: $orange-color;
+                line-height: 140%;
+            }
+
+            .info {
+                font-size: 18px;
+                line-height: 130%;
+                color: $gray-color-800;
+            }
+        }
+
+        .good-count {
+            display: flex;
+            column-gap: 18px;
+            align-items: center;
+
+            .counter {
+                align-items: center;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 4px;
+                color: $gray-color-800;
+                cursor: default;
+                display: flex;
+                font-size: 24px;
+                height: 44px;
+                justify-content: center;
+                overflow: hidden;
+                width: 44px;
+            }
+        }
+    }
+}

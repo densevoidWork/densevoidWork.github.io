@@ -945,6 +945,27 @@ input[type=checkbox] + label a:hover {
   color: #43423F;
 }
 
+.gray-border-btn {
+  display: block;
+  cursor: pointer;
+}
+.gray-border-btn i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 26px;
+  height: 26px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+.gray-border-btn:hover i {
+  color: #43423F;
+  border: 2px solid #43423F;
+}
+
 .icon-btn {
   position: relative;
   cursor: pointer;
@@ -3987,6 +4008,55 @@ input[type=checkbox] + label a:hover {
 }
 .articles .articles-block .article-element:hover .title {
   text-decoration: underline;
+}
+
+.basket-page h1 {
+  font-size: 64px;
+  font-weight: 400;
+}
+.basket-page .basket-content {
+  border-collapse: collapse;
+  margin: 0 auto;
+  min-width: 1003px;
+}
+.basket-page .basket-content th {
+  font-size: 18px;
+  color: #1D1C1B;
+  font-weight: 400;
+  text-align: left;
+  padding: 8px 16px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.basket-page .basket-content td {
+  padding: 8px 16px;
+}
+.basket-page .basket-content .name-cell .name {
+  font-size: 32px;
+  color: #F0571B;
+  line-height: 140%;
+}
+.basket-page .basket-content .name-cell .info {
+  font-size: 18px;
+  line-height: 130%;
+  color: #1D1C1B;
+}
+.basket-page .basket-content .good-count {
+  display: flex;
+  column-gap: 18px;
+  align-items: center;
+}
+.basket-page .basket-content .good-count .counter {
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  color: #1D1C1B;
+  cursor: default;
+  display: flex;
+  font-size: 24px;
+  height: 44px;
+  justify-content: center;
+  overflow: hidden;
+  width: 44px;
 }
 
 @font-face {
