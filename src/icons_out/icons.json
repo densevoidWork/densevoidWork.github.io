@@ -5,7 +5,8 @@
     "calendar": 61700,
     "checkmark": 61701,
     "clip": 61702,
-    "minus": 61703,
-    "plus": 61704,
-    "printer": 61705
+    "cross": 61703,
+    "minus": 61704,
+    "plus": 61705,
+    "printer": 61706
 }

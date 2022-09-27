@@ -115,4 +115,19 @@ document.addEventListener('DOMContentLoaded', function() {
             //newsBlock.style.height = newsBlock.clientHeight + "px";
         });        
     });
+
+
+    /* RADIO GROUP */
+
+    let radioTabs = document.querySelectorAll('.radio-tabs');
+    radioTabs.forEach(radioTab => {
+        let radioButtons = radioTab.querySelectorAll('input[type=radio]');
+        radioButtons.forEach(radioButton => {
+            if (radioButton.checked == true) radioTab.dataset.selectedRadio = radioButton.id;;
+
+            radioButton.addEventListener('click', function(event) {
+                radioTab.dataset.selectedRadio = this.id;
+            });
+        })
+    });
 });

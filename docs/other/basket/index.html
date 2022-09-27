@@ -340,34 +340,236 @@
         <div class="common-padding">
             <h1>Оформление заказа</h1>
 
-            <table class="basket-content">
-                <tr>
-                    <th>Фото</th>
-                    <th>Наименование</th>
-                    <th>Количество, шт.</th>
-                    <th>Стоимость</th>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="/images/other/basket/image2.jpg" />
-                    </td>
-                    <td class="name-cell">
-                        <div class="name">FLY</div>
-                        <div class="info">
-                            Размер: L</br>
-                            # 364001
+            <div class="basket-content">
+                <div class="content-table-header">
+                    <div>Фото</div>
+                    <div>Наименование</div>
+                    <div>Количество, шт.</div>
+                    <div>Стоимость</div>
+                    <div></div>
+                </div>
+                <div class="content-table-body">
+                    
+                    <div class="content-table-body-row">
+                        <div class="content-image">
+                            <img src="/images/other/basket/image2.jpg" />
                         </div>
-                    </td>
-                    <td>
-                        <div class="good-count">
-                            <div id="decrease-count" class="gray-border-btn"><i class="icon icon-minus"></i></div>
-                            <div class="counter">1</div>
-                            <div id="increase-count" class="gray-border-btn"><i class="icon icon-plus"></i></div>
+                        <div class="content-name">
+                            <div class="name">FLY</div>
+                            <div class="info">
+                                Размер: L<br />
+                                # 364001
+                            </div>
                         </div>
-                    </td>
-                    <td></td>
-                </tr>
-            </table>
+                        <div class="content-count">
+                            <div class="good-count">
+                                <div id="decrease-count" class="gray-border-btn"><i class="icon icon-minus"></i></div>
+                                <div class="counter">1</div>
+                                <div id="increase-count" class="gray-border-btn"><i class="icon icon-plus"></i></div>
+                            </div>
+                        </div>
+                        <div class="content-price">10060 руб.</div>
+                        <div class="content-delete">
+                            <div class="remove-from-basket gray-border-btn"><i class="icon icon-cross"></i></div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-table-body-row">
+                        <div class="content-image">
+                            <img src="/images/other/basket/image2.jpg" />
+                        </div>
+                        <div class="content-name">
+                            <div class="name">FLY</div>
+                            <div class="info">
+                                Размер: L<br />
+                                # 364001
+                            </div>
+                        </div>
+                        <div class="content-count">
+                            <div class="good-count">
+                                <div id="decrease-count" class="gray-border-btn"><i class="icon icon-minus"></i></div>
+                                <div class="counter">1</div>
+                                <div id="increase-count" class="gray-border-btn"><i class="icon icon-plus"></i></div>
+                            </div>
+                        </div>
+                        <div class="content-price">10060 руб.</div>
+                        <div class="content-delete">
+                            <div class="remove-from-basket gray-border-btn"><i class="icon icon-cross"></i></div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-table-body-row">
+                        <div class="content-image">
+                            <img src="/images/other/basket/image2.jpg" />
+                        </div>
+                        <div class="content-name">
+                            <div class="name">FLY</div>
+                            <div class="info">
+                                Размер: L<br />
+                                # 364001
+                            </div>
+                        </div>
+                        <div class="content-count">
+                            <div class="good-count">
+                                <div id="decrease-count" class="gray-border-btn"><i class="icon icon-minus"></i></div>
+                                <div class="counter">1</div>
+                                <div id="increase-count" class="gray-border-btn"><i class="icon icon-plus"></i></div>
+                            </div>
+                        </div>
+                        <div class="content-price">10060 руб.</div>
+                        <div class="content-delete">
+                            <div class="remove-from-basket gray-border-btn"><i class="icon icon-cross"></i></div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="content-table-footer">
+                    <div class="result-label">Итого без учета доставки:</div>
+                    <div class="result-value">10060 руб.</div>
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="basket-card">
+                <div class="card-description">
+                    <div class="card-header">1. Контакты</div>
+                    <div class="card-tip">Пожалуйста, введите свои контактные данные для подтверждения и оформления заказа</div>
+                </div>
+                <div class="card-form basket-info-container">
+                    <div class="form-field required">
+                        <label for="basket-field-fio">Фамилия, имя, отчество</label>
+                        <input id="basket-field-fio" type="text"></input>
+                    </div>
+                    <div class="form-field required">
+                        <label for="basket-field-email">Email</label>
+                        <input id="basket-field-email" type="text"></input>
+                    </div>
+                    <div class="form-field required">
+                        <label for="basket-field-phone">Телефон для связи</label>
+                        <input id="basket-field-phone" type="text"></input>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="basket-card">
+                <div class="card-description">
+                    <div class="card-header">2. Скидка</div>
+                    <div class="card-tip">Промокод или дисконтная карта АльпИндустрии (<a href="#">?</a>)</div>
+                </div>
+                <div class="card-form basket-info-container">
+                    <div class="radio-tabs">
+                        <div class="horizontal-radio-group">
+                            <input type="radio" id="basket-field-discount-card" name="discount-type" value="card" checked>
+                            <label for="basket-field-discount-card">Дисконтная карта</label>
+
+                            <input type="radio" id="basket-field-discount-code" name="discount-type" value="code">
+                            <label for="basket-field-discount-code">Промокод</label>
+                        </div>
+
+                        <form id="discout-by-card-form">
+                            <div class="form-field required">
+                                <input id="basket-field-card-number" type="text" placeholder="Номер карты"></input>
+                                <input id="basket-field-code" type="text" placeholder="Трехзначный код"></input>
+                                <button id="basket-button-check-card" class="btn orange buy-btn">Проверить</button>
+                            </div>
+                        </form>
+
+                        <form id="discout-by-code-form">
+                            <div class="form-field required">
+                                <input id="basket-field-promocode" type="text" placeholder="Введите промокод"></input>
+                                <button id="basket-button-check-code" class="btn orange buy-btn">Проверить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+            
+            <div class="basket-card">
+                <div class="card-description">
+                    <div class="card-header">3. Доставка</div>
+                    <div class="card-tip">Укажите ваш адрес и регион доставки</div>
+                </div>
+                <div class="card-form basket-info-container">
+                    <div class="form-field required">
+                        <label for="basket-field-region">Регион доставки</label>
+                        <div class="select">
+                            <select id="basket-field-region" required>
+                                <option value="" hidden></option>
+                                <option value="russia">Россия</option>
+                                <option value="belarus">Беларусь</option>
+                                <option value="ukraine">Украина</option>
+                            </select>
+                            <i class="icon icon-arrow-200"></i>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="basket-field-deliver-service">Служба доставки</label>
+                        <div class="select">
+                            <select id="basket-field-deliver-service">
+                                <option value="" hidden></option>
+                                <option value="russia">Почта России</option>
+                                <option value="belarus">Белпошта</option>
+                                <option value="ukraine">Укрпошта</option>
+                            </select>
+                            <i class="icon icon-arrow-200"></i>
+                        </div>
+                    </div>
+                    <div class="form-field required">
+                        <label for="basket-field-deliver-adress">Адрес доставки</label>
+                        <input id="basket-field-deliver-adress" type="text"></input>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+            
+            <div class="basket-card">
+                <div class="card-description">
+                    <div class="card-header">4. Оплата</div>
+                    <div class="card-tip">Выберите способ оплаты</div>
+                </div>
+                <div class="card-form basket-info-container">
+                    <div class="vertical-radio-group">
+                        <input type="radio" id="basket-field-payment-cash" name="payment-method" value="cash" checked>
+                        <label for="basket-field-payment-cash">Наличными при получении</label>
+
+                        <input type="radio" id="basket-field-payment-card" name="payment-method" value="card">
+                        <label for="basket-field-payment-card">
+                            Карта
+                            <img class="payment-cards" src="/images/other/basket/visa.png" />
+                            <img class="payment-cards" src="/images/other/basket/mastercard.png" />
+                            <img class="payment-cards" src="/images/other/basket/mir.png" />
+                        </label>
+
+                        <input type="radio" id="basket-field-payment-bill" name="payment-method" value="bill">
+                        <label for="basket-field-payment-bill">Оплата по счету для Юр. Лиц</label>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="final-part">
+                <div class="basket-info-container comment-block">
+                    <label for="basket-comment-area">Комментарий</label>
+                    <textarea id="basket-comment-area" placeholder="При необходимости вы можете оставить комментарий к заказу"></textarea>
+                </div>
+
+                <div class="offer-link">Нажимая "оформить заказ", вы соглашаетесь с условиями <a href="#">оферты</a></div>
+                <input id="basket-field-get-news-checkbox" type="checkbox"></input>
+                <label class="news-label" for="basket-field-get-news-checkbox">Хочу получать новости компании</label>
+                <div class="total-result">
+                    <div class="result-label">Итого без учета доставки:</div>
+                    <div class="result-value">10 060 рублей</div>
+                </div>
+
+                <button class="btn orange buy-btn">Купить</button>
+            </div>
         </div>
     </div>
 </div>
