@@ -56,7 +56,56 @@
                         </div>
 
                         <div class="personal-menu">
-                            <div id="bug-button" class="icon-btn"><img src="/images/bug-icon.svg" /><div class="btn-counter">1</div></div>
+                            <div id="basket-button" class="icon-btn">
+                                <img src="/images/bug-icon.svg" />
+                                <div class="btn-counter">1</div>
+                                <div class="mini-basket-menu">
+                                    <div class="mini-basket-header">Ваша корзина</div>
+                                    <div class="mini-basket-message">Товар добавлен в корзину!</div>
+                                    <hr />     
+                                    <div class="mini-basket-content">                               
+                                        
+                                        <div class="mini-basket-item">                                    
+                                            <div class="item-image">
+                                                <img src="/images/other/basket/image2.jpg" />
+                                            </div>
+                                            <div class="item-name">
+                                                <div class="name">FLY</div>
+                                                <div class="info">
+                                                    Размер: L<br />
+                                                    Цвет: Blue<br />
+                                                    # 364001 - 1 шт.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        
+                                        <div class="mini-basket-item">                                    
+                                            <div class="item-image">
+                                                <img src="/images/other/basket/image2.jpg" />
+                                            </div>
+                                            <div class="item-name">
+                                                <div class="name">FLY</div>
+                                                <div class="info">
+                                                    Размер: L<br />
+                                                    Цвет: Blue<br />
+                                                    # 364001 - 1 шт.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        
+                                        <div class="mini-basket-result">
+                                            <div class="result-label">Итого:</div>
+                                            <div class="result-value">6590 рублей</div>
+                                        </div>
+                                        <div class="mini-basket-buttons">
+                                            <button class="btn transp-gray-btn mini-basket-later-button">ПОЗЖЕ</button>
+                                            <a href="/other/basket/" class="btn">ОФОРМИТЬ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div id="account-button" class="icon-btn"><img src="/images/account-icon.svg" /></div>
                         </div>
                     </div>
@@ -362,10 +411,10 @@
                             </div>
                         </div>
                         <div class="content-count">
-                            <div class="good-count">
-                                <div id="decrease-count" class="gray-border-btn"><i class="icon icon-minus"></i></div>
+                            <div class="good-count counter-component">
+                                <div class="decrease-count gray-border-btn"><i class="icon icon-minus"></i></div>
                                 <div class="counter">1</div>
-                                <div id="increase-count" class="gray-border-btn"><i class="icon icon-plus"></i></div>
+                                <div class="increase-count gray-border-btn"><i class="icon icon-plus"></i></div>
                             </div>
                         </div>
                         <div class="content-price">10060 руб.</div>
@@ -386,34 +435,10 @@
                             </div>
                         </div>
                         <div class="content-count">
-                            <div class="good-count">
-                                <div id="decrease-count" class="gray-border-btn"><i class="icon icon-minus"></i></div>
+                            <div class="good-count counter-component">
+                                <div class="decrease-count gray-border-btn"><i class="icon icon-minus"></i></div>
                                 <div class="counter">1</div>
-                                <div id="increase-count" class="gray-border-btn"><i class="icon icon-plus"></i></div>
-                            </div>
-                        </div>
-                        <div class="content-price">10060 руб.</div>
-                        <div class="content-delete">
-                            <div class="remove-from-basket gray-border-btn"><i class="icon icon-cross"></i></div>
-                        </div>
-                    </div>
-                    
-                    <div class="content-table-body-row">
-                        <div class="content-image">
-                            <img src="/images/other/basket/image2.jpg" />
-                        </div>
-                        <div class="content-name">
-                            <div class="name">FLY</div>
-                            <div class="info">
-                                Размер: L<br />
-                                # 364001
-                            </div>
-                        </div>
-                        <div class="content-count">
-                            <div class="good-count">
-                                <div id="decrease-count" class="gray-border-btn"><i class="icon icon-minus"></i></div>
-                                <div class="counter">1</div>
-                                <div id="increase-count" class="gray-border-btn"><i class="icon icon-plus"></i></div>
+                                <div class="increase-count gray-border-btn"><i class="icon icon-plus"></i></div>
                             </div>
                         </div>
                         <div class="content-price">10060 руб.</div>
@@ -502,7 +527,6 @@
                                 <option value="" hidden></option>
                                 <option value="russia">Россия</option>
                                 <option value="belarus">Беларусь</option>
-                                <option value="ukraine">Украина</option>
                             </select>
                             <i class="icon icon-arrow-200"></i>
                         </div>
@@ -514,7 +538,6 @@
                                 <option value="" hidden></option>
                                 <option value="russia">Почта России</option>
                                 <option value="belarus">Белпошта</option>
-                                <option value="ukraine">Укрпошта</option>
                             </select>
                             <i class="icon icon-arrow-200"></i>
                         </div>

@@ -130,4 +130,48 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         })
     });
+
+
+    /* COUNTER */
+
+    let countersComponents = document.querySelectorAll('.counter-component');
+    countersComponents.forEach(countersComponent => {
+        let increaseButton = countersComponent.querySelector('.increase-count');
+        let decreaseButton = countersComponent.querySelector('.decrease-count');
+        let counter = countersComponent.querySelector('.counter');
+        let counterValue  = counter.innerText;
+
+        increaseButton.addEventListener('click', function(e) {
+            counterValue++;
+            counter.innerText = counterValue;
+        });
+
+        decreaseButton.addEventListener('click', function(e) {
+            if (counterValue <= 1) return;
+            counterValue--;
+            counter.innerText = counterValue;
+        });
+    });
+
+    /* MINI BASKET */
+
+    let basketButton = document.querySelector('#basket-button');
+    let miniBasketMenu = basketButton.querySelector('.mini-basket-menu');
+    let closeButton = basketButton.querySelector('.mini-basket-later-button'); 
+    let isMiniBasketMenuVisible = false;
+
+    if (basketButton) {
+        basketButton.addEventListener('click', function(event) {
+            if (miniBasketMenu.contains(event.target) && event.target != closeButton) return;
+
+            if (!isMiniBasketMenuVisible) {
+                miniBasketMenu.style.setProperty('display', 'block');
+            }
+            else {
+                miniBasketMenu.style.setProperty('display', 'none');
+            }
+
+            isMiniBasketMenuVisible = !isMiniBasketMenuVisible;
+        });
+    }
 });

@@ -19,6 +19,7 @@ $final-mobile-size: 850px;
     .good-photos {
         display: flex;
         flex-shrink: 1;
+        flex-grow: 1;
         column-gap: 16px;
 
         .splide_container {
@@ -109,20 +110,13 @@ $final-mobile-size: 850px;
         }
     
         .good-selected-photo {
-            /*
-            background-image: url(../images/goods/full/image1.jpg);
-            background-repeat: no-repeat;
-            background-size: 100%;
-            cursor: url(../images/ui/zoom-in.png),auto;
-            width: 100%;
-            background-position: 50% 50%;
-            */
             display: flex;
             justify-content: center;
             align-items: center;
             max-width: 680px;
             position: relative;
             cursor: url(../images/ui/zoom-in.png),auto;
+            margin: 0 auto;
 
             @media (max-width: $screensize-large-2) {
 

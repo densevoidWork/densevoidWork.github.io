@@ -564,3 +564,98 @@
         }
     }
 }
+
+.mini-basket-menu {
+    position: absolute;
+    width: 322px;
+    min-height: 40px;
+    background: $white-color;
+    border: 1px solid $gray-color-100;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    right: -46px;
+    top: 36px;
+    padding: 16px;
+    text-align: center;
+    display: none;
+    cursor: default;
+
+    .mini-basket-header {
+        font-size: 24px;
+        line-height: 140%;
+        color: $gray-color-600;
+    }
+
+    .mini-basket-message {
+        font-size: 14px;
+        color: $gray-color-200;
+        line-height: 130%;
+    }
+
+    hr {
+        border-top: none;
+        border-bottom: 1px solid $gray-color-100;
+        width: 100%;
+        margin: 12px 0;
+    }
+
+    .mini-basket-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .mini-basket-item {
+            display: flex;
+            column-gap: 8px;
+            width: 248px;
+
+            .item-image {
+
+                img {
+                    max-width: none;
+                    min-width: auto;
+                }
+            }
+
+            .item-name {
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                
+                .name {
+                    font-size: 18px;
+                    line-height: 130%;
+                    color: $orange-color
+                }
+
+                .info {
+                    font-size: 14px;
+                    line-height: 130%;
+                    color: $gray-color-800;
+                }
+            }
+        }
+
+        .mini-basket-result {
+            display: flex;
+            font-size: 14px;
+            color: $gray-color-600;
+            column-gap: 4px;
+
+            .result-value {
+                font-weight: 700;
+            }
+        }
+
+        .mini-basket-buttons {
+            display: flex;
+            column-gap: 12px;
+            margin-top: 12px;
+
+            button {
+                min-height: 36px;
+                font-size: 14px;
+            }
+        }
+    }
+}
