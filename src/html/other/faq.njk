@@ -1,0 +1,61 @@
+---
+eleventyNavigation:
+    key: FAQ
+    parent: Main
+    title: FAQ
+---
+{% include "components/common/breacrumbs.njk" %}
+
+<div class="container">
+    <div class="common-padding">
+        <div class="faq">
+            <h1>FAQ</h1>
+            <div class="header-addition">Часто задаваемые вопросы</div>
+
+            <form class="search-field faq-search">
+                <img class="magnifier-icon" src="{{ '/images/magnifier-icon.svg' | url }}" />
+                <input type="text" placeholder="Ключевое слово для поиска в FAQ"/>
+                <button class="btn search-input" type="submit">Поиск</button>
+            </form>
+            
+            <ul class="faq-list">
+                <li>
+                    <div class="faq-question" data-hide-button-for="faq-answer-1">
+                        <h3>В чём отличие фонарей SWIFT RL и SWIFT RL PRO?</h3>
+                        <i class="icon icon-arrow-200"></i>
+                    </div>
+                    <div id="faq-answer-1" class="faq-answer">
+                        <p>Диаметр самой узкой части соединительного звена GO - 7 мм</p>
+                        <hr />
+                        <div class="related-goods">
+                            <div class="related-goods-header">Товары по теме:</div>
+
+                            {% set goodsGroup = "sport" %}
+                            {% set goodsCount = 3 %}
+                            {% set hideNavigation = true %}
+                            {% include "components/goods/big-goods-list.njk" %}
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="faq-question" data-hide-button-for="faq-answer-2">
+                        <h3>Почему нет винтиков в комплекте с TRAC?</h3>
+                        <i class="icon icon-arrow-200"></i>
+                    </div>
+                    <div id="faq-answer-2" class="faq-answer">
+                        <p>Диаметр самой узкой части соединительного звена GO - 7 мм</p>
+                        <hr />
+                        <div class="related-goods">
+                            <div class="related-goods-header">Товары по теме:</div>
+
+                            {% set goodsGroup = "sport" %}
+                            {% set goodsCount = 3 %}
+                            {% set hideNavigation = true %}
+                            {% include "components/goods/big-goods-list.njk" %}
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+.faq {
+    .header-addition {
+        color: $gray-color-800;
+        font-size: 24px;
+        line-height: 140%;
+        text-align: center;
+        margin-top: -26px;
+    }
+
+    .faq-search {
+        margin: 24px auto 0;
+    }
+
+    .faq-list {
+        .faq-question {
+            h3 {
+                font-size: 24px;
+            }
+        }
+  
+        .faq-answer {
+            font-size: 18px;
+        }
+
+        .related-goods-header {
+            font-size: 24px;
+            line-height: 140%;
+            color: $gray-color-200;
+        }
+    }
+}
