@@ -21,39 +21,6 @@ $mobile-menu-width: 375px;
             min-width: 165px;
         }
     }
-    
-    .search-field {
-        display: flex;
-        align-items: flex-start;
-        margin-top: 2px;
-        width: 100%;
-        max-width: 604px;
-
-        input {
-            border: 1px solid $gray-color-100;
-            border-radius: 2px;
-            height: 38px;
-            padding-left: 38px;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 130%;
-            color: $gray-color-200;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .search-input {
-            margin-left: 8px;
-        }
-
-        .magnifier-icon {
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            padding-top: 10px;
-            padding-left: 12px;
-        }
-    }
 
     .mobile-search-field {
         display: none;

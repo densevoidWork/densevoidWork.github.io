@@ -364,11 +364,20 @@ a:hover {
   text-decoration: underline;
 }
 
+hr {
+  border-top: none;
+  border-bottom: 1px solid #D9D8D3;
+  width: 100%;
+  margin: 12px 0;
+}
+
 h1 {
   font-size: 64px;
   text-align: center;
   margin-top: 60px;
   margin-bottom: 34px;
+  font-weight: 400;
+  color: #1D1C1B;
 }
 @media (max-width: 940px) {
   h1 {
@@ -884,6 +893,75 @@ select::-ms-expand {
   top: calc(50% - 7px);
 }
 
+.search-field {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 2px;
+  width: 100%;
+  max-width: 604px;
+}
+.search-field input {
+  border: 1px solid #D9D8D3;
+  border-radius: 2px;
+  height: 38px;
+  padding-left: 38px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: #AEACA0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.search-field .search-input {
+  margin-left: 8px;
+}
+.search-field .magnifier-icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  padding-top: 10px;
+  padding-left: 12px;
+}
+
+.faq-list {
+  list-style-type: none;
+}
+.faq-list li {
+  border: 1px solid #D9D8D3;
+  padding: 16px;
+  margin-top: 16px;
+  color: #43423F;
+}
+.faq-list .faq-question {
+  position: relative;
+  cursor: pointer;
+}
+.faq-list .faq-question h3 {
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+  margin: 0 27px 0 0;
+}
+.faq-list .faq-question h3:hover {
+  color: #F0571B;
+}
+.faq-list .faq-question i {
+  position: absolute;
+  right: 6px;
+  top: 0;
+  color: #AEACA0;
+  transform: rotate(90deg);
+  transition: transform 0.5s ease-in;
+}
+.faq-list .faq-question.opened i {
+  transform: rotate(90deg) scaleX(-1);
+}
+.faq-list .faq-answer {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
 .btn {
   min-width: 139px;
   min-height: 36px;
@@ -1156,35 +1234,6 @@ select::-ms-expand {
   width: 100%;
   max-width: 280px;
   min-width: 165px;
-}
-.middlebar .search-field {
-  display: flex;
-  align-items: flex-start;
-  margin-top: 2px;
-  width: 100%;
-  max-width: 604px;
-}
-.middlebar .search-field input {
-  border: 1px solid #D9D8D3;
-  border-radius: 2px;
-  height: 38px;
-  padding-left: 38px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 130%;
-  color: #AEACA0;
-  width: 100%;
-  box-sizing: border-box;
-}
-.middlebar .search-field .search-input {
-  margin-left: 8px;
-}
-.middlebar .search-field .magnifier-icon {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  padding-top: 10px;
-  padding-left: 12px;
 }
 .middlebar .mobile-search-field {
   display: none;
@@ -2549,6 +2598,9 @@ select::-ms-expand {
   font-size: 18px;
   line-height: 130%;
 }
+.footer .footer-menu .menu-element:hover {
+  text-decoration: underline;
+}
 .footer .contacts {
   display: flex;
   flex-grow: 2;
@@ -3423,42 +3475,6 @@ select::-ms-expand {
   text-align: left;
   color: #1D1C1B;
 }
-.faq-block ul {
-  list-style-type: none;
-}
-.faq-block ul li {
-  border: 1px solid #D9D8D3;
-  padding: 16px;
-  margin-top: 16px;
-  color: #43423F;
-}
-.faq-block .faq-question {
-  position: relative;
-  cursor: pointer;
-}
-.faq-block .faq-question h3 {
-  font-size: 18px;
-  font-weight: normal;
-  margin: 0;
-  margin: 0 27px 0 0;
-}
-.faq-block .faq-question h3:hover {
-  text-decoration: underline;
-}
-.faq-block .faq-question i {
-  position: absolute;
-  right: 6px;
-  top: 0;
-  color: #AEACA0;
-  transform: rotate(90deg);
-  transition: transform 0.5s ease-in;
-}
-.faq-block .faq-question.opened i {
-  transform: rotate(90deg) scaleX(-1);
-}
-.faq-block .faq-answer {
-  font-size: 14px;
-}
 @media (max-width: 1320px) {
   .faq-block h2 {
     font-size: 20px;
@@ -3468,7 +3484,7 @@ select::-ms-expand {
   .faq-block h2 {
     font-size: 18px;
   }
-  .faq-block .faq-question h3 {
+  .faq-block .faq-list .faq-question h3 {
     font-size: 16px;
   }
 }
@@ -4500,12 +4516,6 @@ select::-ms-expand {
   color: #AEACA0;
   line-height: 130%;
 }
-.mini-basket-menu hr {
-  border-top: none;
-  border-bottom: 1px solid #D9D8D3;
-  width: 100%;
-  margin: 12px 0;
-}
 .mini-basket-menu .mini-basket-content {
   display: flex;
   flex-direction: column;
@@ -4553,6 +4563,28 @@ select::-ms-expand {
 .mini-basket-menu .mini-basket-content .mini-basket-buttons button {
   min-height: 36px;
   font-size: 14px;
+}
+
+.faq .header-addition {
+  color: #1D1C1B;
+  font-size: 24px;
+  line-height: 140%;
+  text-align: center;
+  margin-top: -26px;
+}
+.faq .faq-search {
+  margin: 24px auto 0;
+}
+.faq .faq-list .faq-question h3 {
+  font-size: 24px;
+}
+.faq .faq-list .faq-answer {
+  font-size: 18px;
+}
+.faq .faq-list .related-goods-header {
+  font-size: 24px;
+  line-height: 140%;
+  color: #AEACA0;
 }
 
 @font-face {

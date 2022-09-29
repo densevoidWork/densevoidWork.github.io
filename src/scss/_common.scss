@@ -37,11 +37,20 @@ a {
     }
 }
 
+hr {
+    border-top: none;
+    border-bottom: 1px solid $gray-color-100;
+    width: 100%;
+    margin: 12px 0;
+}
+
 h1 {
     font-size: 64px;
     text-align: center;
     margin-top: 60px;
     margin-bottom: 34px;
+    font-weight: 400;
+    color: $gray-color-800;
 
     @media (max-width: $screensize-large) {
 
@@ -576,17 +585,17 @@ input[type=checkbox] + label {
     }
 }
 
-  select::-ms-expand {
+select::-ms-expand {
     display: none;
-  }
+}
 
-  :root {
+:root {
     --select-border: #777;
     --select-focus: blue;
     --select-arrow: var(--select-border);
-  }
+}
 
-  .select {
+.select {
     width: 100%;
     border: 1px solid $gray-color-100;
     border-radius: 4px;
@@ -626,4 +635,86 @@ input[type=checkbox] + label {
         right: 18px;
         top: calc(50% - 7px);
     }
-  }
+}
+    
+.search-field {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 2px;
+    width: 100%;
+    max-width: 604px;
+
+    input {
+        border: 1px solid $gray-color-100;
+        border-radius: 2px;
+        height: 38px;
+        padding-left: 38px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: $gray-color-200;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .search-input {
+        margin-left: 8px;
+    }
+
+    .magnifier-icon {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        padding-top: 10px;
+        padding-left: 12px;
+    }
+}
+
+.faq-list {        
+    list-style-type: none;
+
+    li {
+        border: 1px solid $gray-color-100;
+        padding: 16px;
+        margin-top: 16px;
+        color: $gray-color-600;
+    }
+  
+    .faq-question {
+        position: relative;
+        cursor: pointer;
+        
+        h3 {            
+            font-size: 18px;
+            font-weight: normal;
+            margin: 0;
+            margin: 0 27px 0 0;
+
+            &:hover {
+                color: $orange-color;
+            }
+        }
+  
+        i {
+            position: absolute;
+            right: 6px;
+            top: 0;
+            color: $gray-color-200;
+            transform: rotate(90deg);
+            transition: transform 0.5s ease-in;
+        }
+
+        &.opened {
+            i {
+                transform: rotate(90deg) scaleX(-1);
+            }
+        }
+    }
+  
+    .faq-answer {
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+  

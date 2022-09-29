@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         function updateContainer() {
-            let elementHeight = hidingElement.clientHeight;
+            let elementHeight = getElementHeight(hidingElement);
 
             let parentHidingContainer = hidingContainer.parentElement.closest(".hiding-container");
             let isParentOpened = false;
@@ -41,6 +41,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     parentHidingContainer.style.height = (parentHidingContainer.firstChild.clientHeight - elementHeight) + "px"; 
                 } 
             }            
+        }
+
+        function getElementHeight(el) {
+            console.log(el);
+            let elHeight = el.offsetHeight;
+            elHeight += parseInt(
+              window.getComputedStyle(el).getPropertyValue("margin-top")
+            );
+            elHeight += parseInt(
+              window.getComputedStyle(el).getPropertyValue("margin-bottom")
+            );
+
+            return elHeight;
         }
     });
 });

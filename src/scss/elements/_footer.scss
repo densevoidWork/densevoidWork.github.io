@@ -54,6 +54,10 @@
             color: $gray-color-800;
             font-size: 18px;
             line-height: 130%;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 
