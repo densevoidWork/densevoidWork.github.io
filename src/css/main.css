@@ -4121,6 +4121,7 @@ select::-ms-expand {
   border-bottom: 1px solid #D9D8D3;
   padding: 16px;
   align-items: center;
+  transition: opacity 0.4s ease-out;
 }
 .basket-page .basket-content .content-table-body .content-table-body-row .content-image {
   grid-area: image;
