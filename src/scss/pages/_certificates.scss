@@ -1,0 +1,142 @@
+.certificates-page {
+    
+    .find-certificate {
+        border: 1px solid $gray-color-100;
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+
+        .find-header {
+            font-size: 24px;
+        }
+
+        .find-description {
+            font-size: 14px;
+        }
+    }
+
+    h2 {
+        text-align: left;
+        font-size: 32px;
+        font-weight: 700;
+
+        .certificate-type-logo {
+            vertical-align: -26px;
+            margin-right: 16px;
+        }
+    }
+
+    .certificates-list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+
+    .certificate-item {
+        display: flex;
+        column-gap: 8px;
+        border: 1px solid $gray-color-100;
+        border-radius: 4px;
+        padding: 16px;
+        align-items: center;
+        text-decoration: none;
+
+        .download-icon {
+            width: 26px;
+            height: 26px;
+        }
+
+        .certificate-info {
+            display: flex;
+            flex-direction: column;
+            row-gap: 4px;
+
+            .certificate-name {
+                font-size: 24px;
+                color: $gray-color-600;
+            }
+
+            .download-link {
+                font-size: 18px;
+                color: $gray-color-200;
+            }
+        }
+
+        &:hover {
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+
+            .certificate-info {
+
+                .download-link {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $screensize-large) {
+        .certificates-search {
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: $screensize-medium) {
+    
+        .find-certificate {
+    
+            .find-header {
+                font-size: 20px;
+            }
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        .certificate-item {
+            align-items: flex-start;
+    
+            .certificate-info {
+    
+                .certificate-name {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $screensize-small-2) {
+    
+        .find-certificate {
+    
+            .find-header {
+                font-size: 18px;
+            }
+
+            .find-description {
+                font-size: 12px;
+            }
+        }
+
+        h2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .certificate-item {
+    
+            .certificate-info {
+    
+                .certificate-name {
+                    font-size: 18px;
+                }
+
+                .download-link {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

@@ -45,12 +45,13 @@ hr {
 }
 
 h1 {
-    font-size: 64px;
+    font-size: 56px;
     text-align: center;
     margin-top: 60px;
     margin-bottom: 34px;
     font-weight: 400;
     color: $gray-color-800;
+    font-family: "HelveticaThin";
 
     @media (max-width: $screensize-large) {
 

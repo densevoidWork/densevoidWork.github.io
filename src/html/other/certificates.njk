@@ -1,0 +1,88 @@
+---
+eleventyNavigation:
+    key: Certificates
+    parent: Main
+    title: Сертификаты на продукцию
+---
+{% include "components/common/breacrumbs.njk" %}
+
+<div class="certificates-page">
+    <div class="container">
+        <div class="common-padding">
+            <h1>Сертификаты на продукцию</h1>
+            <div class="find-certificate">
+                <div class="find-header">
+                    Сертификаты соответствия Техническому Регламенту Таможенного Союза на продукцию фирмы Petzl
+                </div>
+                <div class="find-description">
+                    Актуальные сертификаты удобно искать на странице каждого товара. Ниже приведен полный список действующих сертификатов. Их действие распространяется на всей территории Таможенного Союза, включая Россию, Беларусь, Армению, Казахстан.
+                </div>
+
+                <form class="search-field certificates-search">
+                    <img class="magnifier-icon" src="/images/magnifier-icon.svg">
+                    <input type="text" placeholder="Ключевое слово для поиска">
+                    <button class="btn search-input" type="submit">Поиск</button>
+                </form>
+            </div>
+
+            <h2>
+                <img class="certificate-type-logo" src="/images/other/certificates/eac-big.png" />
+                Евразийское соответствие, EAC
+            </h2>
+            <div class="certificates-list">
+                {% for i in range(0, 9) %}
+                <a href="#" class="certificate-item">
+                    <img class="download-icon" src="/images/other/certificates/download-cerificate-icon.svg" />
+                    <div class="certificate-info">
+                        <div class="certificate-name">
+                            Привязи VOLT, AVAO, NEWTON 2021 - сертификат на партию.  Действителен до 2021 г.
+                        </div>
+                        <div class="download-link">
+                            Скачать pdf 1.35 Мб
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+
+            <h2>
+                <img class="certificate-type-logo" src="/images/other/certificates/rst-big.png" />
+                Знак соответствия при обязательной сертификации продукции в РФ, РСТ
+            </h2>
+            <div class="certificates-list">
+                {% for i in range(0, 9) %}
+                <a href="#" class="certificate-item">
+                    <img class="download-icon" src="/images/other/certificates/download-cerificate-icon.svg" />
+                    <div class="certificate-info">
+                        <div class="certificate-name">
+                            Привязи VOLT, AVAO, NEWTON 2021 - сертификат на партию.  Действителен до 2021 г.
+                        </div>
+                        <div class="download-link">
+                            Скачать pdf 1.35 Мб
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+
+            <h2>
+                Продукция, для которой не требуется обязательная сертификация
+            </h2>
+            <div class="certificates-list">
+                {% for i in range(0, 7) %}
+                <a href="#" class="certificate-item">
+                    <img class="download-icon" src="/images/other/certificates/download-cerificate-icon.svg" />
+                    <div class="certificate-info">
+                        <div class="certificate-name">
+                            Привязи VOLT, AVAO, NEWTON 2021 - сертификат на партию.  Действителен до 2021 г.
+                        </div>
+                        <div class="download-link">
+                            Скачать pdf 1.35 Мб
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
