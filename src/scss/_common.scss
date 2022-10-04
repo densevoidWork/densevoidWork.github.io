@@ -27,10 +27,37 @@ header {
 ul {
     padding: 0;
     margin: 0;
+
+    &.custom-ul {        
+        list-style-type: none;
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        color: $gray-color-600;
+
+        li {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        li:before {
+            background-color: #f0571b;
+            border-radius: 50%;
+            content: "";
+            display: block;
+            height: 12px;
+            width: 12px;
+            position: absolute;
+            left: -20px;
+            top: calc(50% - 6px);
+        }
+    }
 }
 
 a {
     text-decoration: none;
+    color: $orange-color;
 
     &:hover {
         text-decoration: underline;
@@ -67,12 +94,22 @@ h1 {
     }
 }
 
+.header-addition {
+    color: $gray-color-800;
+    font-size: 24px;
+    line-height: 140%;
+    text-align: center;
+    margin-top: -26px;
+    font-family: HelveticaThin;
+}
+
 h2 {
     font-size: 32px;
     text-align: center;
     font-weight: 400;
     margin-bottom: 25px;
     margin-top: 58px;
+    color: $gray-color-800;
 }
 
 input[type=text], textarea {
@@ -474,6 +511,33 @@ input[type=radio]:not(:checked)+label:hover:before {
     margin-top: 80px;
 }
 
+.info-container {
+    background-color: $white-color;
+    border: 1px solid $gray-color-100;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 32px;
+    font-size: 14px;
+    color: $gray-color-600;
+    overflow: hidden;
+
+    h2 {
+        font-size: 24px;
+        margin: 0;
+        color: $gray-color-800;
+        text-align: left;
+    }
+
+    @media (max-width: $screensize-small-2) {
+        font-size: 12px;
+        padding: 16px;
+
+        h2 {
+            font-size: 18px;
+        }
+    }
+}
+
 .hiding-container {
     overflow: hidden;
     transition: height 0.5s ease-in 0s;
@@ -588,12 +652,6 @@ input[type=checkbox] + label {
 
 select::-ms-expand {
     display: none;
-}
-
-:root {
-    --select-border: #777;
-    --select-focus: blue;
-    --select-arrow: var(--select-border);
 }
 
 .select {

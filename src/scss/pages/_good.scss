@@ -639,33 +639,6 @@ $final-mobile-size: 850px;
     }
 }
 
-.info-container {
-    background-color: $white-color;
-    border: 1px solid $gray-color-100;
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 32px;
-    font-size: 14px;
-    color: $gray-color-600;
-    overflow: hidden;
-
-    h2 {
-        font-size: 24px;
-        margin: 0;
-        color: $gray-color-800;
-        text-align: left;
-    }
-
-    @media (max-width: $screensize-small-2) {
-        font-size: 12px;
-        padding: 16px;
-
-        h2 {
-            font-size: 18px;
-        }
-    }
-}
-
 .two-column-grid {
     display: grid;
     grid-template-columns: auto 332px;

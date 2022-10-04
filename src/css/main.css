@@ -356,9 +356,33 @@ ul {
   padding: 0;
   margin: 0;
 }
+ul.custom-ul {
+  list-style-type: none;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  color: #43423F;
+}
+ul.custom-ul li {
+  position: relative;
+  margin-left: 20px;
+}
+ul.custom-ul li:before {
+  background-color: #f0571b;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  left: -20px;
+  top: calc(50% - 6px);
+}
 
 a {
   text-decoration: none;
+  color: #F0571B;
 }
 a:hover {
   text-decoration: underline;
@@ -394,12 +418,22 @@ h1 {
   }
 }
 
+.header-addition {
+  color: #1D1C1B;
+  font-size: 24px;
+  line-height: 140%;
+  text-align: center;
+  margin-top: -26px;
+  font-family: HelveticaThin;
+}
+
 h2 {
   font-size: 32px;
   text-align: center;
   font-weight: 400;
   margin-bottom: 25px;
   margin-top: 58px;
+  color: #1D1C1B;
 }
 
 input[type=text], textarea {
@@ -752,6 +786,32 @@ input[type=radio]:not(:checked) + label:hover:before {
   margin-top: 80px;
 }
 
+.info-container {
+  background-color: #FFFFFF;
+  border: 1px solid #D9D8D3;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 32px;
+  font-size: 14px;
+  color: #43423F;
+  overflow: hidden;
+}
+.info-container h2 {
+  font-size: 24px;
+  margin: 0;
+  color: #1D1C1B;
+  text-align: left;
+}
+@media (max-width: 500px) {
+  .info-container {
+    font-size: 12px;
+    padding: 16px;
+  }
+  .info-container h2 {
+    font-size: 18px;
+  }
+}
+
 .hiding-container {
   overflow: hidden;
   transition: height 0.5s ease-in 0s;
@@ -847,12 +907,6 @@ input[type=checkbox] + label a:hover {
 
 select::-ms-expand {
   display: none;
-}
-
-:root {
-  --select-border: #777;
-  --select-focus: blue;
-  --select-arrow: var(--select-border);
 }
 
 .select {
@@ -3286,32 +3340,6 @@ select::-ms-expand {
   }
 }
 
-.info-container {
-  background-color: #FFFFFF;
-  border: 1px solid #D9D8D3;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 32px;
-  font-size: 14px;
-  color: #43423F;
-  overflow: hidden;
-}
-.info-container h2 {
-  font-size: 24px;
-  margin: 0;
-  color: #1D1C1B;
-  text-align: left;
-}
-@media (max-width: 500px) {
-  .info-container {
-    font-size: 12px;
-    padding: 16px;
-  }
-  .info-container h2 {
-    font-size: 18px;
-  }
-}
-
 .two-column-grid {
   display: grid;
   grid-template-columns: auto 332px;
@@ -4568,13 +4596,6 @@ select::-ms-expand {
   font-size: 14px;
 }
 
-.faq .header-addition {
-  color: #1D1C1B;
-  font-size: 24px;
-  line-height: 140%;
-  text-align: center;
-  margin-top: -26px;
-}
 .faq .faq-search {
   margin: 24px auto 0;
 }
@@ -4686,6 +4707,43 @@ select::-ms-expand {
   .certificates-page .certificate-item .certificate-info .download-link {
     font-size: 16px;
   }
+}
+
+.shipping {
+  margin-bottom: 46px;
+}
+.shipping .header-addition {
+  font-size: 32px;
+}
+.shipping h2 {
+  margin-top: 64px;
+  margin-bottom: 32px;
+}
+.shipping .shipping-regions {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
+.shipping .info-container .region-header {
+  font-size: 32px;
+  line-height: 140%;
+  color: #1D1C1B;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.shipping .payment-methods {
+  display: flex;
+  column-gap: 32px;
+}
+.shipping .last-questions {
+  margin-top: 32px;
+  font-size: 24px;
+  line-height: 140%;
+  text-align: center;
+}
+.shipping .last-questions a {
+  color: #F0571B;
 }
 
 @font-face {

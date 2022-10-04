@@ -1,0 +1,617 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Petzl</title>
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="/js/main.js" defer></script> 
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide-core.min.css">
+    </head>
+    <body>
+        <header>
+            <div class="topbar">
+                <div class="container">
+                    <div class="first-level">
+                        <div class="shops-name">Сеть магазинов АльпИндустрия</div>
+                        <div class="second-level">
+                            <a href="#">Доставка и оплата</a>
+                            <a href="#">Магазин в Москве</a>
+                            <a href="/other/contacts/">Контакты</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="middlebar">
+                <div class="container">
+                    <div class="first-level">
+
+                        <div class="hamburger-btn" data-hide-button-for="mobile-main-menu">
+                            <img class="first-line" src="/images/hamburger-line.svg"/>
+                            <img class="second-line" src="/images/hamburger-line.svg"/>
+                        </div>
+
+                        <a class="logo-container" href="/">
+                            <img class="logo-img" src="/images/mainlogo_full.svg" />     
+                        </a>
+
+                        <form class="search-field">
+                            <img class="magnifier-icon" src="/images/magnifier-icon.svg" />
+                            <input type="text" placeholder="Название, артикул, код товара..."/>
+                            <button class="btn search-input" type="submit">Поиск</button>
+                        </form>
+
+                        <div class="mini-contacts-in-middle-bar">
+                            <div class="mini-contacts">
+    <a class="round-btn" style="background-image: url(/images/whatsapp-icon.svg)"></a>
+    <a class="round-btn" style="background-image: url(/images/phone-icon.svg)"></a>
+    <div class="phone-and-worktime">
+        <div class="phone-text">8 495 134 74 46</div>
+        <div class="worktime-text">Интернет-магазин 10:00 - 20:00</div>
+    </div>
+</div>
+                        </div>
+
+                        <div class="personal-menu">
+                            <div id="basket-button" class="icon-btn">
+                                <img src="/images/bug-icon.svg" />
+                                <div class="btn-counter">1</div>
+                                <div class="mini-basket-menu">
+                                    <div class="mini-basket-header">Ваша корзина</div>
+                                    <div class="mini-basket-message">Товар добавлен в корзину!</div>
+                                    <hr />     
+                                    <div class="mini-basket-content">                               
+                                        
+                                        <div class="mini-basket-item">                                    
+                                            <div class="item-image">
+                                                <img src="/images/other/basket/image2.jpg" />
+                                            </div>
+                                            <div class="item-name">
+                                                <div class="name">FLY</div>
+                                                <div class="info">
+                                                    Размер: L<br />
+                                                    Цвет: Blue<br />
+                                                    # 364001 - 1 шт.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        
+                                        <div class="mini-basket-item">                                    
+                                            <div class="item-image">
+                                                <img src="/images/other/basket/image2.jpg" />
+                                            </div>
+                                            <div class="item-name">
+                                                <div class="name">FLY</div>
+                                                <div class="info">
+                                                    Размер: L<br />
+                                                    Цвет: Blue<br />
+                                                    # 364001 - 1 шт.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        
+                                        <div class="mini-basket-result">
+                                            <div class="result-label">Итого:</div>
+                                            <div class="result-value">6590 рублей</div>
+                                        </div>
+                                        <div class="mini-basket-buttons">
+                                            <button class="btn transp-gray-btn mini-basket-later-button">ПОЗЖЕ</button>
+                                            <a href="/other/basket/" class="btn">ОФОРМИТЬ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="account-button" class="icon-btn"><img src="/images/account-icon.svg" /></div>
+                        </div>
+                    </div>
+                    <div class="mobile-search-field">
+                        <img class="magnifier-icon" src="/images/magnifier-icon.svg" />
+                        <input type="text" placeholder="Искать..."/>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navbar">
+                <div class="container">
+                    <div class="first-level">                        
+                        <div class="navbar-menu">
+                            
+                                
+
+                                
+                                    
+                                
+
+                                <div class="navbar-element parent">
+                                    <a href="/catalog/sport/">Спорт</a>
+
+                                    <div class="menu-categories">
+                                        
+                                            <a class="category" href="/catalog/safetysystems/">
+                                                <img class="preview" src="/images/goods/small/1.jpg"></img>
+                                                <div class="title">Страховочные системы</div>
+                                            </a>
+                                        
+                                            <a class="category" href="/catalog/safetysystems/">
+                                                <img class="preview" src="/images/goods/small/2.jpg"></img>
+                                                <div class="title">Каски</div>
+                                            </a>
+                                        
+                                    </div>
+                                </div>
+                            
+                                
+
+                                
+                                    
+                                
+
+                                <div class="navbar-element parent">
+                                    <a href="/catalog/promalp/">Промальп</a>
+
+                                    <div class="menu-categories">
+                                        
+                                            <a class="category" href="/catalog/safetysystems/">
+                                                <img class="preview" src="/images/goods/small/2.jpg"></img>
+                                                <div class="title">Тест 1</div>
+                                            </a>
+                                        
+                                            <a class="category" href="/catalog/safetysystems/">
+                                                <img class="preview" src="/images/goods/small/1.jpg"></img>
+                                                <div class="title">Тест 2</div>
+                                            </a>
+                                        
+                                    </div>
+                                </div>
+                            
+                                
+
+                                
+
+                                <div class="navbar-element">
+                                    <a href="/catalog/promalp/">Фонари</a>
+
+                                    <div class="menu-categories">
+                                        
+                                    </div>
+                                </div>
+                            
+                                
+
+                                
+
+                                <div class="navbar-element">
+                                    <a href="/catalog/promalp/">Подборки</a>
+
+                                    <div class="menu-categories">
+                                        
+                                    </div>
+                                </div>
+                            
+                                
+
+                                
+
+                                <div class="navbar-element">
+                                    <a href="/catalog/promalp/">Новости и статьи</a>
+
+                                    <div class="menu-categories">
+                                        
+                                    </div>
+                                </div>
+                            
+                                
+
+                                
+
+                                <div class="navbar-element">
+                                    <a href="/catalog/promalp/">Техническая информация</a>
+
+                                    <div class="menu-categories">
+                                        
+                                    </div>
+                                </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-submenu">
+                    <div class="submenu-goods-categories">
+                    </div>
+                </div>
+            </div>       
+
+            <div class="mobile-navbar">
+                <div id="mobile-main-menu" class="mobile-submenu">
+                    <div class="main-categories-list">
+                        
+                        
+                            
+                            
+
+                            
+                                
+                            
+
+                            <div class="main-category parent" data-hide-button-for="category_1">
+                                <div class="main-title">
+                                    Спорт
+                                </div>
+
+                                <div id="category_1" class="categories-list">
+                                    
+                                                                     
+                                            
+                                        
+
+                                        <a class="category" href="/catalog/safetysystems/">
+                                            <img class="icon" src="/images/goods/categories/category-1.png" />
+                                            <div class="title">Страховочные системы</div>
+                                        </a>
+                                    
+                                                                     
+                                            
+                                        
+
+                                        <a class="category" href="/catalog/safetysystems/">
+                                            <img class="icon" src="/images/goods/categories/category-1.png" />
+                                            <div class="title">Каски</div>
+                                        </a>
+                                    
+                                </div>
+                            </div>
+                        
+                            
+                            
+
+                            
+                                
+                            
+
+                            <div class="main-category parent" data-hide-button-for="category_2">
+                                <div class="main-title">
+                                    Промальп
+                                </div>
+
+                                <div id="category_2" class="categories-list">
+                                    
+                                                                     
+                                            
+                                        
+
+                                        <a class="category" href="/catalog/safetysystems/">
+                                            <img class="icon" src="/images/goods/categories/category-1.png" />
+                                            <div class="title">Тест 1</div>
+                                        </a>
+                                    
+                                                                     
+                                            
+                                        
+
+                                        <a class="category" href="/catalog/safetysystems/">
+                                            <img class="icon" src="/images/goods/categories/category-1.png" />
+                                            <div class="title">Тест 2</div>
+                                        </a>
+                                    
+                                </div>
+                            </div>
+                        
+                            
+                            
+
+                            
+
+                            <div class="main-category" data-hide-button-for="category_3">
+                                <div class="main-title">
+                                    Фонари
+                                </div>
+
+                                <div id="category_3" class="categories-list">
+                                    
+                                </div>
+                            </div>
+                        
+                            
+                            
+
+                            
+
+                            <div class="main-category" data-hide-button-for="category_4">
+                                <div class="main-title">
+                                    Подборки
+                                </div>
+
+                                <div id="category_4" class="categories-list">
+                                    
+                                </div>
+                            </div>
+                        
+                            
+                            
+
+                            
+
+                            <div class="main-category" data-hide-button-for="category_5">
+                                <div class="main-title">
+                                    Новости и статьи
+                                </div>
+
+                                <div id="category_5" class="categories-list">
+                                    
+                                </div>
+                            </div>
+                        
+                            
+                            
+
+                            
+
+                            <div class="main-category" data-hide-button-for="category_6">
+                                <div class="main-title">
+                                    Техническая информация
+                                </div>
+
+                                <div id="category_6" class="categories-list">
+                                    
+                                </div>
+                            </div>
+                        
+                    </div>                                
+
+                    <div class="mini-contacts-in-mobile-menu">                                    
+                        <div class="mini-contacts">
+    <a class="round-btn" style="background-image: url(/images/whatsapp-icon.svg)"></a>
+    <a class="round-btn" style="background-image: url(/images/phone-icon.svg)"></a>
+    <div class="phone-and-worktime">
+        <div class="phone-text">8 495 134 74 46</div>
+        <div class="worktime-text">Интернет-магазин 10:00 - 20:00</div>
+    </div>
+</div>
+                    </div>
+                    
+                    <div class="mobile-menu-options">
+                        <a href="#">Доставка и оплата</a>
+                        <a href="#">Связаться с нами</a>
+                    </div>
+                </div>
+            </div>
+        </header>   
+
+        <main>
+            
+<div class="breadcrumbs">    
+    <div class="container">
+        <div class="desktop">
+            <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+                
+                
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="item" href="/">
+                        <span itemprop="name">Главная</span></a>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    
+                
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="item" href="/other/shipping/">
+                        <span itemprop="name">Доставка и оплата</span></a>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                    
+                
+            </ol>
+        </div>
+        <div class="mobile">
+            <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="/"><span itemprop="name">Назад</span></a>
+                    <meta itemprop="position" content="1" />
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="shipping">
+    <div class="container">
+        <div class="common-padding">
+            <h1>Доставка и оплата</h1>
+            <div class="header-addition">Условия и стоимость доставки заказов</div>
+
+            <div class="shipping-regions">
+                <div class="info-container">
+                    <div class="region-header">Москва</div>
+                    <ul class="custom-ul">
+                        <li><strong>200 рублей</strong> при покупке менее 3000 рублей</li>
+                        <li><strong>Бесплатно</strong> при покупке от 3000 рублей</li>
+                        <li><strong>Срочная доставка</strong> (день в день при заказе до 13:00, на следующий день при заказе после 13:00). Плюс 500 рублей к стоимости (700 рублей при заказе до 3000 рублей, 500 рублей при заказе более 3000 рублей).</li>
+                    </ul>
+                </div>
+
+                <div class="info-container">
+                    <div class="region-header">Московская область</div>
+                    <ul class="custom-ul">
+                        <li><strong>300 рублей</strong> при покупке менее 3000 рублей</li>
+                        <li><strong>Бесплатно</strong> при покупке от 3000 рублей</li>
+                    </ul>
+                </div>
+
+                <div class="info-container">
+                    <div class="region-header">По России</div>
+                    <ul class="custom-ul">
+                        <li><strong>300 рублей</strong> при покупке менее 3000 рублей</li>
+                        <li><strong>Бесплатно</strong> при покупке от 3000 рублей</li>
+                    </ul>
+                </div>
+
+                <div class="info-container">
+                    <div class="region-header">Другие страны</div>
+                    <ul class="custom-ul">
+                        <li>Стоимость доставки рассчитывается индивидуально</li>
+                    </ul>
+                </div>
+
+                <div class="info-container">
+                    <div class="region-header">Самовывоз</div>
+                    <ul class="custom-ul">
+                        <li>Стоимость доставки рассчитывается индивидуально</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h2>Оплата заказов</h2>
+            <div class="info-container">
+                <div class="payment-methods">
+                    <div>
+                        <img class="payment-cards" src="/images/other/basket/visa.png" />
+                        <img class="payment-cards" src="/images/other/basket/mastercard.png" />
+                        <img class="payment-cards" src="/images/other/basket/mir.png" />
+                    </div>
+                    <div>
+                        <ul class="custom-ul">
+                            <li>Наличными при получении (для физических лиц)</li>
+                            <li>Оплата по счету для юридических лиц</li>
+                            <li>Оплата картой на сайте. Для оплаты с карты лимит не более 350 000 рублей в сутки</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="last-questions">
+                    Остались вопросы?<br />
+                    Обращайтесь: +7 (495) 134-74-46, <a href = "mailto: sale@petzl.ru">sale@petzl.ru</a>
+                </div>
+                    
+            </div>
+            
+            <h2>Возврат товара</h2>
+            <div class="info-container">
+                <ul class="custom-ul">
+                    <li>Заполните <a href="/other/quality-questions/">заявление на возврат</a></li>
+                    <li>Приложите ксерокопию документа, удостоверяющего личность</li>
+                    <li>Отправьте посылку почтой без наложенного платежа (Москва, г. Зеленоград, 1015-258, для ИП Безручко)</li>
+                    <li>Получите оплату на карту или банковские реквизиты</li>
+                </ul>                    
+            </div>
+        </div>
+    </div>
+</div>
+        </main>
+
+        <footer class="footer">
+            <div class="subscribe-block">
+                <div class="container content">
+                    <div class="text-part">
+                        <div class="big-text">Подписаться на рассылку</div>
+                        <div class="small-text">и всегда быть в курсе</div>
+                    </div>
+                    <div class="form-part">
+                        <form class="subscribe-field">
+                            <input type="text" placeholder="Введите ваш email"/>
+                            <button class="btn search-input" type="submit">Подписаться</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="footer-content">
+                    <div class="brand-part">
+                        <a class="logo-container" href="/">
+                            <img src="/images/mainlogo_full.svg" />     
+                        </a>
+                        <div class="follow-block">
+                            <div class="invite-text">Присоединяйтесь к нам</div>
+                            <div class="social-links">                                
+                                
+                                <a class="round-btn big" href="#">
+                                    <div class="icon-container">
+                                        <img class="color-icon" src="/images/social/vk.svg"></img>
+                                        <img class="gray-icon" src="/images/social/vk-gray.svg"></img>
+                                    </div>
+                                </a>
+                                
+                                <a class="round-btn big" href="#">
+                                    <div class="icon-container">
+                                        <img class="color-icon" src="/images/social/twitter.svg"></img>
+                                        <img class="gray-icon" src="/images/social/twitter-gray.svg"></img>
+                                    </div>
+                                </a>
+                                
+                                <a class="round-btn big" href="#">
+                                    <div class="icon-container">
+                                        <img class="color-icon" src="/images/social/yandexdzen.svg"></img>
+                                        <img class="gray-icon" src="/images/social/yandexdzen-gray.svg"></img>
+                                    </div>
+                                </a>
+                                
+                                <a class="round-btn big" href="#">
+                                    <div class="icon-container">
+                                        <img class="color-icon" src="/images/social/youtube.svg"></img>
+                                        <img class="gray-icon" src="/images/social/youtube-gray.svg"></img>
+                                    </div>
+                                </a>
+                                
+                                <a class="round-btn big" href="#">
+                                    <div class="icon-container">
+                                        <img class="color-icon" src="/images/social/telegram.svg"></img>
+                                        <img class="gray-icon" src="/images/social/telegram-gray.svg"></img>
+                                    </div>
+                                </a>
+                                
+                                <a class="round-btn big" href="#">
+                                    <div class="icon-container">
+                                        <img class="color-icon" src="/images/social/tiktok.svg"></img>
+                                        <img class="gray-icon" src="/images/social/tiktok-gray.svg"></img>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                        </div>
+                        <div class="rules">Условия использования сайта. При републикации материалов активная ссылка на petzl.ru обязательна.</div>
+                    </div>
+
+                    <div class="footer-menu">
+                        <a class="menu-element" href="/quality_questions">Задать вопрос</a>
+                        <a class="menu-element" href="/other/articles">Новости и статьи</a>
+                        <a class="menu-element" href="/other/quality_questions">Вопросы по качеству</a>
+                        <a class="menu-element" href="#">Проверка СИЗ</a>
+                        <a class="menu-element" href="/other/catalogs">Каталоги</a>
+                        <a class="menu-element" href="/other/blanks">Сертификаты</a>
+                        <a class="menu-element" href="/other/contacts">Команда Petzl</a>
+                        <a class="menu-element" href="#">Фильмотека</a>
+                        <a class="menu-element" href="/other/faq">FAQ</a>
+                    </div>
+
+                    <div class="contacts">
+                        <div class="column">
+                            <div class="title">Интернет магазин</div>
+                            <a class="menu-element" href="#"><img class="icon" src="/images/small-email-icon.svg"/>info@petzl.ru</a>
+                            <a class="menu-element" href="#"><img class="icon" src="/images/small-phone-icon.svg"/>8 (495) 134-74-46</a>
+                            <a class="menu-element" href="#">Доставка и оплата</a>
+                            <a class="menu-element" href="#">Магазин в Москве</a>
+                            <a class="menu-element" href="#">Где еще купить Petzl</a>
+                            <a class="menu-element" href="/other/contacts/">Контакты</a>
+                            <a class="menu-element" href="#">О бренде</a>
+                        </div>
+                        <div class="column">
+                            <div class="title">Petzl Technical Institute</div>
+                            <img class="vlab-logo" src="/images/logo-vlab.png"/>
+                            <div class="title big-gap">Оптовым клиентам</div>
+                            <a class="menu-element underline" href="dealerpage.ru">dealerpage.ru</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-contacts">
+                        <a class="menu-element" href="#"><img class="icon" src="/images/small-email-icon.svg"/>info@petzl.ru</a>
+                        <a class="menu-element" href="#"><img class="icon" src="/images/small-phone-icon.svg"/>8 (495) 134-74-46</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
