@@ -2332,6 +2332,7 @@ select::-ms-expand {
   margin-top: 8px;
   float: right;
   visibility: hidden;
+  margin-right: 8px;
 }
 .news-preview-block .read-btn::after {
   background: url(../images/orange-arrow.svg) no-repeat;

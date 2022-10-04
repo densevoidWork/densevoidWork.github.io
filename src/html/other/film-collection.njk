@@ -10,6 +10,35 @@ eleventyNavigation:
     <div class="container">
         <div class="common-padding">
             <h1>Фильмотека</h1>
+
+            <div class="news-preview-block margin-top-60">
+                <div class="news-list">
+                    {% for i in range(0, 8) -%}
+                        <a class="news-element" href="#">
+                            <img class="image" src="/images/other/film_collection/film.jpg" />
+                            <div class="title">Пекло (Sunshine)</div>
+                            <div class="preview-content">
+                                Используемое снаряжение PETZL: фонарь MYOBELT SB 5
+                            </div>
+                            <div class="read-btn">
+                                Смотреть
+                            </div>
+                        </a>
+                    {%- endfor %}
+                </div>
+
+                <div class="navigation">
+                    <button class="btn transp-gray-btn">Показать больше</button>
+                    <div class="pages">
+                        <div class="page current">1</div>
+                        <div class="page">2</div>
+                        <div class="page">3</div>
+                        <div class="dots">...</div>
+                        <div class="page">13</div>
+                        <div class="right-arrow">></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
