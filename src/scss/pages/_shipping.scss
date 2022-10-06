@@ -8,6 +8,12 @@
     h2 {
         margin-top: 64px;
         margin-bottom: 32px;
+        font-size: 32px;
+        font-family: HelveticaThin;
+    }
+
+    h1 + h2 {
+        margin-top: -8px;
     }
 
     .shipping-regions {
@@ -31,6 +37,7 @@
     .payment-methods {
         display: flex;
         column-gap: 32px;
+        align-items: center;
     }
 
     .last-questions {
@@ -41,6 +48,37 @@
 
         a {
             color: $orange-color;
+        }
+    }
+
+    @media (max-width: $screensize-large) {
+        .last-questions {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: $screensize-medium-3) {
+        .info-container {
+    
+            .region-header {
+                font-size: 20px;
+                text-align: center;
+            }
+        }
+
+        .last-questions {
+            font-size: 18px;
+        }
+
+        .payment-methods {
+            flex-direction: column-reverse;
+            row-gap: 24px;
+        }
+    }
+
+    @media (max-width: $screensize-small-2) {
+        h2 {
+            font-size: 24px;
         }
     }
 }

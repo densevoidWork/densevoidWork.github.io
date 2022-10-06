@@ -12,32 +12,36 @@
     }
 
     .articles-block {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 50%);
-        justify-content: center;
+        .page-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 50%);
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
     
-        &.big {
+        &.big .page-content {
             grid-template-columns: repeat(auto-fill, 50%);
         }
     
-        &.small {
+        &.small .page-content {
             grid-template-columns: repeat(auto-fill, 33.33%);
         }
     
         @media (max-width: $screensize-medium)
         {
-            &.big {
+            &.big .page-content {
                 grid-template-columns: repeat(auto-fill, 100%);
             }
         
-            &.small {
+            &.small .page-content {
                 grid-template-columns: repeat(auto-fill, 50%);
             }
         }
     
         @media (max-width: $screensize-small-2)
         {
-            &.small {
+            &.small .page-content {
                 grid-template-columns: repeat(auto-fill, 100%);
             }
         }

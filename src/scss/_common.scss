@@ -52,6 +52,10 @@ ul {
             left: -20px;
             top: calc(50% - 6px);
         }
+
+        @media (max-width: $screensize-medium-3) {
+            font-size: 16px;
+        }
     }
 }
 
@@ -97,10 +101,14 @@ h1 {
 .header-addition {
     color: $gray-color-800;
     font-size: 24px;
-    line-height: 140%;
     text-align: center;
     margin-top: -26px;
     font-family: HelveticaThin;
+
+    @media (max-width: $screensize-small-2) {
+        font-size: 21px;
+        line-height: 100%;
+    }
 }
 
 h2 {
@@ -636,10 +644,12 @@ input[type=checkbox] + label {
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            user-select: none;
         }
 
-        .right-arrow {
+        .right-arrow, .left-arrow {
             cursor: pointer;
+            user-select: none;
         }
 
         .page.current {
@@ -776,4 +786,3 @@ select::-ms-expand {
         flex-direction: column;
     }
 }
-  

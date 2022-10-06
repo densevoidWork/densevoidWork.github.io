@@ -606,3 +606,138 @@ if (basketButton) {
         isMiniBasketMenuVisible = !isMiniBasketMenuVisible;
     });
 }
+
+/* NAVIGATION */
+
+let navigations = document.querySelectorAll('.navigation');
+navigations.forEach(navigation => {
+    let contentId = navigation.getAttribute('data-navigation-for');
+    if (contentId == null) return;
+
+    let parentElement = document.querySelector('#' + contentId);
+    if (parentElement == null) return;
+
+    let showMoreButton = navigation.querySelector('.show-more');
+    if (showMoreButton) {
+        showMoreButton.addEventListener('click', function(e) {
+            let newContent = requestNewPageContent(parentElement);
+            if (newContent == null) return;
+
+            newContent.style.opacity = 0;
+            parentElement.append(newContent);
+            setTimeout(function() {
+                newContent.style.opacity = 1;
+            }, 500);
+        });
+    }
+
+    let pages = navigation.querySelector('.pages');
+    let currentPage = 5;
+    let maxPage = 13;
+
+    if (pages) {
+        updatePageNavigation();
+    }
+
+    function updatePageNavigation() {
+        pages.innerHTML = "";
+
+        if (currentPage > 1) {
+            let leftArrow = document.createElement("div");
+            leftArrow.classList.add('left-arrow');
+            leftArrow.innerText = '<';
+            leftArrow.addEventListener('click', () => {
+                changePage(currentPage - 1);
+            })
+            pages.append(leftArrow);
+        }
+
+        if (currentPage > 3) {
+            pages.append(createPageButton(1));
+        }
+
+        if (currentPage > 4) {
+            pages.append(createDots(createDots));
+        }
+
+        let minMiddleNumber = currentPage - 2;
+        if (minMiddleNumber < 1) minMiddleNumber = 1;
+
+        let maxMiddleNumber = currentPage + 2;
+        if (maxMiddleNumber > maxPage) maxMiddleNumber = maxPage;
+
+        for (let i = minMiddleNumber; i <= maxMiddleNumber; i++) {
+            pages.append(createPageButton(i));
+        }
+
+        if (currentPage < maxPage - 3) {
+            pages.append(createDots(createDots));
+        }
+
+        if (currentPage < maxPage - 2) {
+            pages.append(createPageButton(maxPage));
+        }
+
+        if (currentPage < maxPage) {
+            let rightArrow = document.createElement("div");
+            rightArrow.classList.add('right-arrow');
+            rightArrow.innerText = '>';
+            rightArrow.addEventListener('click', () => {
+                changePage(currentPage + 1);
+            })
+            pages.append(rightArrow);
+        }
+    }
+
+    function changePage(pageNumber) {
+        pageNumber = Math.min(Math.max(pageNumber, 1), maxPage);
+        currentPage = pageNumber;
+        updatePageNavigation();
+                
+        let allPageContent = parentElement.querySelectorAll('.page-content');
+        
+        allPageContent.forEach(pageContent => {
+            pageContent.style.opacity = 0;
+        });
+
+        if (allPageContent.length > 0) {
+            allPageContent[0].addEventListener('transitionend', () => {
+                let newContent = requestNewPageContent(parentElement);
+                newContent.style.opacity = 0;
+
+                parentElement.innerHTML = "";
+                parentElement.append(newContent);
+                setTimeout(function() {
+                    newContent.style.opacity = 1;
+                }, 500);
+            });
+        }
+    }
+
+    function createPageButton(number) {
+        let pageButton = document.createElement("div");
+        pageButton.classList.add('page');
+        if (number == currentPage) pageButton.classList.add('current');
+        pageButton.id = 'page-number-' + number;
+        pageButton.innerText = number;
+        pageButton.addEventListener('click', () => {
+            changePage(number);
+        })
+        return pageButton;
+    }
+
+    function createDots() {
+        let dots = document.createElement("div");
+        dots.classList.add('dots');
+        dots.innerText = '...';
+        return dots;
+    }
+
+    function requestNewPageContent(pageNumber) {
+        let pageContent = parentElement.querySelector('.page-content');
+        if (pageContent == null) return null;
+    
+        let newContent = pageContent.cloneNode(true);
+        return newContent;
+    }
+});

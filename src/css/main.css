@@ -379,6 +379,11 @@ ul.custom-ul li:before {
   left: -20px;
   top: calc(50% - 6px);
 }
+@media (max-width: 630px) {
+  ul.custom-ul {
+    font-size: 16px;
+  }
+}
 
 a {
   text-decoration: none;
@@ -421,10 +426,15 @@ h1 {
 .header-addition {
   color: #1D1C1B;
   font-size: 24px;
-  line-height: 140%;
   text-align: center;
   margin-top: -26px;
   font-family: HelveticaThin;
+}
+@media (max-width: 500px) {
+  .header-addition {
+    font-size: 21px;
+    line-height: 100%;
+  }
 }
 
 h2 {
@@ -895,9 +905,11 @@ input[type=checkbox] + label a:hover {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  user-select: none;
 }
-.navigation .pages .right-arrow {
+.navigation .pages .right-arrow, .navigation .pages .left-arrow {
   cursor: pointer;
+  user-select: none;
 }
 .navigation .pages .page.current {
   border-radius: 100%;
@@ -4037,27 +4049,29 @@ select::-ms-expand {
     margin-bottom: 8px;
   }
 }
-.articles .articles-block {
+.articles .articles-block .page-content {
   display: grid;
   grid-template-columns: repeat(auto-fill, 50%);
   justify-content: center;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
-.articles .articles-block.big {
+.articles .articles-block.big .page-content {
   grid-template-columns: repeat(auto-fill, 50%);
 }
-.articles .articles-block.small {
+.articles .articles-block.small .page-content {
   grid-template-columns: repeat(auto-fill, 33.33%);
 }
 @media (max-width: 768px) {
-  .articles .articles-block.big {
+  .articles .articles-block.big .page-content {
     grid-template-columns: repeat(auto-fill, 100%);
   }
-  .articles .articles-block.small {
+  .articles .articles-block.small .page-content {
     grid-template-columns: repeat(auto-fill, 50%);
   }
 }
 @media (max-width: 500px) {
-  .articles .articles-block.small {
+  .articles .articles-block.small .page-content {
     grid-template-columns: repeat(auto-fill, 100%);
   }
 }
@@ -4718,6 +4732,11 @@ select::-ms-expand {
 .shipping h2 {
   margin-top: 64px;
   margin-bottom: 32px;
+  font-size: 32px;
+  font-family: HelveticaThin;
+}
+.shipping h1 + h2 {
+  margin-top: -8px;
 }
 .shipping .shipping-regions {
   margin-top: 32px;
@@ -4735,6 +4754,7 @@ select::-ms-expand {
 .shipping .payment-methods {
   display: flex;
   column-gap: 32px;
+  align-items: center;
 }
 .shipping .last-questions {
   margin-top: 32px;
@@ -4744,6 +4764,29 @@ select::-ms-expand {
 }
 .shipping .last-questions a {
   color: #F0571B;
+}
+@media (max-width: 940px) {
+  .shipping .last-questions {
+    font-size: 20px;
+  }
+}
+@media (max-width: 630px) {
+  .shipping .info-container .region-header {
+    font-size: 20px;
+    text-align: center;
+  }
+  .shipping .last-questions {
+    font-size: 18px;
+  }
+  .shipping .payment-methods {
+    flex-direction: column-reverse;
+    row-gap: 24px;
+  }
+}
+@media (max-width: 500px) {
+  .shipping h2 {
+    font-size: 24px;
+  }
 }
 
 @font-face {

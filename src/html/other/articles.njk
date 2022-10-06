@@ -47,7 +47,8 @@ eleventyNavigation:
             </div>
 
             <div class="articles-block big">
-                {% for i in range(0, 2) -%}
+                <div class="page-content">
+                    {% for i in range(0, 2) -%}
                     <a class="article-element" href="#">
                         <img class="image" src="/images/articles/ba{{ i + 1 }}.jpg" />
                         <div class="category">Работа со снаряжением. Базовые знания.</div>
@@ -56,11 +57,13 @@ eleventyNavigation:
                             Представляем вам большую научную работу - "Эпидемиологическое исследование травматизма среди промышленных альпинистов во Франции. Анализ условий труда и типология травм." Бенедикт Виньяль, Бастьен Суле, Изабель Роговски. Университет Лион 1
                         </div>
                     </a>
-                {%- endfor %}
+                    {%- endfor %}
+                </div>
             </div>
 
-            <div class="articles-block small">
-                {% for i in range(0, 6) -%}
+            <div id="articles-small" class="articles-block small">
+                <div class="page-content">
+                    {% for i in range(0, 6) -%}
                     <a class="article-element" href="#">
                         <img class="image" src="/images/articles/sa{{ i % 3 + 1 }}.jpg" />
                         <div class="category">Вертикальная жизнь</div>
@@ -69,18 +72,21 @@ eleventyNavigation:
                             С чего началась история компании? Что двигало людьми, создавшими Petzl? Какие события (и хорошие, и не очень) привели к тому, что это стало возможно? Предлагаем вам ознакомиться с
                         </div>
                     </a>
-                {%- endfor %}
+                    {%- endfor %}
+                </div>
             </div>
 
-            <div class="navigation">
-                <button class="btn transp-gray-btn">Показать больше</button>
+            <div class="navigation" data-navigation-for="articles-small">
+                <button class="show-more btn transp-gray-btn">Показать больше</button>
                 <div class="pages">
+                    <!--
                     <div class="page current">1</div>
                     <div class="page">2</div>
                     <div class="page">3</div>
                     <div class="dots">...</div>
                     <div class="page">13</div>
                     <div class="right-arrow">></div>
+                    -->
                 </div>
             </div>
         </div>
