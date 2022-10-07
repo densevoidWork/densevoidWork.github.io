@@ -33,18 +33,18 @@
     },
     {
         "title": "Фонари",
-        "page": "/catalog/promalp/"
+        "page": "/"
     },
     {
         "title": "Подборки",
-        "page": "/catalog/promalp/"
+        "page": "/"
     },
     {
         "title": "Новости и статьи",
-        "page": "/catalog/promalp/"
+        "page": "/other/articles/"
     },
     {
         "title": "Техническая информация",
-        "page": "/catalog/promalp/"
+        "page": "/"
     }
 ]

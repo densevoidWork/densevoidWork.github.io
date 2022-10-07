@@ -137,10 +137,7 @@
                             {% set parent = "" %}
 
                             {% if item.content|length %}
-                                {% set parent = " parent" %}
-                            {% endif %}
-
-                            <div class="main-category{{ parent }}" data-hide-button-for="category_{{ i }}">
+                            <div class="main-category parent" data-hide-button-for="category_{{ i }}">
                                 <div class="main-title">
                                     {{ item.title }}
                                 </div>
@@ -160,6 +157,16 @@
                                     {% endfor %}
                                 </div>
                             </div>
+
+                            {% else %}
+
+                            <a class="main-category" href="{{ item.page }}">
+                                <div class="main-title">
+                                    {{ item.title }}
+                                </div>
+                            </a>
+                            {% endif %}
+
                         {% endfor %}
                     </div>                                
 

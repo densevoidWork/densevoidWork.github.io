@@ -689,7 +689,7 @@ navigations.forEach(navigation => {
         }
     }
 
-    function changePage(pageNumber) {
+    function changePage(pageNumber, callback) {
         pageNumber = Math.min(Math.max(pageNumber, 1), maxPage);
         currentPage = pageNumber;
         updatePageNavigation();
@@ -700,17 +700,26 @@ navigations.forEach(navigation => {
             pageContent.style.opacity = 0;
         });
 
+        let newContent = requestNewPageContent(parentElement);
+        newContent.style.opacity = 0;
+
         if (allPageContent.length > 0) {
             allPageContent[0].addEventListener('transitionend', () => {
-                let newContent = requestNewPageContent(parentElement);
-                newContent.style.opacity = 0;
-
                 parentElement.innerHTML = "";
-                parentElement.append(newContent);
-                setTimeout(function() {
-                    newContent.style.opacity = 1;
-                }, 500);
+                addNewContent(callback);
             });
+        }
+        else {
+            addNewContent(callback);
+        }
+
+        function addNewContent(callback) {            
+            parentElement.append(newContent);
+            if (callback) callback(newContent);
+
+            setTimeout(function() {
+                newContent.style.opacity = 1;
+            }, 500);
         }
     }
 
@@ -721,7 +730,14 @@ navigations.forEach(navigation => {
         pageButton.id = 'page-number-' + number;
         pageButton.innerText = number;
         pageButton.addEventListener('click', () => {
-            changePage(number);
+            let screenYOffset = pages.getBoundingClientRect().top;
+            changePage(number, () => {
+                const bottomScrollMargin = 25;
+                window.scrollTo({
+                    top: pages.offsetTop - window.innerHeight + pages.offsetHeight + bottomScrollMargin,
+                    behavior: 'smooth'
+                  });
+            });
         })
         return pageButton;
     }
