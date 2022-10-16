@@ -1,8 +1,8 @@
 @font-face {
     font-family: "icons";
-    src: url("./../fonts/icons/icons.eot?7d00dffc3a106bfa7e4c5301950567a9#iefix") format("embedded-opentype"),
-url("./../fonts/icons/icons.woff2?7d00dffc3a106bfa7e4c5301950567a9") format("woff2"),
-url("./../fonts/icons/icons.woff?7d00dffc3a106bfa7e4c5301950567a9") format("woff");
+    src: url("./../fonts/icons/icons.eot?ee8471dc0aa5bea256a705dcc7c95a82#iefix") format("embedded-opentype"),
+url("./../fonts/icons/icons.woff2?ee8471dc0aa5bea256a705dcc7c95a82") format("woff2"),
+url("./../fonts/icons/icons.woff?ee8471dc0aa5bea256a705dcc7c95a82") format("woff");
 }
 
 i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -45,4 +45,25 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 }
 .icon-printer:before {
     content: "\f10a";
+}
+.icon-star:before {
+    content: "\f10b";
+}
+.icon-telegram:before {
+    content: "\f10c";
+}
+.icon-tiktok:before {
+    content: "\f10d";
+}
+.icon-twitter:before {
+    content: "\f10e";
+}
+.icon-vk:before {
+    content: "\f10f";
+}
+.icon-yandexdzen:before {
+    content: "\f110";
+}
+.icon-youtube:before {
+    content: "\f111";
 }

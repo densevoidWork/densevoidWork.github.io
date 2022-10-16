@@ -1,6 +1,7 @@
+{% macro preview(newsCount = 8, showMoreLabel = 'Показать больше') %}
 <div class="news-preview-block margin-top-60">
     <div class="news-list">
-        {% for i in range(0, 8) -%}
+        {% for i in range(0, newsCount) -%}
             <a class="news-element" href="#">
                 <img class="image" src="/images/news/small/image1.jpg" />
                 <div class="title">Выбираем спортивную обвязку - все модели 2020 года</div>
@@ -13,5 +14,22 @@
             </a>
         {%- endfor %}
     </div>
-    <button class="btn transp-gray-btn show-more-btn">Показать больше</button>
+    <button class="btn transp-gray-btn show-more-btn">{{ showMoreLabel }}</button>
 </div>
+{% endmacro %}
+
+
+{% macro itemCharacteristic(class, characteristicTitle, characteristicDescription) %}
+<div class="item-characteristic {{ class }}">
+    <div class="characteristic-circle">
+    </div>
+    <div class="characteristic-text">
+        <div class="characteristic-label">
+            {{ characteristicTitle }}
+        </div>
+        <div class="characteristic-description">
+            {{ characteristicDescription }}
+        </div>
+    </div>
+</div>
+{% endmacro %}

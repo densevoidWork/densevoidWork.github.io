@@ -8,7 +8,14 @@ export type IconsId =
   | "cross"
   | "minus"
   | "plus"
-  | "printer";
+  | "printer"
+  | "star"
+  | "telegram"
+  | "tiktok"
+  | "twitter"
+  | "vk"
+  | "yandexdzen"
+  | "youtube";
 
 export type IconsKey =
   | "Arrow_200"
@@ -20,7 +27,14 @@ export type IconsKey =
   | "Cross"
   | "Minus"
   | "Plus"
-  | "Printer";
+  | "Printer"
+  | "Star"
+  | "Telegram"
+  | "Tiktok"
+  | "Twitter"
+  | "Vk"
+  | "Yandexdzen"
+  | "Youtube";
 
 export enum Icons {
   Arrow_200 = "arrow-200",
@@ -33,6 +47,13 @@ export enum Icons {
   Minus = "minus",
   Plus = "plus",
   Printer = "printer",
+  Star = "star",
+  Telegram = "telegram",
+  Tiktok = "tiktok",
+  Twitter = "twitter",
+  Vk = "vk",
+  Yandexdzen = "yandexdzen",
+  Youtube = "youtube",
 }
 
 export const ICONS_CODEPOINTS: { [key in Icons]: string } = {
@@ -46,4 +67,11 @@ export const ICONS_CODEPOINTS: { [key in Icons]: string } = {
   [Icons.Minus]: "61704",
   [Icons.Plus]: "61705",
   [Icons.Printer]: "61706",
+  [Icons.Star]: "61707",
+  [Icons.Telegram]: "61708",
+  [Icons.Tiktok]: "61709",
+  [Icons.Twitter]: "61710",
+  [Icons.Vk]: "61711",
+  [Icons.Yandexdzen]: "61712",
+  [Icons.Youtube]: "61713",
 };

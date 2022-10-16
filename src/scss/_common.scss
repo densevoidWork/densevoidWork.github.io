@@ -786,3 +786,29 @@ select::-ms-expand {
         flex-direction: column;
     }
 }
+
+a:hover {
+    .icon-telegram {
+        color: #34a9df;
+    }
+
+    .icon-vk {
+        color: #4c75a1;
+    }
+
+    .icon-yandexdzen {
+        color: #ffd500;
+    }
+
+    .icon-youtube {
+        color: #ff0000;
+    }
+
+    .icon-twitter {
+        color: #54abee;
+    }
+
+    .icon-tiktok {
+        color: #69c9d0;
+    }
+}

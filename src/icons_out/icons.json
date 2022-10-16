@@ -8,5 +8,12 @@
     "cross": 61703,
     "minus": 61704,
     "plus": 61705,
-    "printer": 61706
+    "printer": 61706,
+    "star": 61707,
+    "telegram": 61708,
+    "tiktok": 61709,
+    "twitter": 61710,
+    "vk": 61711,
+    "yandexdzen": 61712,
+    "youtube": 61713
 }

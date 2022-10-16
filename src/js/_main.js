@@ -1,26 +1,28 @@
 /* DESKTOP SUB MENU */
 
 let navbar = document.querySelector('.navbar');
-let navbarSubmenu = document.querySelector('.navbar .navbar-submenu');
-let navbarParentElements = document.querySelectorAll('.navbar .navbar-element.parent');
-let navbarNotParentElements = document.querySelectorAll('.navbar .navbar-element:not(.parent)');
-
-navbarParentElements.forEach(element => {
-    element.addEventListener("mouseenter", function(event) {
-        navbarSubmenu.querySelector(".submenu-goods-categories").innerHTML = element.querySelector(".menu-categories").innerHTML;
-        navbarSubmenu.classList.add("opened");
+if (navbar) {
+    let navbarSubmenu = document.querySelector('.navbar .navbar-submenu');
+    let navbarParentElements = document.querySelectorAll('.navbar .navbar-element.parent');
+    let navbarNotParentElements = document.querySelectorAll('.navbar .navbar-element:not(.parent)');
+    
+    navbarParentElements.forEach(element => {
+        element.addEventListener("mouseenter", function(event) {
+            navbarSubmenu.querySelector(".submenu-goods-categories").innerHTML = element.querySelector(".menu-categories").innerHTML;
+            navbarSubmenu.classList.add("opened");
+        });
     });
-});
-
-navbar.addEventListener("mouseleave", function(event) {
-    navbarSubmenu.classList.remove("opened");
-});
-
-navbarNotParentElements.forEach(element => {
-    element.addEventListener("mouseenter", function(event) {
+    
+    navbar.addEventListener("mouseleave", function(event) {
         navbarSubmenu.classList.remove("opened");
     });
-});
+    
+    navbarNotParentElements.forEach(element => {
+        element.addEventListener("mouseenter", function(event) {
+            navbarSubmenu.classList.remove("opened");
+        });
+    });
+}
 
 
 /* HIDING TEXT */
@@ -154,23 +156,25 @@ countersComponents.forEach(countersComponent => {
 /* MINI BASKET */
 
 let basketButton = document.querySelector('#basket-button');
-let miniBasketMenu = basketButton.querySelector('.mini-basket-menu');
-let closeButton = basketButton.querySelector('.mini-basket-later-button'); 
-let isMiniBasketMenuVisible = false;
-
 if (basketButton) {
-    basketButton.addEventListener('click', function(event) {
-        if (miniBasketMenu.contains(event.target) && event.target != closeButton) return;
-
-        if (!isMiniBasketMenuVisible) {
-            miniBasketMenu.style.setProperty('display', 'block');
-        }
-        else {
-            miniBasketMenu.style.setProperty('display', 'none');
-        }
-
-        isMiniBasketMenuVisible = !isMiniBasketMenuVisible;
-    });
+    let miniBasketMenu = basketButton.querySelector('.mini-basket-menu');
+    let closeButton = basketButton.querySelector('.mini-basket-later-button'); 
+    let isMiniBasketMenuVisible = false;
+    
+    if (basketButton) {
+        basketButton.addEventListener('click', function(event) {
+            if (miniBasketMenu.contains(event.target) && event.target != closeButton) return;
+    
+            if (!isMiniBasketMenuVisible) {
+                miniBasketMenu.style.setProperty('display', 'block');
+            }
+            else {
+                miniBasketMenu.style.setProperty('display', 'none');
+            }
+    
+            isMiniBasketMenuVisible = !isMiniBasketMenuVisible;
+        });
+    }
 }
 
 /* NAVIGATION */
@@ -300,9 +304,15 @@ navigations.forEach(navigation => {
             changePage(number, () => {
                 const bottomScrollMargin = 25;
                 window.scrollTo({
+                    top: parentElement.offsetTop,
+                    behavior: 'smooth'
+                });
+                /*
+                window.scrollTo({
                     top: pages.offsetTop - window.innerHeight + pages.offsetHeight + bottomScrollMargin,
                     behavior: 'smooth'
-                  });
+                });
+                */
             });
         })
         return pageButton;
@@ -323,3 +333,31 @@ navigations.forEach(navigation => {
         return newContent;
     }
 });
+
+
+let landingPage = document.querySelector('.langing-page');
+if (landingPage) {
+    let mainHero = landingPage.querySelector('.main-hero');
+    if (mainHero) {
+        let knowMore = landingPage.querySelector('.know-more');
+        if (knowMore) {
+            knowMore.addEventListener('click', (e) => {
+                window.scrollTo({
+                    top: mainHero.getBoundingClientRect().height,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    }
+    
+    let goodsGallery = document.querySelector( '.landing-goods-gallery' );
+    new Splide(goodsGallery, {
+        type: 'slide',
+        //perPage: 6,
+        gap: 18,
+        width: 1560,
+        fixedWidth: 245,
+        autoplay: false,
+        perMove: 1,
+    }).mount(); 
+}

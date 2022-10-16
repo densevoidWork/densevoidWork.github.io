@@ -1,0 +1,204 @@
+---
+layout: false
+---
+<!doctype html>
+<html>
+    {% include "components/common/head.njk" %}
+    <body>
+        <div class="langing-page">
+            <div class="main-hero">
+                <a class="site-logo" href="{{ '/' | url }}">
+                    <img class="logo-img" src="{{ '/images/mainlogo_full_white.svg' | url }}" />     
+                </a>
+                <div class="landing-slogan">
+                    <div class="main-slogan">Моя каска</div>
+                    <div class="second-slogan">Petzl - защищает самое важное</div>
+                </div>
+                <div class="know-more">Узнать больше<i class="icon icon-arrow-200"></i></div>
+            </div>
+
+            <div class="second-hero">
+                <div class="hero-text">
+                    <div class="hero-subtitle">КАКОЙ-ТО ПОДЗАГОЛОВОК</div>
+                    <div class="hero-main-text">Каски Petzl, выбирайте лучшее</div>
+                    <div class="hero-second-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a odio blandit turpis mattis sollicitudin. Sed quis commodo nisl. Curabitur vestibulum turpis eget massa scelerisque tempus. Duis vestibulum nisl nec quam gravida, vitae ultrices justo facilisis.</div>
+                </div>
+            </div>
+
+            <div class="video-segment landing-container">
+                <div class="video-label small-orange-label">ВИДЕО</div>
+                <div class="video-name segment-title">День становится длиннее</div>
+                <div class="video-description segment-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a odio blandit turpis mattis sollicitudin. Sed quis commodo nisl. Curabitur vestibulum turpis eget massa scelerisque tempus. Duis vestibulum nisl nec quam gravida, vitae ultrices justo facilisis.</div>
+                <div class="video-player">
+                    <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/561221718?h=0b79471b8f&color=ffffff&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                </div>
+            </div>
+
+            <div class="download-catalog">
+                <div class="small-orange-label">Каталог 2020</div>
+                <div class="download-catalog-main-text">Узнайте больше о продукции PETZL</div>
+                <button class="download-btn btn transp-white-btn">СКАЧАТЬ</button>
+            </div>
+
+            <div class="our-goods">
+                <div class="landing-container">
+                    <div class="small-orange-label">ТОВАРЫ</div>
+                    <div class="segment-title">Полный ассортимент касок для каждого из вас</div>
+                    <div class="segment-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a odio blandit turpis mattis sollicitudin. Sed quis commodo nisl. Curabitur vestibulum turpis eget massa scelerisque tempus. Duis vestibulum nisl nec quam gravida, vitae ultrices justo facilisis.</div>
+                </div>     
+                <div class="gallery-container">
+                    <div class="splide landing-goods-gallery" role="group">
+                        <div class="splide__arrows">
+                            <button class="splide__arrow splide__arrow--prev">
+                                <i class="icon icon-arrow-200"></i>
+                            </button>
+                            <button class="splide__arrow splide__arrow--next">
+                                <i class="icon icon-arrow-200"></i>
+                            </button>
+                        </div>
+                        <div class="splide__track slides">
+                            <ul class="splide__list">
+                                <li class="splide__slide"></li>
+                                {% for i in range(0, 8) %}
+                                    <li class="splide__slide">
+                                        <a class="good" href="/good/acsenton/">
+                                            <div class="good-image">
+                                                <img src="/images/other/landing/good.jpg" />
+                                            </div>
+                                            <div class="good-name">
+                                                IKO
+                                            </div>
+                                            <div class="good-tags">
+                                                Кемпинг, хайкинг, путешествия, неизменная классика.
+                                            </div>
+                                            <div class="good-info">
+                                                <div class="info-characteristic">
+                                                    <div class="characteristic-label">
+                                                        ХАРАКТЕРИСТИКА
+                                                    </div>
+                                                    <div class="characteristic-text">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a odio blandit turpis.
+                                                    </div>
+                                                </div>
+                                                <div class="info-colors">
+                                                    <div class="colors-label">
+                                                        ЦВЕТА
+                                                    </div>
+                                                    <ul class="colors-list">
+                                                        <li class="color-red"></li>
+                                                        <li class="color-yellow"></li>
+                                                        <li class="color-green"></li>
+                                                        <li class="color-blue"></li>
+                                                        <li class="color-black"></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="info-comfort">
+                                                    <div class="comfort-label">
+                                                        КОМФОРТ
+                                                    </div>
+                                                    <ul class="comfort-rating">
+                                                        <li class="comfort-point"></li>
+                                                        <li class="comfort-point"></li>
+                                                        <li></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="info-rating">
+                                                    <div class="rating-label">
+                                                        РЕЙТИНГ ПОЛЬЗОВАТЕЛЕЙ
+                                                    </div>
+                                                    <ul class="clients-rating">
+                                                        <li class="rating-point"><i class="icon icon-star"></i></li>
+                                                        <li class="rating-point"><i class="icon icon-star"></i></li>
+                                                        <li class="rating-point"><i class="icon icon-star"></i></li>
+                                                        <li class="rating-point"><i class="icon icon-star"></i></li>
+                                                        <li><i class="icon icon-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="good-link">НА СТРАНИЦУ ТОВАРА<i class="icon icon-arrow-300"></i></div>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                                <li class="splide__slide"></li>
+                            </ul>
+                            <div class="sides-fade"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="landing-container">
+                    <button class="show-all-btn btn btn-orange">СМОТРЕТЬ ВСЕ<br />ТОВАРЫ</button>
+                </div>
+            </div>
+
+            <div class="find-out-more landing-container">
+                <div class="small-orange-label">СТАТЬИ</div>
+                <div class="segment-title">Узнайте больше</div>
+                
+                {% import "components/news/macroses.njk" as news %}
+                {{ news.preview(4, 'Узнать больше') }}
+            </div>
+
+            <div class="helm-characteristics">
+                <div class="landing-container">
+                    <div class="small-orange-label">ОПИСАНИЕ</div>
+                    <div class="segment-title">Lorem ipsum dolor sit ame</div>
+                    <div class="segment-description">Nullam a odio blandit turpis mattis sollicitudin. Sed quis commodo nisl. Curabitur vestibulum turpis eget massa scelerisque tempus. Duis vestibulum nisl nec quam gravida, vitae ultrices justo facilisis.</div>
+                
+                    <div class="visual-characteristics">
+                        <img src="/images/other/landing/big_helm.png" />
+                        {{ news.itemCharacteristic('char1', 'ХАРАКТЕРИСТИКА', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a odio blandit turpis.') }}
+                        {{ news.itemCharacteristic('char2', 'ХАРАКТЕРИСТИКА', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a odio blandit turpis.') }}
+                        {{ news.itemCharacteristic('char3', 'ХАРАКТЕРИСТИКА', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a odio blandit turpis.') }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="additional-information">
+                <div class="container">
+                    <ul class="information-list">                        
+                        {% for i in range(0, 3) %}
+                        <li>
+                            <img src="/images/other/landing/additional-info.jpg" />
+                            <div class="info-text">
+                                <div class="info-title">
+                                    Lorem ipsum dolor sit ame
+                                </div>
+                                <div class="info-content">
+                                    Nullam a odio blandit turpis mattis sollicitudin. Sed quis commodo nisl. Curabitur vestibulum turpis eget massa scelerisque tempus. Duis vestibulum nisl nec quam gravida, vitae ultrices justo facilisis.
+                                </div>
+                                <div class="info-additional">
+                                    Отдел исследования и разработки изделий из текстиля дорабатывает конструкцию безразмерной обвязки ASPIR.
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="our-socials">
+                <div class="landing-container">
+                    <div class="small-orange-label">СООБЩЕСТВО</div>
+                    <div class="segment-title">#Petzl_hash_tag</div>
+                    <div class="socials-list">              
+                        {% for social in contacts.social %}
+                        <a href="{{ social.link }}"><i class="icon icon-{{ social.name }}"></i></a>
+                        {% endfor %}
+                    </div>
+                    <div class="gray-squares">                                 
+                        {% for i in range(0, 6) %}
+                        <div class="gray-square"></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="landing-footer">
+                <div class="container">
+                    ©Petzl/vuedici.org/Rigger Italia/Coima
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -74,6 +74,7 @@ eleventyNavigation:
             </div>
         </div>
 
-        {% include "components/news/news-preview-block.njk" %}
+        {% import "components/news/macroses.njk" as news %}
+        {{ news.preview() }}
     </div>
 </div>
