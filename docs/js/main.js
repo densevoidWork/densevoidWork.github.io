@@ -785,13 +785,47 @@ if (landingPage) {
     }
     
     let goodsGallery = document.querySelector( '.landing-goods-gallery' );
-    new Splide(goodsGallery, {
+    let splide = new Splide(goodsGallery, {
         type: 'slide',
-        //perPage: 6,
         gap: 18,
         width: 1560,
         fixedWidth: 245,
-        autoplay: false,
-        perMove: 1,
-    }).mount(); 
+        focus: 0,
+        omitEnd: true,
+        pseudoSlides: true,
+        breakpoints: {
+            1174: {
+                width: "100%",
+                pseudoSlides: false,
+                padding: 16,
+            },
+        }
+    });
+
+    splide.on('mounted', function () {
+        updateSplide();
+    });
+
+    splide.on('updated', function (options) {
+        updateSplide();
+    });
+
+    splide.mount();
+
+    function updateSplide() {
+        const { Slides } = splide.Components;
+
+        if (splide.options.pseudoSlides) {
+            Slides.add('<li class="splide__slide pseudo-slide"></li>', 0);
+            Slides.add('<li class="splide__slide pseudo-slide"></li>', splide.length);
+            splide.isPseudoSlidesCreated = true;
+        }
+        else {
+            if (splide.isPseudoSlidesCreated) {
+                Slides.remove(0);
+                Slides.remove(splide.length - 1);
+                splide.isPseudoSlidesCreated = false;
+            }
+        }
+    }
 }
